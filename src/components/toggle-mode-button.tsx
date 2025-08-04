@@ -1,6 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-
 import { Switch } from "./ui/switch";
 
 export function ThemeToggle() {
@@ -11,16 +12,25 @@ export function ThemeToggle() {
     setIsDark(theme === "dark");
   }, [theme]);
 
-  const handleToggle = (checked: boolean) => {
-    setIsDark(checked);
-    setTheme(checked ? "dark" : "light");
+  const toggleTheme = () => {
+    const newValue = !isDark;
+    setIsDark(newValue);
+    setTheme(newValue ? "dark" : "light");
   };
 
   return (
-    <div className="flex flex-row items-center h-9 px-[15px] my-[7px] bg-background rounded-full text-muted-foreground select-none cursor-pointer shadow-[0_3px_4px_rgba(0,0,0,0.3)] gap-x-4" >
-      Light
-      <Switch checked={isDark} onCheckedChange={handleToggle} />
-      Dark
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={toggleTheme}
+      onKeyDown={(e) => e.key === "Enter" && toggleTheme()}
+      className="flex items-center justify-center h-9 px-4 pt-1 bg-background rounded-md text-muted-foreground select-none cursor-pointer shadow-[0_3px_4px_rgba(0,0,0,0.1)] gap-x-2 text-xs uppercase"
+    >
+      <span>Light</span>
+      <div onClick={(e) => e.stopPropagation()} className="pt-0.5">
+        <Switch checked={isDark} onCheckedChange={toggleTheme} />
+      </div>
+      <span>Dark</span>
     </div>
   );
 }

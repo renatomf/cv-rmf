@@ -1,0 +1,118 @@
+{
+  "pt": {
+    "biography": {
+      "title": "Biografia",
+      "paragraph1": "Sou um desenvolvedor web apaixonado por criar experiências digitais incríveis.",
+      "paragraph2": "Tenho experiência em várias tecnologias e adoro resolver problemas complexos com código limpo."
+    },
+    "contact": {
+      "title": "Contato",
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar"
+    },
+    "education": {
+      "title": "Educação",
+      "degree": "Bacharelado em Ciência da Computação",
+      "university": "Universidade de São Paulo",
+      "period": "2015 - 2019"
+    },
+    "experience": {
+      "title": "Experiência",
+      "job1": {
+        "role": "Desenvolvedor Front-End",
+        "company": "Empresa X",
+        "period": "2020 - 2022",
+        "description": "Trabalhei com React e Next.js criando interfaces modernas e responsivas."
+      },
+      "job2": {
+        "role": "Desenvolvedor Full Stack",
+        "company": "Empresa Y",
+        "period": "2022 - presente",
+        "description": "Responsável por aplicações completas em Node.js, React e banco de dados SQL."
+      }
+    },
+    "skills": {
+      "title": "Profissionalismo",
+      "photoshop": "Adobe Photoshop",
+      "photoshop_percent": "90%",
+      "figma": "Figma",
+      "figma_percent": "85%",
+      "html": "HTML",
+      "html_percent": "95%",
+      "wordpress": "WordPress",
+      "wordpress_percent": "80%"
+    },
+    "header": {
+      "hello": "Olá! Eu sou",
+      "titles": ["Desenvolvedor", "Designer"]
+    },
+    "leftSide": {
+      "quotePart1": "Sou um desenvolvedor web front-end apaixonado, especialista em criar interfaces web com precisão de pixels.",
+      "quotePart2": "Estou disponível para trabalhos freelance.",
+      "hireMe": "Me Contrate",
+      "location": "São Paulo / Brasil",
+      "phone": "(11) 97255-0341",
+      "email": "renatomar76@gmail.com"
+    }
+  },
+  "en": {
+    "biography": {
+      "title": "Biography",
+      "paragraph1": "I’m a web developer passionate about building amazing digital experiences.",
+      "paragraph2": "I have experience with various technologies and love solving complex problems with clean code."
+    },
+    "contact": {
+      "title": "Contact",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "education": {
+      "title": "Education",
+      "degree": "Bachelor of Computer Science",
+      "university": "University of São Paulo",
+      "period": "2015 - 2019"
+    },
+    "experience": {
+      "title": "Experience",
+      "job1": {
+        "role": "Front-End Developer",
+        "company": "Company X",
+        "period": "2020 - 2022",
+        "description": "Worked with React and Next.js creating modern, responsive interfaces."
+      },
+      "job2": {
+        "role": "Full Stack Developer",
+        "company": "Company Y",
+        "period": "2022 - present",
+        "description": "Responsible for full applications using Node.js, React, and SQL databases."
+      }
+    },
+    "skills": {
+      "title": "Professionality",
+      "photoshop": "Adobe Photoshop",
+      "photoshop_percent": "90%",
+      "figma": "Figma",
+      "figma_percent": "85%",
+      "html": "HTML",
+      "html_percent": "95%",
+      "wordpress": "WordPress",
+      "wordpress_percent": "80%"
+    },
+    "header": {
+      "hello": "Hi! I'm",
+      "titles": ["Developer", "Designer"]
+    },
+    "leftSide": {
+      "quotePart1": "I am a passionate front-end web developer specializing in pixel-perfect web interfaces.",
+      "quotePart2": "I am available for freelance work.",
+      "hireMe": "Hire Me",
+      "location": "São Paulo / Brazil",
+      "phone": "+55 (11) 97255-0341",
+      "email": "renatomar76@gmail.com"
+    }
+  }
+}

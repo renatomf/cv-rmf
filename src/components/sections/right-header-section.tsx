@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/language-context";
 
 export const RightHeaderSection = () => {
-  const words = ["Desenvolvedor", "Designer"];
+  const { messages } = useLanguage();
+  const words = messages.header.titles;
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -31,7 +33,7 @@ export const RightHeaderSection = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, wordIndex]);
+  }, [charIndex, isDeleting, wordIndex, words]);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -47,7 +49,6 @@ export const RightHeaderSection = () => {
           <div className="circle">
             <div
               className="bg_img"
-              data-bg-img="img/header/1.jpg"
               style={{
                 backgroundImage: 'url("/img/header/1.jpg")',
               }}
@@ -68,20 +69,13 @@ export const RightHeaderSection = () => {
         </div>
         <div className="right_hero_header">
           <div className="my_self">
-            <h4>Ola! Eu sou</h4>
+            <h4>{messages.header.hello}</h4>
             <h2>
-              {/* <!-- It is animation title. You can change animation variation by changing extra className to one of next classNamees: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push. cd-headline className can not be removed.  --> */}
               <span className="cd-headline clip">
                 <span
                   className="cd-words-wrapper"
-                  style={{
-                    width: "127.234px",
-                    overflow: "hidden",
-                  }}
+                  style={{ width: "127.234px", overflow: "hidden" }}
                 >
-                  {/* <b className="is-hidden">Designer</b> */}
-                  {/* <b className="is-hidden"> {displayedText}</b> */}
-
                   <div className="max-w-1">
                     <b className="is-hidden" style={{ whiteSpace: "nowrap" }}>
                       {text}
@@ -93,7 +87,6 @@ export const RightHeaderSection = () => {
                       />
                     </b>
                   </div>
-                  {/* <b className="is-visible">Freelancer</b> */}
                 </span>
               </span>
             </h2>

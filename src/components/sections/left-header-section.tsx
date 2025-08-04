@@ -1,8 +1,11 @@
 import { FaFacebookF, FaXTwitter, FaYoutube, FaPhone } from "react-icons/fa6";
 import { FaInstagram, FaPinterest, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { useLanguage } from "@/components/language-context";
 
-export const LeftSide = () => {
+export const LeftHeaderSection = () => {
+  const { messages } = useLanguage();
+
   return (
     <div className="cv__header">
       <div className="in">
@@ -14,11 +17,11 @@ export const LeftSide = () => {
         </h3>
 
         <p className="quote">
-          Sou um desenvolvedor web front-end apaixonado, especialista em criar
-          interfaces web com precisão de pixels. Estou disponível para trabalhos
-          freelance.{" "}
+          {messages.leftSide?.quotePart1 ??
+            "Sou um desenvolvedor web front-end apaixonado, especialista em criar interfaces web com precisão de pixels."}{" "}
+          {messages.leftSide?.quotePart2 ?? "Estou disponível para trabalhos freelance."}{" "}
           <a href="#contact" className="anchor">
-            Me Contrate
+            {messages.leftSide?.hireMe ?? "Me Contrate"}
           </a>
         </p>
         <ul className="contact_info">
@@ -26,53 +29,45 @@ export const LeftSide = () => {
             <span className="icon">
               <FaLocationDot className="fn__svg" />
             </span>
-            <p>Sao Paulo / Brasil</p>
+            <p>{messages.leftSide?.location ?? "São Paulo / Brasil"}</p>
           </li>
           <li>
             <span className="icon">
               <FaPhone className="fn__svg" />
             </span>
-            <p>(11) 97255-0341</p>
+            <p>{messages.leftSide?.phone ?? "(11) 97255-0341"}</p>
           </li>
           <li>
             <span className="icon">
-              <FaEnvelope className="fn__svg"/>
+              <FaEnvelope className="fn__svg" />
             </span>
-            <p>renatomar76@gmail.com</p>
+            <p>{messages.leftSide?.email ?? "renatomar76@gmail.com"}</p>
           </li>
         </ul>
         <ul className="social">
           <li>
             <a href="#" target="_blank" title="twitter.com">
-              <FaXTwitter
-                className="fn__svg"
-              />
+              <FaXTwitter className="fn__svg" />
             </a>
           </li>
           <li>
             <a href="#" target="_blank" title="facebook.com">
-              <FaFacebookF className='fn__svg' />
+              <FaFacebookF className="fn__svg" />
             </a>
           </li>
           <li>
             <a href="#" target="_blank" title="instagram.com">
-              <FaInstagram
-                className="fn__svg"
-              />
+              <FaInstagram className="fn__svg" />
             </a>
           </li>
           <li>
-            <a href="#" target="_blank" title="printerest.com">
-              <FaPinterest
-                className="fn__svg"
-              />
+            <a href="#" target="_blank" title="pinterest.com">
+              <FaPinterest className="fn__svg" />
             </a>
           </li>
           <li>
             <a href="#" target="_blank" title="youtube.com">
-              <FaYoutube
-                className="fn__svg"
-              />
+              <FaYoutube className="fn__svg" />
             </a>
           </li>
         </ul>
