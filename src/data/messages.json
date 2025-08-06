@@ -10,7 +10,10 @@
       "name": "Nome",
       "email": "Email",
       "message": "Mensagem",
-      "send": "Enviar"
+      "send": "Enviar",
+      "success": "Mensagem enviada com sucesso!",
+      "sending": "Enviando...",
+      "error": "Por favor, preencha os campos obrigatórios!"
     },
     "education": {
       "title": "Educação",
@@ -68,7 +71,10 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "send": "Send"
+      "send": "Send",
+      "success": "Message sent successfully!",
+      "sending": "Sending...",
+      "error": "Please fill required fields!"
     },
     "education": {
       "title": "Education",

@@ -5,7 +5,8 @@ import { useLanguage } from "@/components/language-context";
 
 interface Skill {
   title: string;
-  percent: string; // ex: "90%"
+  percent: string;
+  iconPath: string; // Caminho relativo ao /public
 }
 
 export const SkillSection = () => {
@@ -14,13 +15,28 @@ export const SkillSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [rightPositions, setRightPositions] = useState<number[]>([]);
 
-  // Memoiza o array skills para manter a mesma referência entre renders
   const skills: Skill[] = useMemo(
     () => [
-      { title: messages.skills.photoshop, percent: messages.skills.photoshop_percent },
-      { title: messages.skills.figma, percent: messages.skills.figma_percent },
-      { title: messages.skills.html, percent: messages.skills.html_percent },
-      { title: messages.skills.wordpress, percent: messages.skills.wordpress_percent },
+      {
+        title: messages.skills.photoshop,
+        percent: messages.skills.photoshop_percent,
+        iconPath: "/svg/react.svg",
+      },
+      {
+        title: messages.skills.figma,
+        percent: messages.skills.figma_percent,
+        iconPath: "/svg/figma.svg",
+      },
+      {
+        title: messages.skills.html,
+        percent: messages.skills.html_percent,
+        iconPath: "/svg/html.svg",
+      },
+      {
+        title: messages.skills.wordpress,
+        percent: messages.skills.wordpress_percent,
+        iconPath: "/svg/react.svg",
+      },
     ],
     [messages.skills]
   );
@@ -43,7 +59,7 @@ export const SkillSection = () => {
     if (!isVisible || !containerRef.current) return;
 
     const containerWidth = containerRef.current.clientWidth;
-    const offset = -10; // px para deixar o percentual antes da ponta da barra
+    const offset = -10;
 
     const calculatedRights = skills.map((skill) => {
       const percentNum = Number(skill.percent.replace("%", ""));
@@ -68,16 +84,22 @@ export const SkillSection = () => {
             style={{ transitionDelay: `${i * 300}ms` }}
           >
             <div className="item_in">
-              <h3 className="progress_title">{skill.title}</h3>
+              <h3 className="progress_title flex items-center gap-2">
+                <img
+                  src={skill.iconPath}
+                  alt={`${skill.title} icon`}
+                  className="w-5 h-5 object-contain"
+                />
+                {skill.title}
+              </h3>
 
               <span
                 className="progress_percent"
                 style={{
-                  right: isVisible
-                    ? rightPositions[i] !== undefined
+                  right:
+                    isVisible && rightPositions[i] !== undefined
                       ? `${rightPositions[i]}px`
-                      : "100%"
-                    : "100%",
+                      : "100%",
                   opacity: isVisible ? 1 : 0,
                   transitionDelay: `${i * 300}ms`,
                 }}

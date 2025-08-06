@@ -7,6 +7,7 @@ import { Jost } from 'next/font/google';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/components/language-context';
+import { Toaster } from 'sonner';
 
 const jost = Jost({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${jost.className}  antialiased`} suppressHydrationWarning>
       <head />
       <body>
+        <Toaster />
         <LanguageProvider>
           <ThemeProvider
             attribute="class"

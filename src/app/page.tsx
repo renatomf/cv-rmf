@@ -1,6 +1,8 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+
 
 import { Navbar } from "@/components/navbar";
 import { LeftHeaderSection } from "@/components/sections/left-header-section";
@@ -10,6 +12,8 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { RightHeaderSection } from "@/components/sections/right-header-section";
+
+const BgAnimated = dynamic(() => import("@/components/bg-animated"), { ssr: false });
 
 export default function Home() {
   const [bgAnimateOpen, setBgAnimateOpen] = useState(false);
@@ -27,8 +31,8 @@ export default function Home() {
       <div className="rmf_fn_main">
         <div className="rmf_fn_cv">
           <div className="rmf_cv">
-            <div className="cv__bg"></div>
-            <div className="cv__bg2"></div>
+            {/* <div className="cv__bg"></div>
+            <div className="cv__bg2"></div> */}
             <Navbar />
             <div className="grid grid-cols-1 md:grid-cols-2">
               <LeftHeaderSection />
@@ -41,6 +45,7 @@ export default function Home() {
                 <ContactSection />
               </div>
             </div>
+            <BgAnimated />
           </div>
         </div>
       </div>

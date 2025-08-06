@@ -344,6 +344,7 @@ h6 {
 	left: -30%;
 	bottom: 0;
 	transition: all .5s .5s ease;
+	mix-blend-mode: multiply;
 }
 
 .rmf_cv .cv__bg2 {
@@ -356,6 +357,8 @@ h6 {
 	right: -30%;
 	bottom: 0;
 	transition: all .5s .5s ease;
+	/* mix-blend-mode: overlay; */
+
 }
 
 .rmf_cv .cv__header {
@@ -2960,3 +2963,6 @@ h6 {
 		height: inherit;
 	}
 }
+
+
+

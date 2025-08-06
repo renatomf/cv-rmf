@@ -1,31 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Switch } from "@/components/ui/switch"; // Ajuste caminho
+import { useEffect, useState } from "react";
+import { Switch } from "@/components/ui/switch";
 import { useLanguage } from "./language-context";
 
 export function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
-  const [isEnglish, setIsEnglish] = useState(false);
-
   const { theme } = useTheme();
+  const isEnglish = locale === "en";
 
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setIsEnglish(locale === "en");
-  }, [locale]);
+    setMounted(true);
+  }, []);
 
   const toggleLanguage = () => {
-    const newValue = !isEnglish;
-    setIsEnglish(newValue);
-    setLocale(newValue ? "en" : "pt");
+    setLocale(isEnglish ? "pt" : "en");
   };
 
-  // Define classes dinâmicas para o switch de acordo com o tema
   const switchClassName =
-    theme === "dark"
-      ? "bg-blue-600" // exemplo cor azul no dark
-      : "bg-gray-300"; // exemplo cinza claro no light
+    theme === "dark" ? "bg-blue-600" : "bg-gray-300";
+
+  if (!mounted) return null; // Evita render antes do tema estar disponível
 
   return (
     <div
@@ -47,48 +44,3 @@ export function LanguageSwitcher() {
     </div>
   );
 }
-
-
-
-// "use client";
-
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
-// import { useLanguage } from "./language-context";
-
-// const languages = [
-//   { value: "pt", label: "PT" },
-//   { value: "en", label: "EN" },
-// ] as const;
-
-// export function LanguageSwitcher() {
-//   const { locale, setLocale } = useLanguage();
-
-//   return (
-//     <Select
-//       value={locale}
-//       onValueChange={(value) => setLocale(value as "pt" | "en")}
-//     >
-//       <SelectTrigger className="w-[80px] h-[40px] text-xs bg-background text-muted-foreground">
-//         <SelectValue placeholder="Language" />
-//       </SelectTrigger>
-//       {/* Position "popper" habilita portal, evitando problemas de overflow */}
-//       <SelectContent
-//         align="end"
-//         position="popper"
-//         className="w-auto min-w-[10px] max-w-xs z-[9999] bg-background text-muted-foreground"
-//       >
-//         {languages.map(({ value, label }) => (
-//           <SelectItem key={value} value={value}>
-//             {label}
-//           </SelectItem>
-//         ))}
-//       </SelectContent>
-//     </Select>
-//   );
-// }
