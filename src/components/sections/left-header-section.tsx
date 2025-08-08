@@ -1,5 +1,6 @@
-import { FaFacebookF, FaXTwitter, FaYoutube, FaPhone } from "react-icons/fa6";
-import { FaInstagram, FaPinterest, FaEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaInstagram, FaPinterest, FaEnvelope, FaWhatsapp  } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { useLanguage } from "@/components/language-context";
 
@@ -19,7 +20,8 @@ export const LeftHeaderSection = () => {
         <p className="quote">
           {messages.leftSide?.quotePart1 ??
             "Sou um desenvolvedor web front-end apaixonado, especialista em criar interfaces web com precisão de pixels."}{" "}
-          {messages.leftSide?.quotePart2 ?? "Estou disponível para trabalhos freelance."}{" "}
+          {messages.leftSide?.quotePart2 ??
+            "Estou disponível para trabalhos freelance."}{" "}
           <a href="#contact" className="anchor">
             {messages.leftSide?.hireMe ?? "Me Contrate"}
           </a>
@@ -33,15 +35,24 @@ export const LeftHeaderSection = () => {
           </li>
           <li>
             <span className="icon">
-              <FaPhone className="fn__svg" />
+              <IoLogoWhatsapp className="fn__svg" />
             </span>
-            <p>{messages.leftSide?.phone ?? "(11) 97255-0341"}</p>
+            <p>
+              <a
+                href="https://wa.me/5511972550341"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text--muted-foreground hover:underline"
+              >
+                {messages.leftSide?.phone ?? "55 (11) 97255-0341"}
+              </a>
+            </p>
           </li>
           <li>
             <span className="icon">
               <FaEnvelope className="fn__svg" />
             </span>
-            <p>{messages.leftSide?.email ?? "renatomar76@gmail.com"}</p>
+            <p>{messages.leftSide?.email ?? "renatomarde@gmail.com"}</p>
           </li>
         </ul>
         <ul className="social">

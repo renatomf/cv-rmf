@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import messagesData from "@/data/messages.json";
 
+
 type Locale = "pt" | "en";
 
 interface LanguageContextProps {

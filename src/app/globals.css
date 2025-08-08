@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 
 
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -91,29 +92,15 @@
 	--bg-tertiary: oklch(0.1286 0 0);
 }
 
-h1 {
-	font-size: 45px;
-}
+h1 { font-size: 45px; }
+h2 { font-size: 36px; }
+h3 { font-size: 30px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 16px; }
+/* p { font-size: 16px; } */
 
-h2 {
-	font-size: 36px;
-}
 
-h3 {
-	font-size: 30px;
-}
-
-h4 {
-	font-size: 24px;
-}
-
-h5 {
-	font-size: 20px;
-}
-
-h6 {
-	font-size: 16px;
-}
 
 
 @layer base {
@@ -163,6 +150,10 @@ body {
 	position: relative;
 }
 
+p {
+	color: var(--muted-foreground);
+}
+
 [class^="rmf_fn_"] {
 	width: 100%;
 	float: left;
@@ -197,6 +188,19 @@ h5,
 h6 {
 	color: var(--muted);
 }
+
+/* [aria-label="Notifications alt+T"] {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+} */
+
 
 /*------------------------------------------------------------------*/
 /*	02) Site Structure
@@ -338,13 +342,13 @@ h6 {
 	position: absolute;
 	z-index: 1;
 	width: 25%;
-	background: var(--bg-primary);
+	background: #0BAFAC;
 	clip-path: polygon(100% 0, 80% 50%, 100% 100%, 0 100%, 0 0);
 	top: 0;
 	left: -30%;
 	bottom: 0;
 	transition: all .5s .5s ease;
-	mix-blend-mode: multiply;
+	/* mix-blend-mode: normal; */
 }
 
 .rmf_cv .cv__bg2 {
@@ -357,7 +361,7 @@ h6 {
 	right: -30%;
 	bottom: 0;
 	transition: all .5s .5s ease;
-	/* mix-blend-mode: overlay; */
+	/* mix-blend-mode: multiply; */
 
 }
 
@@ -440,7 +444,7 @@ h6 {
 
 .rmf_cv .cv__header p.quote {
 	margin: 0;
-	color: #777;
+	color: var(--muted-foreground);
 	margin-bottom: 30px;
 	text-align: left;
 	border-left: 3px solid var(--bg-primary);
@@ -506,7 +510,7 @@ h6 {
 }
 
 .cv__header .contact_info p {
-	color: #777;
+	color: var(--muted-foreground);
 	line-height: 1.4;
 	background-color: var(--muted);
 	border-radius: 5px;
@@ -672,7 +676,7 @@ h6 {
 
 .rmf_cv .cv__header p.quote a {
 	text-decoration: none;
-	color: #eee;
+	color: var(--primary);
 	border-bottom: 1px solid;
 	line-height: 1;
 	display: inline-block;
@@ -1077,8 +1081,13 @@ h6 {
 }
 
 .fn_cs_info_items a {
-	color: #111;
+	color: var(--primary);
 	text-decoration: none;
+}
+
+.fn_cs_info_items a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 0.5px;
 }
 
 .fn_cs_info_items a:hover {

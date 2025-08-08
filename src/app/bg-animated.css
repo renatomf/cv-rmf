@@ -16,17 +16,32 @@
 }
 
 :root {
-  --color-bg1: rgb(0, 25, 61);        /* azul escuro */
-  --color-bg2: rgb(0, 44, 91);        /* azul intermediário */
-  --color1: 18, 113, 255;             /* azul claro intenso */
-  --color2: 0, 180, 255;              /* ciano/azul piscina */
-  --color3: 100, 180, 255;            /* azul celeste */
-  --color4: 50, 100, 200;             /* azul médio */
-  --color5: 30, 60, 180;              /* azul profundo */
-  --color-interactive: 80, 140, 255;  /* azul interativo suave */
+  --color-bg1: rgb(11, 175, 172);          /* mais escura */
+  --color-bg2: rgb(60, 185, 182);
+  --color1: 110, 195, 193;
+  --color2: 160, 210, 208;
+  --color3: 195, 220, 218;
+  --color4: 212, 225, 224;
+  --color5: 229, 229, 229;            /* mais clara */
+  --color-interactive: 212, 225, 224;
   --circle-size: 80%;
   --blending: hard-light;
 }
+
+
+/* :root {
+  --color-bg1: rgb(1, 36, 40);         
+  --color-bg2: rgb(3, 60, 65);         
+  --color1: 11, 175, 172;             
+  --color2: 0, 200, 195;            
+  --color3: 100, 230, 225;          
+  --color4: 40, 160, 155;           
+  --color5: 20, 100, 110;         
+  --color-interactive: 60, 190, 185; 
+  --circle-size: 80%;
+  --blending: hard-light;
+} */
+
 
 
 @keyframes moveInCircle {

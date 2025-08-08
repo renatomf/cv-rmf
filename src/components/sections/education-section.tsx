@@ -18,8 +18,7 @@ export const EducationSection = () => {
               </div>
               <h3>{messages.education.degree}</h3>
               <p>
-                Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {messages.education.description}
               </p>
             </div>
           </li>

@@ -1,14 +1,13 @@
 "use client"
 
 // import type { Metadata } from "next";
+import { Toaster } from 'sonner';
 import { Jost } from 'next/font/google';
 
-
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/components/language-context';
-import { Toaster } from 'sonner';
 
+import "./globals.css";
 const jost = Jost({
   subsets: ["latin"],
 });
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${jost.className}  antialiased`} suppressHydrationWarning>
       <head />
       <body>
-        <Toaster />
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
@@ -31,6 +29,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             enableSystem
             disableTransitionOnChange
           >
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              style: { zIndex: 9999 },
+            }}
+          />
             {children}
           </ThemeProvider>
         </LanguageProvider>
