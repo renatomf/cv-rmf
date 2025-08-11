@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 const contactSchema = z.object({
   name: z.string().min(1),
@@ -53,13 +54,27 @@ export const ContactSection = () => {
 
       if (res.ok) {
         toast.success(
-          messages.contact.success || "Mensagem enviada com sucesso!"
+          messages.contact.success || "Mensagem enviada com sucesso!",
+          {
+            icon: <FaCheckCircle style={{ color: "#0bafac" }} />,
+            style: {
+              border: "1px solid black",
+              color: "black",
+            },
+          }
         );
         reset();
       } else {
         toast.error(
           messages.contact.errorSending ||
-            "Erro ao enviar o formulário. Tente novamente."
+            "Erro ao enviar o formulário. Tente novamente.",
+          {
+            icon: <FaTimesCircle style={{ color: "#e02424" }} />,
+            style: {
+              border: "1px solid #e02424",
+              color: "#e02424",
+            },
+          }
         );
       }
     } catch (error) {
@@ -74,9 +89,6 @@ export const ContactSection = () => {
       <div className="section_title">
         <h3>{messages.contact.title || "Contato"}</h3>
       </div>
-<button onClick={() => toast.success('Toast funcionando!')}>
-  Testar Toast
-</button>
       <form
         className="contact_form"
         onSubmit={handleSubmit(onSubmit)}
