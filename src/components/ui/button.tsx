@@ -24,8 +24,8 @@ const buttonVariants = cva(
           "w-full block !h-[60px] whitespace-nowrap text-ellipsis overflow-hidden ",
           "px-5 py-10 text-[18px] font-semibold uppercase text-center no-underline",
           "border-2 border-border rounded-full text-foreground",
-          "hover:border-[#3452ff] hover:text-[#3452ff]",
-          "dark:border-border dark:text-bg-primary dark:hover:text-[#3452ff] dark:hover:border-[#3452ff]"
+          "hover:border-[#0bafac] hover:text-[#0bafac]",
+          "dark:border-border dark:text-bg-primary dark:hover:text-[#0bafac] dark:hover:border-[#0bafac]"
         ),
       },
       size: {

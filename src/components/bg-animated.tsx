@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import "../app/bg-animated.css"; // ajuste se mover o CSS
+import "../app/bg-animated.css"; 
 
 const BgAnimated = () => {
   const interBubble = useRef<HTMLDivElement | null>(null);
@@ -43,14 +43,17 @@ const BgAnimated = () => {
 
   return (
     <div className="gradient-bg w-screen h-screen fixed top-0 left-0 -z-10 pointer-events-none">
-      <svg xmlns="http://www.w3.org/2000/svg">
+      <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
         <defs>
-          <filter id="goo">
+          <filter id="goo" colorInterpolationFilters="sRGB">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              values="1 0 0 0 0  
+                      0 1 0 0 0  
+                      0 0 1 0 0  
+                      0 0 0 18 -8"
               result="goo"
             />
             <feBlend in="SourceGraphic" in2="goo" />

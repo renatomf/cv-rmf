@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -64,7 +62,7 @@
 	--border: oklch(0.922 0 0);
 	--input: oklch(0.922 0 0);
 	--ring: oklch(0.708 0 0);
-	--bg-primary: oklch(0.539 0.2552 267.97);
+	--bg-primary: oklch(0.6822 0.1156 192.6);
 	--bg-secondary: oklch(0.9491 0 0);
 	--bg-tertiary: oklch(0.8975 0 0);
 }
@@ -87,7 +85,7 @@
 	--border: oklch(0.252 0 0);
 	--input: oklch(1 0 0 / 15%);
 	--ring: oklch(0.556 0 0);
-	--bg-primary: oklch(0.539 0.2552 267.97);
+	--bg-primary: oklch(0.6822 0.1156 192.6);
 	--bg-secondary: oklch(0.1957 0 0);
 	--bg-tertiary: oklch(0.1286 0 0);
 }
@@ -379,7 +377,7 @@ h6 {
 }
 
 .rmf_cv .cv__header .in {
-	background-color: var(--background);
+	background-color: var(--card);
 	height: 100%;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -392,7 +390,7 @@ h6 {
 	-o-flex-direction: column;
 	flex-direction: column;
 	justify-content: center;
-	padding: 80px 10%;
+	padding: 40px 10%;
 	border-radius: 10px;
 	overflow-y: scroll;
 }
@@ -671,7 +669,7 @@ h6 {
 
 
 .rmf_cv .cv__header h3 span {
-	color: var(--mc);
+	color: var(--bg-primary);
 }
 
 .rmf_cv .cv__header p.quote a {
@@ -683,7 +681,7 @@ h6 {
 }
 
 .rmf_cv .cv__header p.quote a:hover {
-	color: var(--mc);
+	color: var(--bg-primary);
 }
 
 .cv__header .contact_info {
@@ -745,7 +743,7 @@ h6 {
 }
 
 .rmf_cv .social a:hover {
-	background-color: var(--mc);
+	background-color: var(--bg-primary);
 }
 
 .rmf_cv .cv__content section {
@@ -851,7 +849,7 @@ h6 {
 	right: 0px;
 	left: 7px;
 	bottom: 10px;
-	background-color: var(--mc);
+	background-color: var(--bg-primary);
 	z-index: 2;
 	border-radius: 100%;
 	color: rgba(52, 82, 255, 0.1);
@@ -884,10 +882,10 @@ h6 {
 	width: 4px;
 	height: 138%;
 	display: block;
-	background: var(--mc);
-	background: -moz-linear-gradient(180deg, var(--mc) 50%, rgba(211, 165, 131, 1) 50%, rgba(211, 165, 131, 1) 100%);
-	background: -webkit-linear-gradient(180deg, var(--mc) 50%, rgba(211, 165, 131, 1) 50%, rgba(211, 165, 131, 1) 100%);
-	background: linear-gradient(180deg, var(--mc) 50%, rgba(211, 165, 131, 1) 50%, rgba(211, 165, 131, 1) 100%);
+	background: var(--bg-primary);
+	background: -moz-linear-gradient(180deg, var(--bg-primary) 50%, rgba(211, 165, 131, 1) 50%, rgba(211, 165, 131, 1) 100%);
+	background: -webkit-linear-gradient(180deg, var(--bg-primary) 50%, rgba(211, 165, 131, 1) 50%, rgba(211, 165, 131, 1) 100%);
+	background: linear-gradient(180deg, var(--bg-primary) 50%, rgba(211, 165, 131, 1) 50%, rgba(211, 165, 131, 1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3452ff", endColorstr="#d3a583", GradientType=1);
 	transform: rotate(30deg);
 	z-index: 13;
@@ -951,11 +949,11 @@ h6 {
 }
 
 .section_header .person_info:hover {
-	background-color: var(--mc);
+	background-color: var(--bg-primary);
 }
 
 .section_header .person_info:hover:after {
-	border-color: var(--mc);
+	border-color: var(--bg-primary);
 }
 
 @-webkit-keyframes cs_fn_pulse {
@@ -1091,7 +1089,7 @@ h6 {
 }
 
 .fn_cs_info_items a:hover {
-	color: var(--primary);
+	color: #0bafac
 }
 
 /*------------------------------------------------------------------*/

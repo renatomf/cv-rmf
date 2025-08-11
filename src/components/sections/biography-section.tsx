@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { useLanguage } from "@/components/language-context";
 
 export const BiographySection = () => {
@@ -21,22 +19,36 @@ export const BiographySection = () => {
 
       <div className="fn_cs_info_items">
         <ul>
-          {messages.biography.infoItems.map((item: { label: string; value: string; link?: string }, index: number) => (
-            <li key={index}>
-              <p>
-                {item.label}:{" "}
-                <span>
-                  {item.link ? (
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      {item.value}
-                    </a>
-                  ) : (
-                    item.value
-                  )}
-                </span>
-              </p>
-            </li>
-          ))}
+          {messages.biography.infoItems.map(
+            (
+              item: { label: string; value: string; link?: string },
+              index: number
+            ) => (
+              <li key={index}>
+                <p>
+                  {item.label}:{" "}
+                  <span>
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                          item.label === "Telefone" || item.label === "E-mail"
+                            ? "hover:text-[#0bafac]"
+                            : undefined
+                        }
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      item.value
+                    )}
+                  </span>
+                </p>
+              </li>
+            )
+          )}
         </ul>
       </div>
     </section>
