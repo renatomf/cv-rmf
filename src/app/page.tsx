@@ -24,16 +24,18 @@ export default function Home() {
 
   return (
     <main className={bgAnimateOpen ? "resume-opened" : "resume-open"}>
-      <div className="rmf_fn_main">
+      <div className="rmf_fn_main max-w-[1024px] mx-auto px-4">
         <div className="rmf_fn_cv">
           <div className="rmf_cv">
             <div className="cv__bg"></div>
             <div className="cv__bg2"></div>
             <Navbar />
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="">
               <LeftHeaderSection />
               <div className="cv__content relative z-10">
-                <RightHeaderSection />
+                <div className="hidden xl:flex">
+                  <RightHeaderSection />
+                </div>
                 <BiographySection />
                 <EducationSection />
                 <ExperienceSection />

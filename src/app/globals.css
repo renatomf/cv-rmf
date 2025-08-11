@@ -2706,267 +2706,121 @@ h6 {
 /*	14) Responsive
 /*------------------------------------------------------------------*/
 @media(max-width: 1040px) {
-	.rmf_fn_switcher_wrap {
-		right: 30px;
-	}
+  /* Flex em coluna para .rmf_cv, altura total e scroll */
+  .rmf_cv {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
 
-	.rmf_cv {
-		left: 10px;
-		right: 10px;
-		bottom: 10px;
-		top: 10px;
-	}
+  /* .cv__header e .cv__content ficam com 100% largura */
+  .rmf_cv .cv__header,
+  .rmf_cv .cv__content {
+    width: 100%;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
 
-	.rmf_cv .cv__header {
-		top: 10px;
-		left: 10px;
-		bottom: 10px;
-	}
+  /* Ajuste para scrollbars e z-index do closer */
+  .rmf_cv::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+  }
+  .rmf_cv::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+  }
+  .rmf_cv .closer {
+    z-index: 999;
+  }
 
-	/* .rmf_cv .cv__content {
-		width: calc(70vw - 40px);
-		right: 10px;
-		top: 10px;
-		bottom: 10px;
-	} */
+  /* .cv__header transform para posicionamento (se for necessário) */
+  .rmf_cv .cv__header {
+    margin-bottom: 20px;
+    transform: translateX(380px);
+  }
+  .rmf_cv .cv__content {
+    padding: 0;
+    overflow: initial;
+    float: left;
+    clear: both;
+    min-height: fit-content;
+    max-height: inherit;
+    transform: translateX(-380px);
+  }
+  
+  /* Outros ajustes gerais para flex-column em seções */
+  .section_header .content {
+    flex-direction: column;
+  }
 
-	.rmf_cv {
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
-		display: flex;
-		-webkit-flex-direction: column;
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-o-flex-direction: column;
-		flex-direction: column;
-		padding: 20px;
-		overflow-y: scroll;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		border-radius: 0;
-	}
-
-	.rmf_cv .closer {
-		z-index: 999;
-	}
-
-	.rmf_cv {
-		scrollbar-width: thin;
-		scrollbar-color: #000 #000;
-	}
-
-	.rmf_cv::-webkit-scrollbar {
-		width: 8px;
-		cursor: pointer;
-	}
-
-	.rmf_cv:-webkit-scrollbar-track {
-		background: #000;
-	}
-
-	.rmf_cv::-webkit-scrollbar-thumb {
-		background-color: var(--primary);
-		border-radius: 10px;
-	}
-
-	.rmf_cv .cv__header {
-		width: 100%;
-		position: relative;
-		margin-bottom: 20px;
-		top: auto;
-		left: auto;
-		right: auto;
-		bottom: auto;
-		transform: translateX(380px);
-	}
-
-	.rmf_cv .cv__content {
-		width: 100%;
-		position: relative;
-		top: auto;
-		left: auto;
-		right: auto;
-		bottom: auto;
-		padding: 0;
-		height: auto;
-		overflow: initial;
-		float: left;
-		clear: both;
-		min-height: fit-content;
-		max-height: inherit;
-		transform: translateX(-380px);
-	}
-
-	.section_header .content {
-		-webkit-flex-direction: column;
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-o-flex-direction: column;
-		flex-direction: column;
-	}
-
-	.section_header .right_hero_header {
-		width: 100%;
-	}
-
-	.section_header .left_hero_header {
-		max-width: 100%;
-		padding-right: 0;
-		margin-bottom: 100px;
-	}
-
-	.my_self {
-		text-align: center;
-	}
-
-	.clients_wrapper ul li {
-		width: 50%;
-	}
-
-	.fn_cs_portfolio .portfolio_list ul li {
-		width: 50%;
-	}
+  /* Ajustes em listas, textos e containers para melhor responsividade */
+  .clients_wrapper ul li,
+  .fn_cs_portfolio .portfolio_list ul li {
+    width: 50%;
+  }
 }
 
 @media(max-width: 768px) {
-	.fn_cs_portfolio .portfolio_list ul li {
-		width: 100%;
-	}
+  /* Itens de portfólio ocupam 100% da largura em telas menores */
+  .fn_cs_portfolio .portfolio_list ul li {
+    width: 100%;
+  }
 }
 
 @media(max-width: 600px) {
-	.tips_content .item {
-		-webkit-flex-direction: column;
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-o-flex-direction: column;
-		flex-direction: column;
-	}
-
-	.tips_content .item_right {
-		display: none;
-	}
-
-	.fn_cs_testimonials .item {
-		-webkit-flex-direction: column;
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-o-flex-direction: column;
-		flex-direction: column;
-
-	}
-
-	.fn_cs_testimonials .item_right {
-		width: 100%;
-		min-width: 100%;
-		border-left: none;
-		border-top: 1px solid rgba(255, 255, 255, .05);
-	}
-
-	.fn_cs_service_list .item {
-		-webkit-flex-direction: column;
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-o-flex-direction: column;
-		flex-direction: column;
-	}
-
-	.fn_cs_service_list .item_right {
-		width: 100%;
-		min-width: 100%;
-		border-left: none;
-		border-top: 1px solid rgba(255, 255, 255, .05);
-		padding: 10px 40px;
-		text-align: left;
-		-ms-align-items: flex-start;
-		align-items: flex-start;
-	}
-
-	.fn_cs_boxed_list .item_top {
-		-webkit-flex-direction: column;
-		-moz-flex-direction: column;
-		-ms-flex-direction: column;
-		-o-flex-direction: column;
-		flex-direction: column;
-	}
-
-	.fn_cs_boxed_list .item_top span {
-		margin-left: 0;
-	}
-
-	.tips_content .img_wrapper img {
-		min-width: 100%;
-	}
-
-	.section_contact .item.half,
-	.fn_cs_info_items li,
-	.clients_wrapper ul li {
-		width: 100%;
-	}
-
-	.rmf_fn_totop {
-		right: 20px;
-		bottom: 20px;
-	}
-
-	.rmf_cv {
-		padding: 10px;
-	}
-
-	.rmf_cv .cv__header .in {
-		padding: 40px 20px;
-	}
-
-	.rmf_cv .cv__content section {
-		padding: 30px 20px;
-	}
-
-	.fn_cs_boxed_list .item {
-		padding: 27px 20px 28px 20px;
-	}
-
-	.fn_cs_progress_bar .progress_percent {
-		padding: 0 15px;
-	}
-
-	.fn_cs_testimonials .item_left,
-	.fn_cs_service_list .item_left {
-		padding: 27px 20px 28px 20px;
-	}
-
-	.fn_cs_service_list .item_right {
-		padding: 15px 20px 11px;
-	}
-
-	.fn_cs_testimonials .item_right {
-		padding: 30px 20px;
-	}
-
-	.right_container {
-		padding: 0 30px;
-	}
-}
-
-/* Enable normal scroll on mobile devices */
-@media(max-width: 1040px) {
-	.resume-opened {
-		height: inherit;
-		overflow: auto;
-	}
-
-	.rmf_cv {
-		position: relative;
-		height: inherit;
-		overflow: hidden;
-	}
-
-	.rmf_fn_cv {
-		position: relative;
-		height: inherit;
-	}
+  /* Flex em coluna para vários itens */
+  .tips_content .item,
+  .fn_cs_testimonials .item,
+  .fn_cs_service_list .item,
+  .fn_cs_boxed_list .item_top {
+    flex-direction: column;
+  }
+  /* Ocultar certas partes para simplificar no mobile */
+  .tips_content .item_right {
+    display: none;
+  }
+  /* Ajustes diversos de padding, bordas e alinhamento */
+  .fn_cs_testimonials .item_right,
+  .fn_cs_service_list .item_right {
+    width: 100%;
+    min-width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.05);
+    padding: 10px 40px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  /* Ajuste para imagens e listas ocuparem 100% */
+  .tips_content .img_wrapper img,
+  .section_contact .item.half,
+  .fn_cs_info_items li,
+  .clients_wrapper ul li {
+    width: 100%;
+  }
+  /* Ajustes em padding e posicionamento */
+  .rmf_fn_totop {
+    right: 20px;
+    bottom: 20px;
+  }
+  .rmf_cv {
+    padding: 10px;
+  }
+  /* Padding interno para header e conteúdo */
+  .rmf_cv .cv__header .in {
+    padding: 40px 20px;
+  }
+  .rmf_cv .cv__content section {
+    padding: 30px 20px;
+  }
 }

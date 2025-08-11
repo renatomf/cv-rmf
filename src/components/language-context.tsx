@@ -1,7 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-import messagesData from "@/data/messages.json";
+import messagesData from "@/data/messages.json" assert { type: "json" };
+
 
 
 type Locale = "pt" | "en";

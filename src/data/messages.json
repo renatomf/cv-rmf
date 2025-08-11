@@ -14,11 +14,19 @@
         { "label": "Idade", "value": "48 anos" },
         { "label": "Nacionalidade", "value": "Brasileiro" },
         { "label": "Endereço", "value": "São Paulo, Brasil" },
-        { "label": "Telefone", "value": "55 (11) 97255-0341", "link": "https://wa.me/5511972550341" },
-        { "label": "E-mail", "value": "renatomardev@gmail.com", "link": "mailto:renatomardev@gmail.com" }
+        {
+          "label": "Telefone",
+          "value": "55 (11) 97255-0341",
+          "link": "https://wa.me/5511972550341"
+        },
+        {
+          "label": "E-mail",
+          "value": "renatomardev@gmail.com",
+          "link": "mailto:renatomardev@gmail.com"
+        }
       ]
     },
-      "contact": {
+    "contact": {
       "title": "Contato",
       "name": "Nome",
       "email": "E-mail",
@@ -119,8 +127,18 @@
     },
     "header": {
       "hello": "Olá! Eu sou",
-      "titles": ["Desenvolvedor", "Designer"]
+      "titles": ["Desenvolvedor", "Designer"],
+      "animatedWords": [
+        "OLÁ,",
+        "EU SOU",
+        "FRONT-END",
+        "DEVELOPER",
+        "E",
+        "DESIGNER",
+        "..."
+      ]
     },
+
     "leftSide": {
       "quotePart1": "Sou um desenvolvedor web front-end apaixonado, especialista em criar interfaces web com precisão de pixels.",
       "quotePart2": "Estou disponível para trabalhos freelance.",
@@ -146,11 +164,19 @@
         { "label": "Age", "value": "48 years" },
         { "label": "Nationality", "value": "Brazilian" },
         { "label": "Address", "value": "São Paulo, Brazil" },
-        { "label": "Phone", "value": "+55 (11) 97255-0341", "link": "https://wa.me/5511972550341" },
-        { "label": "Email", "value": "renatomardev@gmail.com", "link": "mailto:renatomardev@gmail.com" }
+        {
+          "label": "Phone",
+          "value": "+55 (11) 97255-0341",
+          "link": "https://wa.me/5511972550341"
+        },
+        {
+          "label": "Email",
+          "value": "renatomardev@gmail.com",
+          "link": "mailto:renatomardev@gmail.com"
+        }
       ]
     },
-      "contact": {
+    "contact": {
       "title": "Contact",
       "name": "Name",
       "email": "Email",
@@ -217,7 +243,6 @@
         "period": "2008 - 2010",
         "description": "Responsible for creating online courses (e-learning) in the areas of Managerial Development, Finance, Marketing, Sales, and Human Resources."
       }
-
     },
     "skills": {
       "title": "Skills",
@@ -252,7 +277,16 @@
     },
     "header": {
       "hello": "Hi! I'm",
-      "titles": ["Developer", "Designer"]
+      "titles": ["Developer", "Designer"],
+      "animatedWords": [
+        "HI,",
+        "I'M",
+        "FRONT-END",
+        "DEVELOPER",
+        "AND",
+        "DESIGNER",
+        "..."
+      ]
     },
     "leftSide": {
       "quotePart1": "I am a passionate front-end web developer specializing in pixel-perfect web interfaces.",
