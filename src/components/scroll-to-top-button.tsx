@@ -10,26 +10,26 @@ export function ScrollToTopButton() {
   const [scrollContainer, setScrollContainer] = useState<Window | HTMLElement | null>(null);
 
   useEffect(() => {
-    // Tenta selecionar o container que possui scroll
-    let container: HTMLElement | Window | null = null;
-    const c1 = document.querySelector(".cv__content");
-    const c2 = document.querySelector(".rmf_cv");
-
-    // Verifica se esses containers realmente podem scrollar
+    // Função para checar se o elemento pode scrollar
     function canScroll(el: HTMLElement) {
       return el.scrollHeight > el.clientHeight;
     }
+
+    // Tenta pegar o container correto de scroll
+    const c1 = document.querySelector(".cv__content") as HTMLElement | null;
+    const c2 = document.querySelector(".rmf_cv") as HTMLElement | null;
+
+    let container: HTMLElement | Window = window;
 
     if (c1 && canScroll(c1)) {
       container = c1;
     } else if (c2 && canScroll(c2)) {
       container = c2;
-    } else {
-      container = window;
     }
 
     setScrollContainer(container);
 
+    // Função que atualiza o scrollTop e scrollMax
     function onScroll() {
       if (container instanceof Window) {
         setScrollTop(window.scrollY || document.documentElement.scrollTop);
@@ -48,6 +48,7 @@ export function ScrollToTopButton() {
     };
   }, []);
 
+  // Mostrar botão quando estiver perto do final do scroll (com um limite mínimo)
   const isAtBottom = scrollMax > 100 && scrollTop >= scrollMax - 20;
 
   function scrollToTop() {
@@ -63,16 +64,16 @@ export function ScrollToTopButton() {
   return (
     <AnimatePresence>
       {isAtBottom && (
-        <div className="fixed bottom-1 left-0 right-0 z-[9999] px-1 flex justify-center md:justify-end">
+        <div className="fixed bottom-4 left-0 right-0 z-[9999] px-4 flex justify-center md:justify-end">
           <motion.button
             initial={{ opacity: 0, scale: 0.4 }}
             animate={{ opacity: 1, scale: 0.6 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
             onClick={scrollToTop}
-            className="flex items-center justify-center w-12 h-12 rounded-lg dark:text-black text-white shadow-lg bg-primary hover:bg-[#0bafac] focus:outline-none focus:ring-2 focus:ring-bg-primary/80"
             aria-label="Scroll to top"
             title="Scroll to top"
+            className="flex items-center justify-center w-12 h-12 rounded-lg dark:text-black text-white shadow-lg bg-primary hover:bg-[#0bafac] focus:outline-none focus:ring-2 focus:ring-bg-primary/80"
           >
             <ArrowUpFromLine className="w-6 h-6" />
           </motion.button>
