@@ -10,6 +10,9 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { RightHeaderSection } from "@/components/sections/right-header-section";
+import { ScrollDownIndicator } from "@/components/scroll-down-indicator";
+import { ArrowUp } from "lucide-react";
+import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
 export default function Home() {
   const [bgAnimateOpen, setBgAnimateOpen] = useState(false);
@@ -33,7 +36,7 @@ export default function Home() {
             <div className="">
               <LeftHeaderSection />
               <div className="cv__content relative z-10">
-                <div className="hidden xl:flex">
+                <div className="hidden xl:flex mb-8">
                   <RightHeaderSection />
                 </div>
                 <BiographySection />
@@ -41,11 +44,14 @@ export default function Home() {
                 <ExperienceSection />
                 <SkillSection />
                 <ContactSection />
+
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ScrollDownIndicator />
+      <ScrollToTopButton />
     </main>
   );
 }

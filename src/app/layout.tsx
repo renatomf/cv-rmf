@@ -19,7 +19,7 @@ const jost = Jost({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jost.className}  antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${jost.className}  antialiased`} suppressHydrationWarning style={{ minHeight: '200vh' }}>
       <head />
       <body>
         <LanguageProvider>
