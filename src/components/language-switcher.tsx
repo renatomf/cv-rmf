@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
       tabIndex={0}
       onClick={toggleLanguage}
       onKeyDown={(e) => e.key === "Enter" && toggleLanguage()}
-      className="flex items-center justify-center h-9 px-4 pt-1 bg-background rounded-md text-muted-foreground select-none cursor-pointer shadow-[0_3px_4px_rgba(0,0,0,0.1)] gap-x-2 text-xs uppercase"
+      className="flex items-center justify-center h-9 px-4 pt-1 bg-background rounded-md text-muted-foreground select-none cursor-pointer gap-x-2 text-xs uppercase"
     >
       <span>PT</span>
       <div onClick={(e) => e.stopPropagation()} className="pt-0.5">

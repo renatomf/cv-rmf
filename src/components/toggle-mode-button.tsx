@@ -24,7 +24,7 @@ export function ThemeToggle() {
       tabIndex={0}
       onClick={toggleTheme}
       onKeyDown={(e) => e.key === "Enter" && toggleTheme()}
-      className="flex items-center justify-center h-9 px-4 pt-1 bg-background rounded-md text-muted-foreground select-none cursor-pointer shadow-[0_3px_4px_rgba(0,0,0,0.1)] gap-x-2 text-xs uppercase"
+      className="flex items-center justify-center h-9 px-4 pt-1 bg-background rounded-md text-muted-foreground select-none cursor-pointer gap-x-2 text-xs uppercase"
     >
       <span>Light</span>
       <div onClick={(e) => e.stopPropagation()} className="pt-0.5">
