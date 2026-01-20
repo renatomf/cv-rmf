@@ -1,0 +1,352 @@
+{
+  "pt": {
+    "nav": {
+      "home": "Início",
+      "biography": "Biografia",
+      "education": "Educação",
+      "experience": "Experiência",
+      "skills": "Habilidades",
+      "contact": "Contato",
+      "openMenu": "Abrir menu",
+      "closeMenu": "Fechar menu",
+      "theme": "Tema",
+      "language": "Idioma",
+      "menu": "MENU"
+    },
+    "biography": {
+      "title": "Biografia",
+      "paragraph1": "Desenvolvedor Front-End e Mobile Sênior com mais de 15 anos de experiência no desenvolvimento e manutenção de aplicações web e mobile interativas, responsivas e de alto desempenho.",
+      "paragraph2": "Especialista em ReactJS, NextJS, Angular, Vue.js, React Native e Flutter. Experiência em transformar requisitos complexos em soluções tecnológicas escaláveis, com foco em qualidade, usabilidade e eficiência. Comprometido em entregar código limpo, otimizado e alinhado às melhores práticas do mercado.",
+      "paragraph3": "Domínio avançado de HTML, CSS, Flexbox e Grid Layout, com ampla experiência em frameworks modernos de estilização, como Tailwind CSS, Shadcn UI, Bootstrap, Material UI e Styled Components. Forte proficiência em JavaScript, TypeScript, Node.js e Python.",
+      "paragraph4": "Expertise em gerenciamento de estado local, global e server state utilizando React, Redux Toolkit, Context API, Zustand e React Query / TanStack Query. Experiência na integração com APIs REST, GraphQL e tRPC, incluindo autenticação, cache, paginação e revalidação de dados. Atuação em projetos de grande porte, aplicando boas práticas de arquitetura, criação de hooks customizados e utilização de design patterns para garantir performance, escalabilidade e manutenibilidade.",
+      "paragraph5": "Experiência em desenvolvimento back-end com Node.js e bancos de dados relacionais (PostgreSQL, MySQL) e não relacionais (MongoDB). Conhecimento avançado em ORMs modernos como Prisma e Drizzle, e experiência com soluções de nuvem e backend, incluindo Neon (PostgreSQL serverless), Supabase (backend completo com autenticação) e Firebase (Realtime Database e Firestore). Habilidade em desenvolvimento e consumo de APIs RESTful, GraphQL e tRPC, arquitetura de microsserviços e implantação em ambientes AWS.",
+      "paragraph6": "1 X Certificação AWS Developer Associate.",
+      "infoItems": [
+        { "label": "Nome", "value": "Renato Marques" },
+        { "label": "Data de nascimento", "value": "30 de novembro de 1976" },
+        { "label": "Idiomas", "value": "Português, Inglês" },
+        { "label": "Idade", "value": "48 anos" },
+        { "label": "Nacionalidade", "value": "Brasileiro" },
+        { "label": "Endereço", "value": "São Paulo, Brasil" },
+        {
+          "label": "Telefone",
+          "value":  "+55 (11) 97255-0341",
+          "link": "https://wa.me/5511972550341"
+        },
+        {
+          "label": "E-mail",
+          "value": "renatomardev@gmail.com",
+          "link": "mailto:renatomardev@gmail.com"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contato",
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "message": "Mensagem",
+      "send": "Enviar",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Por favor, preencha os campos obrigatórios!",
+      "errorSending": "Erro ao enviar o formulário. Tente novamente.",
+      "errorRequest": "Erro na requisição. Tente novamente.",
+      "nameRequired": "Por favor, informe seu nome",
+      "emailInvalid": "E-mail inválido",
+      "messageRequired": "Por favor, escreva uma mensagem"
+    },
+    "education": {
+      "title": "Educação",
+      "degree": "Bacharelado em Design Digital",
+      "university": "Universidade Anhembi-Morumbi",
+      "period": "2010 - 2012",
+      "description": "O curso une teoria e prática em design gráfico, UX/UI, programação e animação em uma formação multidisciplinar."
+    },
+    "experience": {
+      "title": "Experiência",
+      "job1": {
+        "role": "Desenvolvedor Full Stack",
+        "company": "BRLink INGRAM MICRO",
+        "period": "2019 - 2024",
+        "description": "Trabalhei com React, Next.js e Flutter criando interfaces modernas e responsivas. Especializado em ambiente em nuvem utilizando serviços AWS. Conhecimento em Engenharia de dados."
+      },
+      "job2": {
+        "role": "Desenvolvedor Front-End",
+        "company": "ORTIZ GAMING",
+        "period": "2018 - 2019",
+        "description": "Trabalhei no desenvolvimento de uma aplicação de gerenciamento remoto de máquinas de jogos utilizando Angular."
+      },
+      "job3": {
+        "role": "Desenvolvedor Front-End",
+        "company": "FITBANK",
+        "period": "2017 - 2018",
+        "description": "Trabalhei no desenvolvimento de uma aplicação de gerenciamento de pagamentos utilizando Angular e a criação de interface da aplicação angular e mobile Xamarin."
+      },
+      "job4": {
+        "role": "Desenvolvedor Front-End / Designer Gráfico",
+        "company": "RM10 PUBLICIDADE",
+        "period": "2015 - 2016",
+        "description": "Responsável pela criação de sites e hotsites, Materiais Impressos e E-Mail Marketing."
+      },
+      "job5": {
+        "role": "Desenvolvedor Front-End / Designer Gráfico",
+        "company": "LINKZ INFORMÁTICA",
+        "period": "2012 - 2014",
+        "description": "Responsável pela criação de sites e hotsites Aplicativos mobile, Comércio Eletrônico, Apresentações Multimidia, E-Mail Marketing, E-learning e materiais impressos."
+      },
+      "job6": {
+        "role": "Desenvolvedor Front-End / Designer Gráfico",
+        "company": "FISCOSOFT THOMSON REUTERS",
+        "period": "2010 - 2011",
+        "description": "Responsável pela criação de sites e hotsites, materiais impressos e E-Mail Marketing."
+      },
+      "job7": {
+        "role": "Desenvolvedor Front-End / Designer Gráfico",
+        "company": "CATHO ONLINE",
+        "period": "2008 - 2010",
+        "description": "Responsável pela criação de cursos online (e-learning) nas áreas de Desenvolvimento Gerencial, Financeira, Marketing, Vendas e Recursos Humanos."
+      }
+    },
+    "skills": {
+      "title": "Habilidades",
+      "react": "React",
+      "react_percent": "90%",
+      "next": "Nextjs",
+      "next_percent": "90%",
+      "html": "HTML",
+      "html_percent": "95%",
+      "vue": "Vue",
+      "vue_percent": "85%",
+      "angular": "Angular",
+      "angular_percent": "80%",
+      "flutter": "Flutter",
+      "flutter_percent": "85%",
+      "react_native": "React Native",
+      "react_native_percent": "85%",
+      "css": "CSS",
+      "css_percent": "95%",
+      "javascript": "Javascript",
+      "javascript_percent": "85%",
+      "typescript": "Typescript",
+      "typescript_percent": "85%",
+      "python": "Python",
+      "python_percent": "75%",
+      "node": "Node",
+      "node_percent": "80%",
+      "figma": "Figma",
+      "figma_percent": "85%",
+      "adobe": "Adobe Suite",
+      "adobe_percent": "80%"
+    },
+    "header": {
+      "hello": "Olá! Eu sou",
+      "titles": ["Desenvolvedor", "Designer"],
+      "animatedWords1": [
+        "OLÁ,",
+        "EU SOU",
+        "FRONT-END",
+        "DEVELOPER",
+        "E",
+        "DESIGNER",
+        "..."
+      ],
+      "animatedWords2": [
+        "EU SOU",
+        "APAIXONADO",
+        "EM",
+        "CRIAR",
+        "WEB",
+        "INTERFACES",
+        "..."
+      ]
+    },
+    "leftSide": {
+      "quotePart1": "Sou um desenvolvedor front-end apaixonado, especialista em criar interfaces web e mobile.",
+      "quotePart2": "Estou disponível para contratação e trabalhos freelance.",
+      "hireMe": "Contrate-me",
+      "location": "São Paulo / Brasil",
+      "phone": "+55 (11) 97255-0341",
+      "link": "https://wa.me/5511972550341",
+      "email": "renatomardev@gmail.com",
+      "whatsTooltip": "Enviar mensagem no WhatsApp",
+      "emailTooltip": "Enviar email"
+    },
+    "scrollToTop": "Voltar ao topo"
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "biography": "Biography",
+      "education": "Education",
+      "experience": "Experience",
+      "skills": "Skills",
+      "contact": "Contact",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "theme": "Theme",
+      "language": "Language",
+      "menu": "MENU"
+    },
+    "biography": {
+      "title": "Biography",
+      "paragraph1": "Senior Front-End and Mobile Developer with over 15 years of experience in developing and maintaining interactive, responsive, and high-performance web and mobile applications.",
+      "paragraph2": "Specialist in ReactJS, NextJS, Angular, Vue.js, React Native, and Flutter. Experienced in transforming complex requirements into scalable technological solutions, focusing on quality, usability, and efficiency. Committed to delivering clean, optimized code aligned with industry best practices.",
+      "paragraph3": "Advanced knowledge of HTML, CSS, Flexbox, and Grid Layout, with extensive experience in modern styling frameworks such as Tailwind CSS, Shadcn UI, Bootstrap, Material UI, and Styled Components. Strong proficiency in JavaScript, TypeScript, Node.js, and Python.",
+      "paragraph4": "Expertise in managing local, global, and server state using React, Redux Toolkit, Context API, Zustand, and React Query / TanStack Query. Experienced in integrating with REST, GraphQL, and tRPC APIs, including authentication, caching, pagination, and data revalidation. Worked on large-scale projects, applying best practices in architecture, creating custom hooks, and using design patterns to ensure performance, scalability, and maintainability.",
+      "paragraph5": "Experience in back-end development with Node.js and in relational (PostgreSQL, MySQL) and non-relational (MongoDB) databases. Advanced knowledge of modern ORMs such as Prisma and Drizzle, with experience in cloud and backend solutions including Neon (PostgreSQL serverless), Supabase (full backend with authentication), and Firebase (Realtime Database and Firestore). Skilled in developing and consuming RESTful, GraphQL, and tRPC APIs, microservices architecture, and deployment in AWS environments.",
+      "paragraph6": "1 X AWS Developer Associate Certification.",
+      "infoItems": [
+        { "label": "Name", "value": "Renato Marques" },
+        { "label": "Birthday", "value": "November 30, 1976" },
+        { "label": "Languages", "value": "Portuguese, English" },
+        { "label": "Age", "value": "48 years" },
+        { "label": "Nationality", "value": "Brazilian" },
+        { "label": "Address", "value": "São Paulo, Brazil" },
+        {
+          "label": "Phone",
+          "value": "+55 (11) 97255-0341",
+          "link": "https://wa.me/5511972550341"
+        },
+        {
+          "label": "Email",
+          "value": "renatomardev@gmail.com",
+          "link": "mailto:renatomardev@gmail.com"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Please fill out the required fields!",
+      "errorSending": "Error sending form. Please try again.",
+      "errorRequest": "Request error. Please try again.",
+      "nameRequired": "Please provide your name",
+      "emailInvalid": "Invalid email",
+      "messageRequired": "Please write a message"
+    },
+    "education": {
+      "title": "Education",
+      "degree": "Bachelor of Computer Science",
+      "university": "University Anhembi-Morumbi",
+      "period": "2010 - 2012",
+      "description": "The course combines theory and practice in graphic design, UX/UI, programming, and animation in a multidisciplinary training."
+    },
+    "experience": {
+      "title": "Experience",
+      "job1": {
+        "role": "Full Stack Developer",
+        "company": "BRLink INGRAM MICRO",
+        "period": "2019 - 2024",
+        "description": "Worked with React, Next.js, and Flutter creating modern and responsive interfaces. Specialized in cloud environments using AWS services. Knowledge in Data Engineering."
+      },
+      "job2": {
+        "role": "Front-End Developer",
+        "company": "ORTIZ GAMING",
+        "period": "2018 - 2019",
+        "description": "Worked on the development of a remote management application for gaming machines using Angular."
+      },
+      "job3": {
+        "role": "Front-End Developer",
+        "company": "FITBANK",
+        "period": "2017 - 2018",
+        "description": "Worked on the development of a payment management application using Angular, and on creating the Angular and Xamarin mobile application interface."
+      },
+      "job4": {
+        "role": "Front-End Developer / Graphic Designer",
+        "company": "RM10 PUBLICIDADE",
+        "period": "2015 - 2016",
+        "description": "Responsible for creating websites and hotsites, printed materials, and email marketing campaigns."
+      },
+      "job5": {
+        "role": "Front-End Developer / Graphic Designer",
+        "company": "LINKZ INFORMÁTICA",
+        "period": "2012 - 2014",
+        "description": "Responsible for creating websites, hotsites, mobile apps, e-commerce, multimedia presentations, email marketing, e-learning content, and printed materials."
+      },
+      "job6": {
+        "role": "Front-End Developer / Graphic Designer",
+        "company": "FISCOSOFT THOMSON REUTERS",
+        "period": "2010 - 2011",
+        "description": "Responsible for creating websites and hotsites, printed materials, and email marketing campaigns."
+      },
+      "job7": {
+        "role": "Front-End Developer / Graphic Designer",
+        "company": "CATHO ONLINE",
+        "period": "2008 - 2010",
+        "description": "Responsible for creating online courses (e-learning) in the areas of Managerial Development, Finance, Marketing, Sales, and Human Resources."
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "react": "React",
+      "react_percent": "90%",
+      "next": "Nextjs",
+      "next_percent": "90%",
+      "html": "HTML",
+      "html_percent": "95%",
+      "vue": "Vue",
+      "vue_percent": "85%",
+      "angular": "Angular",
+      "angular_percent": "80%",
+      "flutter": "Flutter",
+      "flutter_percent": "85%",
+      "react_native": "React Native",
+      "react_native_percent": "85%",
+      "css": "CSS",
+      "css_percent": "95%",
+      "javascript": "Javascript",
+      "javascript_percent": "85%",
+      "typescript": "Typescript",
+      "typescript_percent": "85%",
+      "python": "Python",
+      "python_percent": "75%",
+      "node": "Node",
+      "node_percent": "80%",
+      "figma": "Figma",
+      "figma_percent": "85%",
+      "adobe": "Adobe Suite",
+      "adobe_percent": "80%"
+    },
+    "header": {
+      "hello": "Hi! I'm",
+      "titles": ["Developer", "Designer"],
+      "animatedWords1": [
+        "HI,",
+        "I'M",
+        "FRONT-END",
+        "DEVELOPER",
+        "AND",
+        "DESIGNER",
+        "..."
+      ],
+      "animatedWords2": [
+        "I'M",
+        "PASSIONATE",
+        "ABOUT",
+        "CREATING",
+        "WEB",
+        "INTERFACES",
+        "..."
+      ]
+    },
+    "leftSide": {
+      "quotePart1": "I'm a passionate front-end web developer specializing in creating web and mobile interfaces.",
+      "quotePart2": "I am available for hire and freelance work",
+      "hireMe": "Hire Me",
+      "location": "São Paulo / Brazil",
+      "phone": "+55 (11) 97255-0341",
+      "link": "https://wa.me/5511972550341",
+      "email": "renatomardev@gmail.com",
+      "whatsTooltip": "Send message on WhatsApp",
+      "emailTooltip": "Send email"
+    },
+    "scrollToTop": "Scroll to top"
+  }
+}
