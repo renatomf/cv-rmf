@@ -1,8 +1,8 @@
 "use client";
 
-import { FaFacebookF, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaYoutube } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { FaInstagram, FaPinterest, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { useLanguage } from "@/components/language-context";
 import Image from "next/image";
@@ -136,12 +136,12 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
         <ul className="social">
           <li>
             <a
-              href="https://twitter.com/renatomardev"
+              href="https://www.linkedin.com/in/renatomf76"
               target="_blank"
               rel="noopener noreferrer"
-              title="twitter.com"
+              title="linkedin.com"
             >
-              <FaXTwitter className="fn__svg" />
+              <FaLinkedinIn className="fn__svg" />
             </a>
           </li>
           <li>
@@ -171,7 +171,7 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
               rel="noopener noreferrer"
               title="pinterest.com"
             >
-              <FaPinterest className="fn__svg" />
+              <FaPinterestP className="fn__svg" />
             </a>
           </li>
           <li>
