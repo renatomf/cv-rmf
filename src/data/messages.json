@@ -66,10 +66,10 @@
     "experience": {
       "title": "Experiência",
       "job1": {
-        "role": "Desenvolvedor Full Stack",
+        "role": "Desenvolvedor Front-End",
         "company": "BRLink INGRAM MICRO",
         "period": "2019 - 2024",
-        "description": "Trabalhei com React, Next.js e Flutter criando interfaces modernas e responsivas. Especializado em ambiente em nuvem utilizando serviços AWS. Conhecimento em Engenharia de dados."
+        "description": "Trabalhei com React, Next.js e Flutter criando interfaces modernas e responsivas. Especializado em ambiente em nuvem utilizando serviços AWS."
       },
       "job2": {
         "role": "Desenvolvedor Front-End",
@@ -244,7 +244,7 @@
         "role": "Full Stack Developer",
         "company": "BRLink INGRAM MICRO",
         "period": "2019 - 2024",
-        "description": "Worked with React, Next.js, and Flutter creating modern and responsive interfaces. Specialized in cloud environments using AWS services. Knowledge in Data Engineering."
+        "description": "Worked with React, Next.js, and Flutter creating modern and responsive interfaces. Specialized in cloud environments using AWS services."
       },
       "job2": {
         "role": "Front-End Developer",
