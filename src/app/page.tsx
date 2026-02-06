@@ -12,6 +12,7 @@ import { SkillSection } from "@/components/sections/skills-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ScrollDownIndicator } from "@/components/scroll-down-indicator";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 import "./globals.css";
 
@@ -21,6 +22,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [loadedClass, setLoadedClass] = useState("");
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!loading) return;
@@ -80,16 +82,31 @@ export default function Home() {
   return (
     <main className={bgAnimateOpen ? "resume-opened" : "resume-open"}>
       {loading && (
-        <div className="fixed inset-0 z-50 overflow-hidden">
-          <div 
-            className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
-            style={{ width: `${progress}%` }}
-          >
-            <div className="absolute bottom-0 right-0 text-white text-[100px] p-4">
-              {Math.floor(progress)}%
+        <>
+          {isMobile ? (
+            // Spinner para mobile
+            <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#0bafac] z-50">
+              <div className="relative w-25 h-25">
+                <div className="w-full h-full border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold">
+                  {Math.floor(progress)}%
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
+          ) : (
+            // Loader verde animado para desktop
+            <div className="fixed inset-0 z-50 overflow-hidden">
+              <div 
+                className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
+                style={{ width: `${progress}%` }}
+              >
+                <div className="absolute bottom-0 right-0 text-white text-[100px] p-4">
+                  {Math.floor(progress)}%
+                </div>
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       <Navbar
