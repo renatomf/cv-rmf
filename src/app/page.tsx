@@ -80,12 +80,14 @@ export default function Home() {
   return (
     <main className={bgAnimateOpen ? "resume-opened" : "resume-open"}>
       {loading && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0bafac] z-50">
-          <div className="relative w-25 h-25">
-            <div className="w-full h-full border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-            <span className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold">
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          <div 
+            className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
+            style={{ width: `${progress}%` }}
+          >
+            <div className="absolute bottom-0 right-0 text-white text-[100px] p-4">
               {Math.floor(progress)}%
-            </span>
+            </div>
           </div>
         </div>
       )}

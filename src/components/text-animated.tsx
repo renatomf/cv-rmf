@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "@/components/language-context";
 
 interface Word {
@@ -21,30 +21,94 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
 
   // Frases
   const animatedWords1 = messages?.header?.animatedWords1 ?? [
-    "HI,", "I'M", "FRONT-END", "DEVELOPER", "AND", "DESIGNER", "..."
+    "HI,",
+    "I'M",
+    "FRONT-END",
+    "DEVELOPER",
+    "AND",
+    "DESIGNER",
+    "...",
   ];
   const animatedWords2 = messages?.header?.animatedWords2 ?? [
-    "I'M", "PASSIONATE", "ABOUT", "CREATING", "WEB", "INTERFACES", "..."
+    "I'M",
+    "PASSIONATE",
+    "ABOUT",
+    "CREATING",
+    "WEB",
+    "INTERFACES",
+    "...",
   ];
 
   const baseLayout: Omit<Word, "text">[] = [
-    { color: "text-black", from: -350, delay: 0.3, extraStyle: { fontSize: "30px", marginRight: "30px", fontWeight: "400" } },
-    { color: "text-white", from: -350, delay: 0.4, extraStyle: { filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))", fontSize: "70px" } },
-    { color: "text-black", from: 450, delay: 0.5, extraStyle: { filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))", fontSize: "90px", marginLeft: "-40px" } },
-    { color: "text-[10rem] font-bold bg-gradient-to-b from-teal-800 to-teal-300 bg-clip-text text-transparent", from: 250, delay: 0.6, extraStyle: {   filter: `
+    {
+      color: "text-black",
+      from: -350,
+      delay: 0.3,
+      extraStyle: { fontSize: "30px", marginRight: "30px", fontWeight: "400" },
+    },
+    {
+      color: "text-white",
+      from: -350,
+      delay: 0.4,
+      extraStyle: {
+        filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+        fontSize: "70px",
+      },
+    },
+    {
+      color: "text-black",
+      from: 450,
+      delay: 0.5,
+      extraStyle: {
+        filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+        fontSize: "90px",
+        marginLeft: "-40px",
+      },
+    },
+    {
+      color:
+        "text-[10rem] font-bold bg-gradient-to-b from-teal-800 to-teal-300 bg-clip-text text-transparent",
+      from: 250,
+      delay: 0.6,
+      extraStyle: {
+        filter: `
       drop-shadow(3px 3px 6px rgba(0,0,0,1))
       drop-shadow(6px 6px 12px rgba(0,0,0,0.9))
       drop-shadow(10px 10px 20px rgba(0,0,0,0.8))
-    ` } },
-    { color: "text-white", from: -250, delay: 0.6, extraStyle: { fontSize: "50px", marginLeft: "-60px", fontWeight: "400" } },
-    { color: "text-black", from: -250, delay: 0.6, extraStyle: { marginRight: "50px" } },
-    { color: "text-white", from: -250, delay: 0.6, extraStyle: { fontSize: "30px", marginLeft: "-40px" } },
+    `,
+      },
+    },
+    {
+      color: "text-white",
+      from: -250,
+      delay: 0.6,
+      extraStyle: {
+        fontSize: "50px",
+        marginLeft: "-60px",
+        fontWeight: "400",
+      },
+    },
+    {
+      color: "text-black",
+      from: -250,
+      delay: 0.6,
+      extraStyle: { marginRight: "50px" },
+    },
+    {
+      color: "text-black",
+      from: -250,
+      delay: 0.6,
+      extraStyle: { fontSize: "20px", marginLeft: "-45px" },
+    },
   ];
 
-  const phrases: Word[][] = [
-    animatedWords1.map((text, i) => ({ ...baseLayout[i], text })),
-    animatedWords2.map((text, i) => ({ ...baseLayout[i], text })),
-  ];
+  const phrases: Word[][] = useMemo(
+    () => [
+      animatedWords1.map((text, i) => ({ ...baseLayout[i], text })),
+      animatedWords2.map((text, i) => ({ ...baseLayout[i], text })),
+    ],
+    [animatedWords1, animatedWords2]
+  );
 
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
@@ -57,17 +121,21 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
     const totalAnimationTime =
       Math.max(...currentPhrase.map((w) => w.delay)) + 0.8;
 
+    let nextTimer: ReturnType<typeof setTimeout> | undefined;
+
     const timer = setTimeout(() => {
       setReverse(true);
-      const nextTimer = setTimeout(() => {
+      nextTimer = setTimeout(() => {
         setReverse(false);
         setPhraseIndex((prev) => (prev + 1) % phrases.length);
       }, 2000);
-      return () => clearTimeout(nextTimer);
     }, (totalAnimationTime + 5) * 1000);
 
-    return () => clearTimeout(timer);
-  }, [phraseIndex, loading]);
+    return () => {
+      clearTimeout(timer);
+      if (nextTimer) clearTimeout(nextTimer);
+    };
+  }, [phraseIndex, loading, phrases]);
 
   // não mostra nada até loading ser false
   if (loading) return null;
