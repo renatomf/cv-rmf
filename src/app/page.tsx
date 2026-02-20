@@ -15,6 +15,7 @@ import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import "./globals.css";
+import { FileText } from "lucide-react";
 
 export default function Home() {
   const [bgAnimateOpen, setBgAnimateOpen] = useState(false);
@@ -81,10 +82,18 @@ export default function Home() {
 
   return (
     <main className={bgAnimateOpen ? "resume-opened" : "resume-open"}>
+      {/* Logo fixa superior esquerda */}
+      <div className="fixed top-6 left-6 z-[60] pointer-events-none select-none">
+        <h4 className="flex items-center gap-1 text-sm md:text-md font-bold uppercase tracking-tight">
+          <FileText className="w-5 h-5 text-white" />
+          <span className="text-white">CV</span>
+          <span className="text-black">- RMF</span>
+        </h4>
+      </div>
+
       {loading && (
         <>
           {isMobile ? (
-            // Spinner para mobile
             <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#0bafac] z-50">
               <div className="relative w-25 h-25">
                 <div className="w-full h-full border-4 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -94,9 +103,8 @@ export default function Home() {
               </div>
             </div>
           ) : (
-            // Loader verde animado para desktop
             <div className="fixed inset-0 z-50 overflow-hidden">
-              <div 
+              <div
                 className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
                 style={{ width: `${progress}%` }}
               >
@@ -135,7 +143,7 @@ export default function Home() {
         </div>
       </div>
 
-      <ScrollDownIndicator loading={loading}/>
+      <ScrollDownIndicator loading={loading} />
       <ScrollToTopButton scrollToSection={scrollToSection} />
     </main>
   );
