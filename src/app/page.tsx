@@ -85,7 +85,7 @@ export default function Home() {
       {/* Logo fixa superior esquerda */}
       <div className="fixed top-6 left-6 z-[60] pointer-events-none select-none">
         <h4 className="flex items-center gap-1 text-sm md:text-md font-bold uppercase tracking-tight">
-          <FileText className="w-5 h-5 text-white" />
+          <FileText className="w-6 h-6 text-white" />
           <span className="text-white">CV</span>
           <span className="text-black">- RMF</span>
         </h4>
@@ -108,7 +108,7 @@ export default function Home() {
                 className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
                 style={{ width: `${progress}%` }}
               >
-                <div className="absolute bottom-0 right-0 text-white text-[70px] font-bold p-4">
+                <div className="absolute bottom-0 right-0 text-white text-6xl font-bold p-4">
                   {Math.floor(progress)}%
                 </div>
               </div>
