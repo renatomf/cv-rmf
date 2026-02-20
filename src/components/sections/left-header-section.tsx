@@ -166,16 +166,6 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
           </li>
           <li>
             <a
-              href="https://br.pinterest.com/renatomardev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="pinterest.com"
-            >
-              <FaPinterestP className="fn__svg" />
-            </a>
-          </li>
-          <li>
-            <a
               href="https://www.youtube.com/@renatomardev"
               target="_blank"
               rel="noopener noreferrer"

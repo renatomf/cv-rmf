@@ -46,13 +46,13 @@ export const Navbar = ({ scrollToSection, activeSection, show }: NavbarProps) =>
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
       >
         <Button
-          className="flex items-center gap-2 font-medium hover:text-foreground transition-colors relative z-50"
+          className="group flex items-center gap-2 font-medium hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black transition-colors relative z-50 dark:text-black dark:opacity-100 select-none cursor-pointer"
           variant="ghost"
           aria-label={messages.nav?.menu ?? "Menu"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <Menu style={{ width: 22, height: 22 }} />
-          <span>MENU</span>
+          <Menu className="dark:text-black group-hover:text-black" style={{ width: 22, height: 22 }} />
+          <span className="select-none">MENU</span>
         </Button>
       </motion.div>
 

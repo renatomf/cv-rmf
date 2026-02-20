@@ -100,7 +100,7 @@ export default function Home() {
                 className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
                 style={{ width: `${progress}%` }}
               >
-                <div className="absolute bottom-0 right-0 text-white text-[100px] p-4">
+                <div className="absolute bottom-0 right-0 text-white text-[70px] font-bold p-4">
                   {Math.floor(progress)}%
                 </div>
               </div>

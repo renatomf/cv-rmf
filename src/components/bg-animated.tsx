@@ -15,9 +15,9 @@ export const BgAnimated = () => {
 
   // vídeos
   const videos = [
+    "/videos/video-9.mp4",
     "/videos/video-3.mp4",
     "/videos/video-5.mp4",
-    "/videos/video-9.mp4",
   ];
 
   // estado para armazenar o vídeo atual
