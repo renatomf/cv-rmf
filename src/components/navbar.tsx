@@ -84,15 +84,12 @@ export const Navbar = ({
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
       >
         <Button
-          className="group flex items-center gap-2 font-medium hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black transition-colors relative z-50 dark:text-black dark:opacity-100 select-none cursor-pointer"
+          className="group flex items-center gap-2 font-medium transition-colors relative z-50 select-none cursor-pointer opacity-100 text-white xl:text-black hover:bg-white hover:text-black"
           variant="ghost"
           aria-label={messages.nav?.menu ?? "Menu"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <Menu
-            className="dark:text-black group-hover:text-black"
-            style={{ width: 22, height: 22 }}
-          />
+          <Menu style={{ width: 22, height: 22 }} />
           <span className="select-none">MENU</span>
         </Button>
       </motion.div>
