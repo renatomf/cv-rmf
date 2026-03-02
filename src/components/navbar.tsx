@@ -74,14 +74,14 @@ export const Navbar = ({
     <motion.nav
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+      transition={{ duration: 0.3, ease: "easeOut", delay: 0.05 }}
       className="navbar fixed top-0 left-0 right-0 h-[70px] xl:h-[50px] z-[10000] pl-[50px] pr-[70px] flex items-center justify-between text-white xl:text-black bg-black xl:bg-transparent"
     >
       {/* Botão de menu */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
       >
         <Button
           className="group flex items-center gap-2 font-medium transition-colors relative z-50 select-none cursor-pointer opacity-100 text-white xl:text-black hover:bg-white hover:text-black"
@@ -99,7 +99,7 @@ export const Navbar = ({
         className="hidden md:flex flex-row items-center gap-2"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
       >
         <ThemeToggle />
         <LanguageSwitcher />
