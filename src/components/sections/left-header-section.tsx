@@ -1,6 +1,6 @@
 "use client";
 
-import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaYoutube } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaYoutube, FaGithub  } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaInstagram, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -146,12 +146,12 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
           </li>
           <li>
             <a
-              href="https://www.facebook.com/profile.php?id=61579726780247"
+              href="https://github.com/renatomf"
               target="_blank"
               rel="noopener noreferrer"
-              title="facebook.com"
+              title="github.com"
             >
-              <FaFacebookF className="fn__svg" />
+              <FaGithub className="fn__svg" />
             </a>
           </li>
           <li>
@@ -166,12 +166,12 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
           </li>
           <li>
             <a
-              href="https://www.youtube.com/@renatomardev"
+              href="https://www.facebook.com/profile.php?id=61579726780247"
               target="_blank"
               rel="noopener noreferrer"
-              title="youtube.com"
+              title="facebook.com"
             >
-              <FaYoutube className="fn__svg" />
+              <FaFacebookF className="fn__svg" />
             </a>
           </li>
         </ul>
