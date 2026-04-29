@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function escapeHtml(str: string): string {
   return str
     .replace(/&/g, "&amp;")
@@ -156,6 +154,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
 };
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
   if (!checkRateLimit(ip)) {
