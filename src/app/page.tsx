@@ -14,39 +14,28 @@ import { ScrollDownIndicator } from "@/components/scroll-down-indicator";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-import "./globals.css";
-import { FileText } from "lucide-react";
-
 export default function Home() {
   const [bgAnimateOpen, setBgAnimateOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#cv_header");
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const [loadedClass, setLoadedClass] = useState("");
+  const [barStarted, setBarStarted] = useState(false);
+  const [fading, setFading] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (!loading) return;
+    const raf = requestAnimationFrame(() => setBarStarted(true));
+    const t1 = setTimeout(() => setFading(true), 800);
+    const t2 = setTimeout(() => {
+      setLoading(false);
+      setBgAnimateOpen(true);
+    }, 1100);
 
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + 1;
-        if (next >= 100) {
-          clearInterval(interval);
-          setLoadedClass("loaded");
-
-          setTimeout(() => {
-            setLoading(false);
-            setBgAnimateOpen(true);
-          }, 1000);
-          return 100;
-        }
-        return next;
-      });
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, [loading]);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
 
   const scrollToSection = (href: string) => {
     const c1 = document.querySelector(".cv__content") as HTMLElement | null;
@@ -83,35 +72,34 @@ export default function Home() {
   return (
     <main className={bgAnimateOpen ? "resume-opened" : "resume-open"}>
       {/* Logo fixa superior esquerda */}
-      <div className="fixed top-6 left-6 z-[60] pointer-events-none select-none">
-        <h4 className="flex items-center gap-1 text-sm md:text-md font-bold uppercase tracking-tight">
-          <FileText className="w-6 h-6 text-white" />
-          <span className="text-white">CV</span>
-          <span className="text-black">- RMF</span>
-        </h4>
+      <div className="fixed top-6 left-6 z-[60] pointer-events-none select-none flex items-center gap-2">
+        <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 28V12C30 10.8954 29.1046 10 28 10H27.8994C27.369 10 26.8604 10.2109 26.4854 10.5859L10.5859 26.4854C10.2109 26.8604 10 27.369 10 27.8994V40H0V27.8994C2.15312e-05 24.7168 1.26423 21.6645 3.51465 19.4141L19.4141 3.51465C21.6645 1.26423 24.7168 2.1373e-05 27.8994 0H28C34.6274 0 40 5.37258 40 12V28C40 34.6274 34.6274 40 28 40H14V30H28C29.1046 30 30 29.1046 30 28Z M0 0H17L7 10H0V0Z" fill="white"/>
+        </svg>
+        <span className="text-white text-md font-bold uppercase tracking-tight">CV | RMF</span>
       </div>
 
       {loading && (
         <>
           {isMobile ? (
-            <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#0bafac] z-50">
-              <div className="relative w-25 h-25">
-                <div className="w-full h-full border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                <span className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold">
-                  {Math.floor(progress)}%
-                </span>
-              </div>
+            <div
+              className="fixed inset-0 flex flex-col items-center justify-center bg-[#0bafac] z-50 transition-opacity duration-300"
+              style={{ opacity: fading ? 0 : 1 }}
+            >
+              <div className="w-25 h-25 border-4 border-white border-t-transparent rounded-full animate-spin" />
             </div>
           ) : (
-            <div className="fixed inset-0 z-50 overflow-hidden">
+            <div
+              className="fixed inset-0 z-50 overflow-hidden transition-opacity duration-300"
+              style={{ opacity: fading ? 0 : 1 }}
+            >
               <div
-                className="h-screen bg-[#0bafac] transition-all duration-300 ease-out relative"
-                style={{ width: `${progress}%` }}
-              >
-                <div className="absolute bottom-0 right-0 text-white text-6xl font-bold p-4">
-                  {Math.floor(progress)}%
-                </div>
-              </div>
+                className="h-screen bg-[#0bafac] relative"
+                style={{
+                  width: barStarted ? "100%" : "0%",
+                  transition: "width 800ms ease-out",
+                }}
+              />
             </div>
           )}
         </>

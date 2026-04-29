@@ -1,6 +1,6 @@
 "use client";
 
-import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaYoutube, FaGithub  } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaFileArrowDown } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaInstagram, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -102,7 +102,7 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
                 setTooltip({
                   text:
                     messages.leftSide?.emailTooltip ??
-                    (messages.leftSide?.email ?? "renatomarde@gmail.com"),
+                    (messages.leftSide?.email ?? "renatomardev@gmail.com"),
                   x: e.clientX,
                   y: e.clientY,
                 })
@@ -110,10 +110,10 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
               onMouseLeave={() => setTooltip(null)}
             >
               <a
-                href={`mailto:${messages.leftSide?.email ?? "renatomarde@gmail.com"}`}
+                href={`mailto:${messages.leftSide?.email ?? "renatomardev@gmail.com"}`}
                 className="underline hover:text-[#0bafac]"
               >
-                {messages.leftSide?.email ?? "renatomarde@gmail.com"}
+                {messages.leftSide?.email ?? "renatomardev@gmail.com"}
               </a>
             </p>
           </li>
@@ -134,47 +134,36 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
 
         {/* Social icons */}
         <ul className="social">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/renatomf76"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="linkedin.com"
-            >
-              <FaLinkedinIn className="fn__svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/renatomf"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="github.com"
-            >
-              <FaGithub className="fn__svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/renatomardev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="instagram.com"
-            >
-              <FaInstagram className="fn__svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=61579726780247"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="facebook.com"
-            >
-              <FaFacebookF className="fn__svg" />
-            </a>
-          </li>
+          {[
+            { href: "https://www.linkedin.com/in/renatomf76", label: "LinkedIn", icon: <FaLinkedinIn className="fn__svg" /> },
+            { href: "https://github.com/renatomf", label: "GitHub", icon: <FaGithub className="fn__svg" /> },
+            { href: "https://www.instagram.com/renatomardev/", label: "Instagram", icon: <FaInstagram className="fn__svg" /> },
+            { href: "https://www.facebook.com/profile.php?id=61579726780247", label: "Facebook", icon: <FaFacebookF className="fn__svg" /> },
+          ].map(({ href, label, icon }) => (
+            <li key={label}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} de Renato Marques`}
+                onMouseMove={(e) => setTooltip({ text: label, x: e.clientX, y: e.clientY })}
+                onMouseLeave={() => setTooltip(null)}
+              >
+                {icon}
+              </a>
+            </li>
+          ))}
         </ul>
+
+        {/* Download CV */}
+        <a
+          href="#"
+          aria-label={messages.leftSide?.downloadCV ?? "Download CV"}
+          className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#0bafac] text-[#0bafac] text-sm font-medium hover:bg-[#0bafac] hover:text-white transition-colors duration-200"
+        >
+          <FaFileArrowDown className="w-4 h-4" />
+          {messages.leftSide?.downloadCV ?? "Download CV"}
+        </a>
       </div>
     </div>
   );

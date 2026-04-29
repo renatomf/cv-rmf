@@ -608,6 +608,10 @@ h6 {
 	background-color: var(--primary);
 }
 
+.rmf_cv .social a:hover .fn__svg {
+	fill: white;
+}
+
 .rmf_cv .cv__content section:last-child {
 	margin-bottom: 0;
 }
@@ -771,6 +775,10 @@ h6 {
 
 .rmf_cv .social a:hover {
 	background-color: var(--bg-primary);
+}
+
+.rmf_cv .social a:hover .fn__svg {
+	fill: white;
 }
 
 .rmf_cv .cv__content section {

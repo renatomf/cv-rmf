@@ -69,11 +69,6 @@ export const SkillSection = () => {
       iconPath: "/svg/typescript.svg",
     },
     {
-      title: messages.skills.python,
-      percent: messages.skills.python_percent,
-      iconPath: "/svg/python.svg",
-    },
-    {
       title: messages.skills.node,
       percent: messages.skills.node_percent,
       iconPath: "/svg/node.svg",

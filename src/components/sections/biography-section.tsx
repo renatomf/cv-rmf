@@ -1,7 +1,29 @@
 import { useLanguage } from "@/components/language-context";
 
+const calculateAge = () => {
+  const birth = new Date(1976, 10, 30);
+  const today = new Date();
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDiff = today.getMonth() - birth.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age;
+};
+
 export const BiographySection = () => {
-  const { messages } = useLanguage();
+  const { locale, messages } = useLanguage();
+
+  const ageItem = {
+    label: locale === "pt" ? "Idade" : "Age",
+    value: locale === "pt" ? `${calculateAge()} anos` : `${calculateAge()} years`,
+  };
+
+  const infoItems = [
+    ...messages.biography.infoItems.slice(0, 3),
+    ageItem,
+    ...messages.biography.infoItems.slice(3),
+  ];
 
   return (
     <section id="cv_biography">
@@ -20,7 +42,7 @@ export const BiographySection = () => {
 
       <div className="fn_cs_info_items">
         <ul>
-          {messages.biography.infoItems.map(
+          {infoItems.map(
             (
               item: { label: string; value: string; link?: string },
               index: number

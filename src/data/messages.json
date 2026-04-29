@@ -25,7 +25,6 @@
         { "label": "Nome", "value": "Renato Marques" },
         { "label": "Data de nascimento", "value": "30 de novembro de 1976" },
         { "label": "Idiomas", "value": "Português, Inglês" },
-        { "label": "Idade", "value": "48 anos" },
         { "label": "Nacionalidade", "value": "Brasileiro" },
         { "label": "Endereço", "value": "São Paulo, Brasil" },
         {
@@ -61,7 +60,10 @@
       "degree": "Bacharelado em Design Digital",
       "university": "Universidade Anhembi-Morumbi",
       "period": "2010 - 2012",
-      "description": "O curso une teoria e prática em design gráfico, UX/UI, programação e animação em uma formação multidisciplinar."
+      "description": "O curso une teoria e prática em design gráfico, UX/UI, programação e animação em uma formação multidisciplinar.",
+      "certTitle": "Certified",
+      "certName": "AWS Certified Developer – Associate",
+      "certIssuer": "Amazon Web Services"
     },
     "experience": {
       "title": "Experiência",
@@ -130,8 +132,6 @@
       "javascript_percent": "85%",
       "typescript": "Typescript",
       "typescript_percent": "85%",
-      "python": "Python",
-      "python_percent": "75%",
       "node": "Node",
       "node_percent": "80%",
       "figma": "Figma",
@@ -170,7 +170,8 @@
       "link": "https://wa.me/5511972550341",
       "email": "renatomardev@gmail.com",
       "whatsTooltip": "Enviar mensagem no WhatsApp",
-      "emailTooltip": "Enviar email"
+      "emailTooltip": "Enviar email",
+      "downloadCV": "Download CV"
     },
     "scrollToTop": "Voltar ao topo"
   },
@@ -200,7 +201,6 @@
         { "label": "Name", "value": "Renato Marques" },
         { "label": "Birthday", "value": "November 30, 1976" },
         { "label": "Languages", "value": "Portuguese, English" },
-        { "label": "Age", "value": "48 years" },
         { "label": "Nationality", "value": "Brazilian" },
         { "label": "Address", "value": "São Paulo, Brazil" },
         {
@@ -236,7 +236,10 @@
       "degree": "Bachelor of Design Digital",
       "university": "University Anhembi-Morumbi",
       "period": "2010 - 2012",
-      "description": "The course combines theory and practice in graphic design, UX/UI, programming, and animation in a multidisciplinary training."
+      "description": "The course combines theory and practice in graphic design, UX/UI, programming, and animation in a multidisciplinary training.",
+      "certTitle": "Certifications",
+      "certName": "AWS Certified Developer – Associate",
+      "certIssuer": "Amazon Web Services"
     },
     "experience": {
       "title": "Experience",
@@ -305,8 +308,6 @@
       "javascript_percent": "85%",
       "typescript": "Typescript",
       "typescript_percent": "85%",
-      "python": "Python",
-      "python_percent": "75%",
       "node": "Node",
       "node_percent": "80%",
       "figma": "Figma",
@@ -345,7 +346,8 @@
       "link": "https://wa.me/5511972550341",
       "email": "renatomardev@gmail.com",
       "whatsTooltip": "Send message on WhatsApp",
-      "emailTooltip": "Send email"
+      "emailTooltip": "Send email",
+      "downloadCV": "Download CV"
     },
     "scrollToTop": "Scroll to top"
   }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "@/components/language-context";
 
 export const EducationSection = () => {
@@ -17,9 +18,19 @@ export const EducationSection = () => {
                 <span>({messages.education.period})</span>
               </div>
               <h3>{messages.education.degree}</h3>
-              <p>
-                {messages.education.description}
-              </p>
+              <p>{messages.education.description}</p>
+            </div>
+          </li>
+          <li>
+            <div className="item">
+              <div className="item_top" style={{ alignItems: "center" }}>
+                <h5 className="flex items-center gap-2">
+                  <Image src="/svg/aws.svg" alt="AWS" width={36} height={22} />
+                  {messages.education.certIssuer ?? "Amazon Web Services"}
+                </h5>
+                <span>Certified</span>
+              </div>
+              <h3>{messages.education.certName ?? "AWS Certified Developer – Associate"}</h3>
             </div>
           </li>
         </ul>

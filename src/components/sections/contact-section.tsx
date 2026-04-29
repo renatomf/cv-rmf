@@ -14,7 +14,7 @@ import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 const contactSchema = z.object({
   name: z.string().min(1),
-  email: z.string().email(),
+  email: z.email(),
   phone: z.string().optional(),
   message: z.string().min(1),
 });
@@ -42,12 +42,9 @@ export const ContactSection = () => {
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
-      const res = await fetch("https://formspree.io/f/xanblwyr", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
@@ -57,7 +54,7 @@ export const ContactSection = () => {
           {
             icon: <FaCheckCircle style={{ color: "#0bafac" }} />,
             style: {
-              border: "1px solid black",
+              border: "1px solid #d1d5db",
               color: "black",
             },
           }
@@ -76,7 +73,7 @@ export const ContactSection = () => {
           }
         );
       }
-    } catch (error) {
+    } catch {
       toast.error(
         messages.contact.errorRequest || "Erro na requisição. Tente novamente."
       );

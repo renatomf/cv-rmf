@@ -34,8 +34,8 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
     "PASSIONATE",
     "ABOUT",
     "CREATING",
-    "WEB",
-    "INTERFACES",
+    "DIGITAL",
+    "EXPERIENCES",
     "...",
   ];
 
