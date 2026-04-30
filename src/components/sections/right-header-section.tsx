@@ -1,6 +1,6 @@
 "use client";
 
-import { BgAnimated } from "../bg-animated";
+import { Hero } from "../hero";
 import { TextAnimated } from "../text-animated";
 
 interface RightHeaderSectionProps {
@@ -18,7 +18,7 @@ export const RightHeaderSection = ({ loading }: RightHeaderSectionProps) => {
       </div>
 
       <div className="absolute inset-0">
-        <BgAnimated />
+        <Hero />
       </div>
     </section>
   );

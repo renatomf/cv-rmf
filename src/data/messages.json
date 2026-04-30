@@ -15,12 +15,13 @@
     },
     "biography": {
       "title": "Biografia",
-      "paragraph1": "Desenvolvedor Front-End e Mobile Sênior com mais de 15 anos de experiência na engenharia de aplicações web e mobile escaláveis, performáticas e orientadas a produto. Especialista em React, NextJS, Vue, Angular, React Native e Flutter, atuando desde a definição arquitetural (SPA/SSR/SSG/ISR) até a entrega e evolução contínua em produção. Forte atuação em arquitetura de software, organização de projetos em monorepo, aplicação de Clean Architecture, SOLID, sempre com foco em qualidade, escalabilidade e manutenibilidade.",
-      "paragraph2": "Possuo domínio avançado de HTML, CSS, JavaScript e TypeScript, com ampla experiência na construção e evolução de Design Systems utilizando Tailwind CSS, Shadcn/ui, Material UI e Styled Components dentre outros. Especialista em UI Engineering, acessibilidade (WCAG), componentização avançada e implementação de animações performáticas, garantindo consistência visual e excelência na experiência do usuário.",
-      "paragraph3": "Expertise sólida em gerenciamento de estado (Redux, Context API, Zustand, Bloc) e Server State com TanStack Query(React Query), além de integração com APIs REST, GraphQL e tRPC, incluindo autenticação , cache, paginação e revalidação de dados. Forte foco em performance e Core Web Vitals, aplicando estratégias de code splitting, lazy loading, edge rendering e monitoramento.",
-      "paragraph4": "Atuação complementar em back-end com Node.js e bancos de dados PostgreSQL, MySQL e MongoDB, utilizando ORMs modernos como Prisma e Drizzle. Experiência com arquiteturas de microsserviços, ambientes em nuvem (AWS, Supabase, Firebase, NeonDB) e deploy em plataformas modernas como Vercel e AWS, CI/CD e boas práticas de segurança.",
-      "paragraph5": "Experiência na Utilização de IA de forma estratégica em todo o ciclo de desenvolvimento, utilizando Cursor, Claude, Copilot e ChatGPT para engenharia de prompts, geração e revisão de código e testes. Orquestração de fluxos assíncronos e background jobs com Inngest, garantindo automações escaláveis, qualidade técnica e maior produtividade.",
-      "paragraph6": "1 X Certificação AWS Developer Associate.",
+      "paragraph1": "Desenvolvedor Front-End e Mobile Staff Engineer com mais de 10 anos de experiência na construção de aplicações web e mobile escaláveis, performáticas e orientadas a produto. Atuo na definição de arquitetura, padronização técnica e direcionamento estratégico de plataformas, com impacto transversal entre times, definindo padrões e direcionando decisões técnicas em larga escala.",
+      "paragraph2": "Especialista em JavaScript e TypeScript, com foco em tipagem avançada, modelagem de contratos e escalabilidade de código, atuando no ecossistema moderno de front-end com React, Next.js, Vue, Angular, React Native e Flutter. Experiência na definição de arquiteturas SPA, SSR, SSG, ISR e Server Components (RSC), além de estratégias de renderização em Edge e otimização para SEO técnico e Core Web Vitals.",
+      "paragraph3": "Experiência sólida em arquitetura front-end em escala, incluindo organização de monorepos, adoção de micro-frontends com Module Federation e governança de Design Systems com Tailwind CSS, Shadcn/ui e Material UI. Aplicação de princípios de Domain-Driven Design (DDD) e Clean Architecture na definição de boundaries e modularização, garantindo consistência, reuso e evolução sustentável entre aplicações.",
+      "paragraph4": "Expertise em gerenciamento de estado (Redux, Zustand, Context API) e server-state com TanStack Query, integração com APIs REST, GraphQL e tRPC. Uso de TDD e testes automatizados como base para qualidade, aliado à liderança em estratégias de performance como code splitting, lazy loading e análise de dependências, com foco na eficiência, escalabilidade e melhoria contínua da experiência do usuário. Experiência com CI/CD e observabilidade, incluindo monitoramento e rastreamento de erros em produção com Sentry.",
+      "paragraph5": "Atuação complementar em back-end com Node.js e bancos de dados PostgreSQL, MySQL e MongoDB, utilizando ORMs modernos como Prisma e Drizzle. Experiência com arquiteturas de microsserviços, ambientes em nuvem (AWS, Supabase, Firebase, NeonDB) e deploy em plataformas como Vercel e AWS, aplicando práticas de segurança baseadas no OWASP, garantindo proteção de dados, autenticação segura e mitigação de vulnerabilidades.",
+      "paragraph6": "Experiência na utilização de IA de forma estratégica em todo o ciclo de desenvolvimento, utilizando Cursor, Claude, Copilot e ChatGPT para engenharia de prompts, geração, revisão e otimização de código e testes. Orquestração de fluxos assíncronos e background jobs com Inngest, promovendo automações escaláveis, aumento de produtividade e eficiência operacional.",
+      "paragraph7": "1 X AWS Developer Associate.",
       "infoItems": [
         { "label": "Nome", "value": "Renato Marques" },
         { "label": "Data de nascimento", "value": "30 de novembro de 1976" },
@@ -68,46 +69,52 @@
     "experience": {
       "title": "Experiência",
       "job1": {
-        "role": "Desenvolvedor Front-End",
-        "company": "BRLink INGRAM MICRO",
-        "period": "2019 - 2024",
-        "description": "Trabalhei com React, Next.js e Flutter criando interfaces modernas e responsivas. Especializado em ambiente em nuvem utilizando serviços AWS."
+        "role": "Desenvolvedor Full Stack",
+        "company": "LINKZ INFORMÁTICA",
+        "period": "02/2025 - PRESENTE",
+        "description": "Apps web e SaaS para publicidade digital com React e Next.js (SSR e Server Components), focados em experiências rápidas para campanhas e landing pages. Criação de CMSs personalizados para gestão de conteúdo e campanhas. Back-end com Node.js, PostgreSQL, APIs REST e tRPC para gestão de dados e métricas. Uso de LLMs para automação de processos, geração de conteúdo e otimização de fluxos de trabalho."
       },
       "job2": {
         "role": "Desenvolvedor Front-End",
-        "company": "ORTIZ GAMING",
-        "period": "2018 - 2019",
-        "description": "Trabalhei no desenvolvimento de uma aplicação de gerenciamento remoto de máquinas de jogos utilizando Angular."
+        "company": "BRLINK / INGRAM MICRO",
+        "period": "10/2019 - 10/2024",
+        "description": "Arquitetura front-end enterprise com React, Next.js e Flutter, focada em escalabilidade, performance e manutenibilidade. Gerenciamento de estado com Context API e BLoC. Liderança em Design Systems com Material UI e Tailwind CSS, além de code reviews, definição de padrões e mentoria. Integração com AWS (EC2, S3, Lambda) via APIs REST. Evolução da cobertura de testes com Jest e Cypress."
       },
       "job3": {
         "role": "Desenvolvedor Front-End",
-        "company": "FITBANK",
-        "period": "2017 - 2018",
-        "description": "Trabalhei no desenvolvimento de uma aplicação de gerenciamento de pagamentos utilizando Angular e a criação de interface da aplicação angular e mobile Xamarin."
+        "company": "ORTIZ GAMING",
+        "period": "03/2018 - 08/2019",
+        "description": "Plataforma web com Angular para gerenciamento remoto de máquinas em tempo real. Estado avançado com RxJS/NgRx; APIs REST de alta frequência com WebSockets e polling otimizado."
       },
       "job4": {
-        "role": "Desenvolvedor Front-End / Designer Gráfico",
-        "company": "RM10 PUBLICIDADE",
-        "period": "2015 - 2016",
-        "description": "Responsável pela criação de sites e hotsites, Materiais Impressos e E-Mail Marketing."
+        "role": "Desenvolvedor Front-End & UX Designer",
+        "company": "FITBANK",
+        "period": "02/2017 - 09/2018",
+        "description": "App de pagamentos com Angular, desenvolvendo interfaces responsivas para fluxos financeiros críticos. Atuação em UX Design e criação de identidade visual, além de interface mobile com Xamarin e colaboração com produto e back-end na definição de contratos de API."
       },
       "job5": {
-        "role": "Desenvolvedor Front-End / Designer Gráfico",
-        "company": "LINKZ INFORMÁTICA",
-        "period": "2012 - 2014",
-        "description": "Responsável pela criação de sites e hotsites Aplicativos mobile, Comércio Eletrônico, Apresentações Multimidia, E-Mail Marketing, E-learning e materiais impressos."
+        "role": "Desenvolvedor Front-End & Designer Gráfico",
+        "company": "RM10 PUBLICIDADE",
+        "period": "04/2015 - 07/2016",
+        "description": "Criação de sites, hotsites, materiais impressos e e-mail marketing."
       },
       "job6": {
-        "role": "Desenvolvedor Front-End / Designer Gráfico",
-        "company": "FISCOSOFT THOMSON REUTERS",
-        "period": "2010 - 2011",
-        "description": "Responsável pela criação de sites e hotsites, materiais impressos e E-Mail Marketing."
+        "role": "Desenvolvedor Front-End",
+        "company": "LINKZ INFORMÁTICA",
+        "period": "02/2012 - 12/2014",
+        "description": "Criação de sites, hotsites, aplicativos mobile, comércio eletrônico, apresentações multimídia, e-mail marketing, e-learning e materiais impressos."
       },
       "job7": {
-        "role": "Desenvolvedor Front-End / Designer Gráfico",
+        "role": "Desenvolvedor Front-End & Designer Gráfico",
+        "company": "FISCOSOFT THOMSON REUTERS",
+        "period": "08/2010 - 10/2011",
+        "description": "Criação de sites, hotsites, materiais impressos e e-mail marketing."
+      },
+      "job8": {
+        "role": "Desenvolvedor Front-End",
         "company": "CATHO ONLINE",
-        "period": "2008 - 2010",
-        "description": "Responsável pela criação de cursos online (e-learning) nas áreas de Desenvolvimento Gerencial, Financeira, Marketing, Vendas e Recursos Humanos."
+        "period": "07/2008 - 06/2010",
+        "description": "Criação de cursos online (e-learning) nas áreas de Desenvolvimento Gerencial, Financeiro, Marketing, Vendas e Recursos Humanos."
       }
     },
     "skills": {
@@ -191,12 +198,13 @@
     },
     "biography": {
       "title": "Biography",
-      "paragraph1": "Senior Front-End and Mobile Developer with over 15 years of experience in engineering scalable, high-performance, product-oriented web and mobile applications. Specialist in React, Next.js, Vue, Angular, React Native, and Flutter, working from architectural design (SPA/SSR/SSG/ISR) through delivery and continuous production evolution. Strong background in software architecture, monorepo project organization, and application of Clean Architecture and SOLID principles, consistently focused on quality, scalability, and maintainability.",
-      "paragraph2": "I have advanced expertise in HTML, CSS, JavaScript, and TypeScript, with extensive experience in building and evolving Design Systems using Tailwind CSS, shadcn/ui, Material UI, and Styled Components, among others. Specialist in UI Engineering, accessibility (WCAG), advanced component architecture, and high-performance animations, ensuring visual consistency and excellence in user experience.",
-      "paragraph3": "Strong expertise in state management (Redux, Context API, Zustand, Bloc) and Server State with TanStack Query (React Query), as well as integration with REST, GraphQL, and tRPC APIs, including authentication, caching, pagination, and data revalidation. Strong focus on performance and Core Web Vitals, applying strategies such as code splitting, lazy loading, edge rendering, and continuous monitoring.",
-      "paragraph4": "Complementary back-end experience with Node.js and databases such as PostgreSQL, MySQL, and MongoDB, using modern ORMs like Prisma and Drizzle. Experienced with microservices architectures, cloud environments (AWS, Supabase, Firebase, NeonDB), and deployments on modern platforms such as Vercel and AWS, including CI/CD pipelines and security best practices.",
-      "paragraph5": "Experience in strategically leveraging AI throughout the entire development lifecycle, using Cursor, Claude, Copilot, and ChatGPT for prompt engineering, AI-assisted code generation and review, and automated test creation. Orchestration of asynchronous workflows and background jobs with Inngest, ensuring scalable automation, high technical quality, and increased productivity.",
-      "paragraph6": "1 X AWS Developer Associate Certification.",
+      "paragraph1": "Front-End Developer and Mobile Staff Engineer with more than 10 years of experience in building scalable, high-performance, product-oriented web and mobile applications. I work on architecture definition, technical standardization, and strategic direction of platforms, with cross-team impact, defining standards and driving technical decisions at scale.",
+      "paragraph2": "Specialist in JavaScript and TypeScript, focused on advanced typing, contract modeling, and code scalability, working within the modern front-end ecosystem with React, Next.js, Vue, Angular, React Native, and Flutter. Experience in defining SPA, SSR, SSG, ISR, and Server Components (RSC) architectures, as well as Edge rendering strategies and optimization for technical SEO and Core Web Vitals.",
+      "paragraph3": "Solid experience in large-scale front-end architecture, including monorepo organization, adoption of micro-frontends with Module Federation, and governance of Design Systems with Tailwind CSS, Shadcn/ui, and Material UI. Application of Domain-Driven Design (DDD) and Clean Architecture principles in defining boundaries and modularization, ensuring consistency, reuse, and sustainable evolution across applications.",
+      "paragraph4": "Expertise in state management (Redux, Zustand, Context API) and server-state with TanStack Query, integration with REST, GraphQL, and tRPC APIs. Use of TDD and automated testing as a foundation for quality, combined with leadership in performance strategies such as code splitting, lazy loading, and dependency analysis, focusing on efficiency, scalability, and continuous improvement of user experience. Experience with CI/CD and observability, including monitoring and error tracking in production with Sentry.",
+      "paragraph5": "Complementary back-end experience with Node.js and databases PostgreSQL, MySQL, and MongoDB, using modern ORMs such as Prisma and Drizzle. Experience with microservices architectures, cloud environments (AWS, Supabase, Firebase, NeonDB), and deployment on platforms such as Vercel and AWS, applying security practices based on OWASP, ensuring data protection, secure authentication, and vulnerability mitigation.",
+      "paragraph6": "Experience in using AI strategically throughout the development lifecycle, using Cursor, Claude, Copilot, and ChatGPT for prompt engineering, code generation, review, and optimization of code and tests. Orchestration of asynchronous flows and background jobs with Inngest, promoting scalable automations, increased productivity, and operational efficiency.",
+      "paragraph7": "1 X AWS Developer Associate.",
       "infoItems": [
         { "label": "Name", "value": "Renato Marques" },
         { "label": "Birthday", "value": "November 30, 1976" },
@@ -245,44 +253,50 @@
       "title": "Experience",
       "job1": {
         "role": "Full Stack Developer",
-        "company": "BRLink INGRAM MICRO",
-        "period": "2019 - 2024",
-        "description": "Worked with React, Next.js, and Flutter creating modern and responsive interfaces. Specialized in cloud environments using AWS services."
+        "company": "LINKZ INFORMÁTICA",
+        "period": "02/2025 - Present",
+        "description": "Web apps and SaaS platforms for digital advertising built with React and Next.js (SSR and Server Components), focused on fast experiences for campaigns and landing pages. Development of custom CMSs for content and campaign management. Back-end with Node.js, PostgreSQL, REST APIs, and tRPC for handling data and metrics. Use of LLMs for process automation, content generation, and workflow optimization."
       },
       "job2": {
         "role": "Front-End Developer",
-        "company": "ORTIZ GAMING",
-        "period": "2018 - 2019",
-        "description": "Worked on the development of a remote management application for gaming machines using Angular."
+        "company": "BRLINK / INGRAM MICRO",
+        "period": "10/2019 - 10/2024",
+        "description": "Enterprise front-end architecture with React, Next.js, and Flutter, focused on scalability, performance, and maintainability. State management with Context API and BLoC. Leadership in Design Systems using Material UI and Tailwind CSS, including code reviews, standards definition, and mentoring. Integration with AWS (EC2, S3, Lambda) via REST APIs. Improved test coverage with Jest and Cypress."
       },
       "job3": {
         "role": "Front-End Developer",
-        "company": "FITBANK",
-        "period": "2017 - 2018",
-        "description": "Worked on the development of a payment management application using Angular, and on creating the Angular and Xamarin mobile application interface."
+        "company": "ORTIZ GAMING",
+        "period": "03/2018 - 08/2019",
+        "description": "Web platform with Angular for real-time remote machine management. Advanced state management with RxJS/NgRx; high-frequency REST APIs with WebSockets and optimized polling."
       },
       "job4": {
-        "role": "Front-End Developer / Graphic Designer",
-        "company": "RM10 PUBLICIDADE",
-        "period": "2015 - 2016",
-        "description": "Responsible for creating websites and hotsites, printed materials, and email marketing campaigns."
+        "role": "Front-End Developer & UX Designer",
+        "company": "FITBANK",
+        "period": "02/2017 - 09/2018",
+        "description": "Payment application built with Angular, developing responsive interfaces for critical financial workflows. Involved in UX Design and visual identity creation, as well as mobile interface development with Xamarin, collaborating with product and back-end teams in defining API contracts."
       },
       "job5": {
-        "role": "Front-End Developer / Graphic Designer",
-        "company": "LINKZ INFORMÁTICA",
-        "period": "2012 - 2014",
-        "description": "Responsible for creating websites, hotsites, mobile apps, e-commerce, multimedia presentations, email marketing, e-learning content, and printed materials."
+        "role": "Front-End Developer & Graphic Designer",
+        "company": "RM10 PUBLICIDADE",
+        "period": "04/2015 - 07/2016",
+        "description": "Responsible for creating websites, hotsites, printed materials, and email marketing campaigns."
       },
       "job6": {
-        "role": "Front-End Developer / Graphic Designer",
-        "company": "FISCOSOFT THOMSON REUTERS",
-        "period": "2010 - 2011",
-        "description": "Responsible for creating websites and hotsites, printed materials, and email marketing campaigns."
+        "role": "Front-End Developer",
+        "company": "LINKZ INFORMÁTICA",
+        "period": "02/2012 - 12/2014",
+        "description": "Responsible for creating websites, hotsites, mobile apps, e-commerce, multimedia presentations, email marketing, e-learning content, and printed materials."
       },
       "job7": {
-        "role": "Front-End Developer / Graphic Designer",
+        "role": "Front-End Developer",
+        "company": "FISCOSOFT THOMSON REUTERS",
+        "period": "08/2010 - 10/2011",
+        "description": "Responsible for creating websites, hotsites, printed materials, and email marketing campaigns."
+      },
+      "job8": {
+        "role": "Front-End Developer",
         "company": "CATHO ONLINE",
-        "period": "2008 - 2010",
+        "period": "07/2008 - 06/2010",
         "description": "Responsible for creating online courses (e-learning) in the areas of Managerial Development, Finance, Marketing, Sales, and Human Resources."
       }
     },

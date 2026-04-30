@@ -3,9 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "./ui/button";
-import "@/app/globals.css";
 
-export const BgAnimated = () => {
+export const Hero = () => {
   const interBubble = useRef<HTMLDivElement | null>(null);
   const curX = useRef(0);
   const curY = useRef(0);

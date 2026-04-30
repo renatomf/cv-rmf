@@ -62,7 +62,7 @@ export function ScrollDownIndicator({ loading }: ScrollDownIndicatorProps) {
     };
   }, [showIndicator, loading, initialDelayPassed]);
 
-  if (!showIndicator || !visible) return null;
+  if (!showIndicator) return null;
 
   return (
     <AnimatePresence>
@@ -70,7 +70,7 @@ export function ScrollDownIndicator({ loading }: ScrollDownIndicatorProps) {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 30 }}
+          exit={{ opacity: 0, transition: { duration: 0.1 } }}
           transition={{ duration: 0.4 }}
           className="fixed bottom-16 2xl:bottom-28 left-3/5 -translate-x-3/5 z-[9999] flex-col items-center text-black dark:text-white select-none flex"
         >

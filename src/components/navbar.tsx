@@ -118,7 +118,7 @@ export const Navbar = ({
             />
 
             <motion.div
-              className="fixed top-0 right-0 h-screen w-full md:w-[35%] xl:w-1/4 2xl:w-1/5 bg-black/95 backdrop-blur z-[11000] overflow-y-auto"
+              className="fixed top-0 right-0 h-screen w-full md:w-[35%] xl:w-1/4 2xl:w-1/6 bg-black/95 backdrop-blur z-[11000] overflow-y-auto"
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
@@ -129,7 +129,7 @@ export const Navbar = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-10 w-10 rounded-full bg-white/20 backdrop-blur"
+                  className="h-10 w-10 rounded-full bg-white/20 hover:bg-[#0bafac] backdrop-blur"
                   onClick={() => setIsMenuOpen(false)}
                   aria-label={messages.nav?.closeMenu ?? "Fechar menu"}
                 >

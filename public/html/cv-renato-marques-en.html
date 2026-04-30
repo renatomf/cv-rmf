@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Renato Marques Ferreira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --teal: #0bafac;
+      --teal-soft: #e6f7f7;
+      --dark: #0f0f0f;
+      --body: #374151;
+      --muted: #6b7280;
+      --light: #9ca3af;
+      --rule: #e5e7eb;
+      --card-bg: #f9fafb;
+      --white: #ffffff;
+    }
+
+    /* ── BASE ─────────────────────────────────────────────────── */
+    html {
+      background: var(--white);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10pt;
+      line-height: 1.6;
+      color: var(--body);
+      background: var(--white);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 44px 52px;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── HEADER ──────────────────────────────────────────────── */
+    .header {
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--teal);
+    }
+
+    .name {
+      font-size: 28pt;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      color: var(--dark);
+      line-height: 1.05;
+    }
+
+    .name span {
+      color: var(--teal);
+    }
+
+    .headline {
+      font-size: 10pt;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 5px;
+      margin-bottom: 14px;
+      letter-spacing: 0.1px;
+    }
+
+    /* ── CONTACT PILLS ───────────────────────────────────────── */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 8.5pt;
+      color: var(--body);
+      text-decoration: none;
+      transition: border-color .2s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .contact-item svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      fill: var(--teal);
+    }
+
+    /* ── SECTIONS ────────────────────────────────────────────── */
+    section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--dark);
+      position: relative;
+      padding-bottom: 7px;
+      margin-bottom: 28px;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    /* ── PROFILE ─────────────────────────────────────────────── */
+    .profile p {
+      font-size: 9.5pt;
+      color: var(--body);
+      line-height: 1.65;
+      margin-bottom: 7px;
+    }
+
+    .profile p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── SKILLS GRID ─────────────────────────────────────────── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+    }
+
+    .skills-table tr:not(:last-child) td {
+      padding-bottom: 6px;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+      padding-right: 14px;
+      vertical-align: top;
+      width: 155px;
+      padding-top: 1px;
+    }
+
+    .skill-value {
+      color: var(--body);
+    }
+
+    /* ── JOB CARD ────────────────────────────────────────────── */
+    .job {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border-left: 3px solid var(--teal);
+      padding: 14px 18px;
+      margin-bottom: 24px;
+    }
+
+    .job:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+
+    .job-company {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: var(--dark);
+    }
+
+    .job-period {
+      font-size: 8.5pt;
+      color: var(--teal);
+      font-weight: 600;
+      white-space: nowrap;
+      background: var(--teal-soft);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .job-role {
+      font-size: 9pt;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .bullets {
+      padding-left: 16px;
+      font-size: 9pt;
+      color: var(--body);
+    }
+
+    .bullets li {
+      margin-bottom: 4px;
+    }
+
+    .bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullets li::marker {
+      color: var(--teal);
+    }
+
+    /* ── PREVIOUS EXP (compact grid) ────────────────────────── */
+    .prev-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .prev-item {
+      background: var(--card-bg);
+      border-left: 3px solid var(--rule);
+      border-radius: 6px;
+      padding: 9px 14px;
+      font-size: 9pt;
+    }
+
+    .prev-item:hover {
+      border-left-color: var(--teal);
+    }
+
+    .prev-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .prev-company {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .prev-period {
+      font-size: 8pt;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .prev-role {
+      color: var(--muted);
+      font-size: 8.5pt;
+      margin-bottom: 2px;
+    }
+
+    .prev-desc {
+      color: var(--light);
+      font-size: 8.5pt;
+      line-height: 1.5;
+    }
+
+    /* ── EDU / CERT ──────────────────────────────────────────── */
+    .edu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .edu-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      border-left: 3px solid var(--teal);
+      padding: 11px 16px;
+    }
+
+    .edu-name {
+      font-weight: 600;
+      font-size: 10pt;
+      color: var(--dark);
+    }
+
+    .edu-sub {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .edu-period {
+      font-size: 8.5pt;
+      color: var(--teal);
+      font-weight: 600;
+      background: var(--teal-soft);
+      padding: 2px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* ── LANGUAGES ───────────────────────────────────────────── */
+    .lang-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lang-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 9pt;
+    }
+
+    .lang-pill strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .lang-pill span {
+      color: var(--muted);
+    }
+
+    /* ── DIVIDER ─────────────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      margin: 4px 0 14px;
+    }
+
+    /* ── PRINT ───────────────────────────────────────────────── */
+    @media print {
+      body {
+        padding: 0;
+        font-size: 8.5pt;
+        line-height: 1.5;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .name {
+        font-size: 20pt;
+      }
+
+      .headline {
+        margin-bottom: 10px;
+        font-size: 9pt;
+      }
+
+      .header {
+        padding-bottom: 14px;
+        margin-bottom: 20px;
+      }
+
+      .contact-grid {
+        gap: 6px;
+      }
+
+      .contact-item {
+        padding: 4px 9px;
+        font-size: 8pt;
+      }
+
+      section {
+        margin-bottom: 22px;
+      }
+
+      section+section {
+        padding-top: 2px;
+      }
+
+      .section-title {
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+      }
+
+      .profile p {
+        font-size: 8.5pt;
+        line-height: 1.55;
+        margin-bottom: 7px;
+      }
+
+      /* Skills: 1 coluna — leitura fluida */
+      .skills-table {
+        display: block;
+        font-size: 8.5pt;
+      }
+
+      .skills-table tbody {
+        display: block;
+      }
+
+      .skills-table tr {
+        display: flex;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 5px;
+      }
+
+      .skills-table tr:not(:last-child) td {
+        padding-bottom: 0;
+      }
+
+      .skills-table td {
+        display: block;
+      }
+
+      .skill-label {
+        width: 130px;
+        font-size: 8.5pt;
+        padding-right: 10px;
+        padding-top: 0;
+        flex-shrink: 0;
+      }
+
+      .skill-value {
+        font-size: 8.5pt;
+        line-height: 1.5;
+      }
+
+      .job {
+        margin-bottom: 10px;
+        padding: 10px 14px;
+      }
+
+      .job-company {
+        font-size: 10pt;
+      }
+
+      .job-period {
+        font-size: 8pt;
+        padding: 2px 7px;
+      }
+
+      .job-role {
+        margin-bottom: 6px;
+        font-size: 8.5pt;
+      }
+
+      .bullets {
+        font-size: 8.5pt;
+      }
+
+      .bullets li {
+        margin-bottom: 4px;
+      }
+
+      .edu-card {
+        padding: 9px 14px;
+      }
+
+      .edu-name {
+        font-size: 9.5pt;
+      }
+
+      .edu-sub {
+        font-size: 8pt;
+      }
+
+      .edu-period {
+        font-size: 8pt;
+        padding: 2px 7px;
+      }
+
+      .edu-grid {
+        gap: 9px;
+      }
+
+      .prev-item {
+        padding: 7px 11px;
+      }
+
+      .prev-grid {
+        gap: 8px;
+      }
+
+      .divider {
+        margin: 6px 0 12px;
+      }
+
+      .lang-grid {
+        gap: 7px;
+      }
+
+      .lang-pill {
+        padding: 5px 12px;
+        font-size: 8.5pt;
+      }
+
+      @page {
+        size: A4;
+        margin: 10mm 12mm;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 20px;
+      }
+
+      .job-header {
+        flex-direction: column;
+      }
+
+      .edu-card {
+        flex-direction: column;
+      }
+
+      .skill-label {
+        width: auto;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .skills-table,
+      .skills-table tbody,
+      .skills-table tr,
+      .skills-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .skills-table tr:not(:last-child) td:last-child {
+        padding-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HEADER ════════════════════════════════════════════════ -->
+  <header class="header">
+    <div class="name">Renato Marques Ferreira</div>
+    <div class="headline">Senior Front-End Developer &nbsp;·&nbsp; Full Stack Developer &nbsp;·&nbsp; React · Next.js ·
+      Vue · Flutter · TypeScript · Node.js</div>
+
+    <div class="contact-grid">
+
+      <!-- Location -->
+      <span class="contact-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+        São Paulo, SP — Brazil
+      </span>
+
+      <!-- Phone -->
+      <a class="contact-item" href="https://wa.me/5511972550341" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z" />
+        </svg>
+        +55 (11) 97255-0341
+      </a>
+
+      <!-- E-mail -->
+      <a class="contact-item" href="mailto:renatomardev@gmail.com" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+        renatomardev@gmail.com
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="contact-item" href="https://linkedin.com/in/renatomf76" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.73a1.77 1.77 0 110-3.54 1.77 1.77 0 010 3.54zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.16 20 6.96 20 12.3V19z" />
+        </svg>
+        linkedin.com/in/renatomf76
+      </a>
+
+      <!-- GitHub -->
+      <a class="contact-item" href="https://github.com/renatomf" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.78-.25.78-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.02 11.02 0 015.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.41-5.25 5.7.41.35.78 1.05.78 2.12v3.14c0 .3.2.66.79.55A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
+        </svg>
+        github.com/renatomf
+      </a>
+
+      <!-- Portfolio -->
+      <a class="contact-item" href="https://renatomf.is-a.dev" target="_blank">
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v1.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+        </svg>
+        renatomf.is-a.dev
+      </a>
+
+      <!-- AWS Badge -->
+      <a href="https://renatomf.is-a.dev/pdf/AWS%20Certified%20Developer%20-%20Associate%20certificate.pdf"
+        target="_blank"
+        style="display:inline-flex;align-items:center;gap:6px;background:var(--teal-soft);border:1.5px solid var(--teal);border-radius:6px;padding:4px 12px;font-size:8.5pt;font-weight:700;color:var(--teal);letter-spacing:.3px;margin-left:0;text-decoration:none;">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+          style="width:13px;height:13px;fill:var(--teal);flex-shrink:0">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.59L18 8.5l-8 8z" />
+        </svg>
+        AWS Certified Developer – Associate
+      </a>
+
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">Professional Summary</div>
+    <div class="profile">
+      <p>Senior Front-End and Mobile Staff Engineer with 10+ years of experience leading architecture, technical
+        standards, and strategic direction of scalable web and mobile applications with cross-team impact.</p>
+      <p>Specialist in JavaScript and TypeScript, working with React, Next.js, Vue, Angular, React Native, and Flutter,
+        applying SPA, SSR, SSG, ISR, and Server Components (RSC), as well as Edge rendering strategies, technical SEO,
+        and Core Web Vitals.</p>
+      <p>Experience in large-scale front-end architecture with monorepos, micro-frontends (Module Federation), and
+        Design Systems. Application of DDD and Clean Architecture for boundary definition and modularization.</p>
+      <p>Expertise in state management (Redux, Zustand, Context API, TanStack Query), REST, GraphQL, and tRPC APIs, plus
+        performance, automated testing, CI/CD, and observability with Sentry.</p>
+      <p>Additional experience with Node.js, relational and NoSQL databases, microservices, cloud (AWS, Supabase,
+        Firebase), and deployments on Vercel and AWS. Application of OWASP security practices.</p>
+      <p>Strategic use of AI tools such as Cursor, Claude, Copilot, and ChatGPT, plus workflow automation with Inngest,
+        improving productivity and operational efficiency.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Technical Skills</div>
+    <table class="skills-table">
+      <tbody>
+        <tr>
+          <td class="skill-label">Front-End</td>
+          <td class="skill-value">React, Next.js (SSR · SSG · Server Components · ISR), Vue.js, Angular, TypeScript,
+            JavaScript (ES2024+), HTML5, CSS3</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Mobile</td>
+          <td class="skill-value">Flutter, React Native</td>
+        </tr>
+        <tr>
+          <td class="skill-label">State Management</td>
+          <td class="skill-value">Redux, Context API, Zustand, TanStack Query, NgRx, RxJS, Bloc</td>
+        </tr>
+        <tr>
+          <td class="skill-label">UI / Design System</td>
+          <td class="skill-value">Tailwind CSS, ShadCN UI, Material UI, Styled Components, Bootstrap, Technical SEO</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Back-End</td>
+          <td class="skill-value">Node.js, REST API, GraphQL, tRPC, Prisma, Drizzle ORM</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Databases</td>
+          <td class="skill-value">PostgreSQL, MongoDB, MySQL, NeonDB, Supabase, Firebase</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Cloud & DevOps</td>
+          <td class="skill-value">AWS (EC2, S3, Lambda, RDS, DynamoDB), Docker, Kubernetes, CI/CD (GitHub Actions,
+            Vercel), Sentry</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Testing</td>
+          <td class="skill-value">Jest, Cypress, Playwright, Testing Library, TDD</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Architecture</td>
+          <td class="skill-value">Clean Architecture, SOLID, DDD, Microservices, Event-Driven, Serverless, Monorepo,
+            Background Jobs (Inngest)</td>
+        </tr>
+        <tr>
+          <td class="skill-label">AI Applied</td>
+          <td class="skill-value">LLMs, RAG, Embeddings, MCP, Prompt Engineering, Cursor, Claude, GitHub Copilot</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Version Control</td>
+          <td class="skill-value">Git, GitHub, GitFlow, Conventional Commits</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Web Security</td>
+          <td class="skill-value">OAuth, JWT, XSS/CSRF, CSP, Secure Headers</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Design & UX</td>
+          <td class="skill-value">Figma, Adobe Suite, Performance animations, Core Web Vitals, Accessibility (WCAG)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section-exp">
+    <div class="section-title">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">LINKZ INFORMÁTICA</span>
+        <span class="job-period">02/2025 — Present</span>
+      </div>
+      <div class="job-role">Full Stack Developer · São Paulo, SP</div>
+      <ul class="bullets">
+        <li>Front-end architecture with React, Next.js, and Flutter focused on scalability and performance.</li>
+        <li>Design Systems (Material UI, Tailwind CSS), code reviews, and technical mentoring.</li>
+        <li>AWS integration (EC2, S3, Lambda) via REST APIs and testing with Jest and Cypress.</li>
+      </ul>
+    </div>
+
+    <div class="job" style="margin-top: 3rem;">
+      <div class="job-header">
+        <span class="job-company">BRLINK / INGRAM MICRO</span>
+        <span class="job-period">10/2019 — 10/2024</span>
+      </div>
+      <div class="job-role">Senior Front-End Developer · São Paulo, SP</div>
+      <ul class="bullets">
+        <li>Enterprise front-end architecture with React, Next.js, and Flutter; state management with Context API and
+          BLoC.</li>
+        <li>Evolution of Design Systems, technical standards, code reviews, and team mentoring.</li>
+        <li>AWS integration via REST APIs and test coverage with Jest and Cypress.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">ORTIZ GAMING</span>
+        <span class="job-period">03/2018 — 08/2019</span>
+      </div>
+      <div class="job-role">Front-End Developer · São Paulo, SP</div>
+      <ul class="bullets">
+        <li>Web platform with Angular for real-time remote machine management.</li>
+        <li>Advanced state with RxJS/NgRx; high-frequency REST APIs with WebSockets and optimized polling.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">FITBANK</span>
+        <span class="job-period">02/2017 — 09/2018</span>
+      </div>
+      <div class="job-role">Front-End Developer · São Paulo, SP</div>
+      <ul class="bullets">
+        <li>Payments app with Angular, building responsive interfaces for critical financial flows.</li>
+        <li>UX Design and visual identity creation.</li>
+        <li>Mobile interface with Xamarin and collaboration with product and back-end teams.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="section-title">Education & Certifications</div>
+    <div class="edu-grid">
+
+      <div class="edu-card">
+        <div>
+          <div class="edu-name">Anhembi Morumbi University</div>
+          <div class="edu-sub">Bachelor’s Degree in Digital Design</div>
+        </div>
+        <div class="edu-period">1998 — 2000</div>
+      </div>
+
+      <div class="edu-card">
+        <div>
+          <div class="edu-name">AWS Certified Developer – Associate</div>
+          <div class="edu-sub">Amazon Web Services (AWS)</div>
+        </div>
+        <div class="edu-period">11/2020 — 11/2023</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Languages</div>
+    <div class="lang-grid">
+      <div class="lang-pill"><strong>Portuguese</strong> <span>— Native</span></div>
+      <div class="lang-pill"><strong>English</strong> <span>— Technical fluent · Intermediate speaking</span></div>
+      <div class="lang-pill"><strong>Spanish</strong> <span>— Basic</span></div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -36,8 +36,14 @@ export const BiographySection = () => {
       <p className="pb-4">{messages.biography.paragraph3}</p>
       <p className="pb-4">{messages.biography.paragraph4}</p>
       <p className="pb-4">{messages.biography.paragraph5}</p>
-      <p className="flex items-center font-medium !text-[#0bafac] ">
-        {messages.biography.paragraph6}
+      <p className="pb-4">{messages.biography.paragraph6}</p>
+      <p className="pt-4 pb-1">
+        <a
+          href="/pdf/AWS Certified Developer - Associate certificate.pdf"
+          download
+        >
+          {messages.biography.paragraph7}
+        </a>
       </p>
 
       <div className="fn_cs_info_items">

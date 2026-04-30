@@ -15,7 +15,7 @@ export const EducationSection = () => {
             <div className="item">
               <div className="item_top">
                 <h5>{messages.education.university}</h5>
-                <span>({messages.education.period})</span>
+                <span>{messages.education.period}</span>
               </div>
               <h3>{messages.education.degree}</h3>
               <p>{messages.education.description}</p>
@@ -25,10 +25,9 @@ export const EducationSection = () => {
             <div className="item">
               <div className="item_top" style={{ alignItems: "center" }}>
                 <h5 className="flex items-center gap-2">
-                  <Image src="/svg/aws.svg" alt="AWS" width={36} height={22} />
                   {messages.education.certIssuer ?? "Amazon Web Services"}
+                  <Image src="/svg/aws.svg" alt="AWS" width={36} height={22} className="mt-2 ml-1" />
                 </h5>
-                <span>Certified</span>
               </div>
               <h3>{messages.education.certName ?? "AWS Certified Developer – Associate"}</h3>
             </div>
