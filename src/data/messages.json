@@ -1,5 +1,7 @@
 {
   "pt": {
+    "locale": "pt-BR",
+    "path": "/pt",
     "nav": {
       "home": "Início",
       "biography": "Biografia",
@@ -30,7 +32,7 @@
         { "label": "Endereço", "value": "São Paulo, Brasil" },
         {
           "label": "Telefone",
-          "value":  "+55 (11) 97255-0341",
+          "value": "+55 (11) 97255-0341",
           "link": "https://wa.me/5511972550341"
         },
         {
@@ -183,6 +185,8 @@
     "scrollToTop": "Voltar ao topo"
   },
   "en": {
+    "locale": "en-US",
+    "path": "/en",
     "nav": {
       "home": "Home",
       "biography": "Biography",

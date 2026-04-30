@@ -58,9 +58,12 @@ export const metadata: Record<string, Metadata> = {
     authors: [{ name: "Renato Marques" }],
     creator: "Renato Marques",
     publisher: "Renato Marques",
+    verification: {
+      google: "qaMymppOzfE3hEXNeBfSm2pQgDnQAee7hojMlTTU2Vw",
+    },
     openGraph: {
       type: "website",
-      url: "https://renatomf.is-a.dev",
+      url: "https://renatomf.is-a.dev/pt",
       title: "Currículo Renato Marques",
       description:
         "Currículo online de Renato Marques — experiência, habilidades técnicas, educação e contato.",
@@ -74,7 +77,12 @@ export const metadata: Record<string, Metadata> = {
         "Currículo online de Renato Marques — experiência, habilidades técnicas, educação e contato.",
     },
     alternates: {
-      canonical: "https://renatomf.is-a.dev",
+      canonical: "https://renatomf.is-a.dev/pt",
+      languages: {
+        "pt-BR": "https://renatomf.is-a.dev/pt",
+        "en-US": "https://renatomf.is-a.dev/en",
+        "x-default": "https://renatomf.is-a.dev/pt",
+      },
     },
   },
 
@@ -137,7 +145,7 @@ export const metadata: Record<string, Metadata> = {
     publisher: "Renato Marques",
     openGraph: {
       type: "website",
-      url: "https://renatomf.is-a.dev",
+      url: "https://renatomf.is-a.dev/en",
       title: "Resume Renato Marques",
       description:
         "Online resume of Renato Marques — experience, technical skills, education, and contact information.",
@@ -151,7 +159,12 @@ export const metadata: Record<string, Metadata> = {
         "Online resume of Renato Marques — experience, technical skills, education, and contact information.",
     },
     alternates: {
-      canonical: "https://renatomf.is-a.dev",
+      canonical: "https://renatomf.is-a.dev/en",
+      languages: {
+        "pt-BR": "https://renatomf.is-a.dev/pt",
+        "en-US": "https://renatomf.is-a.dev/en",
+        "x-default": "https://renatomf.is-a.dev/pt",
+      },
     },
   },
 };

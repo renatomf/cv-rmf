@@ -1,7 +1,14 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
-import messagesData from "@/data/messages.json" assert { type: "json" };
+import {
+  createContext,
+  useContext,
+  ReactNode,
+  useMemo,
+  useState,
+} from "react";
+
+import messagesData from "@/data/messages.json";
 
 type Locale = "pt" | "en";
 
@@ -11,16 +18,29 @@ interface LanguageContextProps {
   setLocale: (locale: Locale) => void;
 }
 
-const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextProps | undefined>(
+  undefined
+);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<Locale>("pt");
+interface LanguageProviderProps {
+  children: ReactNode;
+  locale?: Locale;
+}
 
-  const value: LanguageContextProps = {
-    locale,
-    messages: messagesData[locale],
-    setLocale,
-  };
+export const LanguageProvider = ({
+  children,
+  locale: initialLocale = "pt",
+}: LanguageProviderProps) => {
+  const [locale, setLocale] = useState<Locale>(initialLocale);
+
+  const value = useMemo(
+    () => ({
+      locale,
+      messages: messagesData[locale],
+      setLocale,
+    }),
+    [locale]
+  );
 
   return (
     <LanguageContext.Provider value={value}>
@@ -29,8 +49,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useLanguage = (): LanguageContextProps => {
+export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error("useLanguage must be used within a LanguageProvider");
+
+  if (!context) {
+    throw new Error("useLanguage must be used within LanguageProvider");
+  }
+
   return context;
 };

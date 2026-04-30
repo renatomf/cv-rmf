@@ -13,8 +13,13 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { ScrollDownIndicator } from "@/components/scroll-down-indicator";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLanguage } from "@/components/language-context";
 
-export default function Home() {
+export default function Home({
+  locale = "pt",
+}: {
+  locale?: "pt" | "en";
+}) {
   const [bgAnimateOpen, setBgAnimateOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#cv_header");
   const [loading, setLoading] = useState(true);
