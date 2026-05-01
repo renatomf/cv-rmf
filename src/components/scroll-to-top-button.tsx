@@ -2,7 +2,7 @@
 
 import { ArrowUpFromLine } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 interface ScrollToTopButtonProps {
   scrollToSection: (href: string) => void;

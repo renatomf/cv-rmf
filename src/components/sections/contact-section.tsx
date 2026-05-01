@@ -14,7 +14,7 @@ import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 const contactSchema = z.object({
   name: z.string().min(1),
-  email: z.email(),
+  email: z.string().email(),
   phone: z.string().optional(),
   message: z.string().min(1),
 });
@@ -22,7 +22,7 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export const ContactSection = () => {
-  const { messages } = useLanguage();
+  const { locale, messages } = useLanguage();
 
   const errorMessages: Record<string, string> = {
     name: messages.contact.nameRequired || "Por favor, informe seu nome",
@@ -45,7 +45,7 @@ export const ContactSection = () => {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, locale }),
       });
 
       if (res.ok) {

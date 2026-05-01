@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "@/components/language-context";
 
@@ -19,96 +19,94 @@ interface TextAnimatedProps {
 export const TextAnimated = ({ loading }: TextAnimatedProps) => {
   const { messages } = useLanguage();
 
-  // Frases
-  const animatedWords1 = messages?.header?.animatedWords1 ?? [
-    "HI,",
-    "I'M",
-    "FRONT-END",
-    "DEVELOPER",
-    "AND",
-    "DESIGNER",
-    "...",
-  ];
-  const animatedWords2 = messages?.header?.animatedWords2 ?? [
-    "I'M",
-    "PASSIONATE",
-    "ABOUT",
-    "CREATING",
-    "DIGITAL",
-    "EXPERIENCES",
-    "...",
-  ];
+  const phrases: Word[][] = useMemo(() => {
+    const animatedWords1 = messages?.header?.animatedWords1 ?? [
+      "HI,",
+      "I'M",
+      "FRONT-END",
+      "DEVELOPER",
+      "AND",
+      "DESIGNER",
+      "...",
+    ];
+    const animatedWords2 = messages?.header?.animatedWords2 ?? [
+      "I'M",
+      "PASSIONATE",
+      "ABOUT",
+      "CREATING",
+      "DIGITAL",
+      "EXPERIENCES",
+      "...",
+    ];
 
-  const baseLayout: Omit<Word, "text">[] = [
-    {
-      color: "text-black",
-      from: -350,
-      delay: 0.3,
-      extraStyle: { fontSize: "30px", marginRight: "30px", fontWeight: "400" },
-    },
-    {
-      color: "text-white",
-      from: -350,
-      delay: 0.4,
-      extraStyle: {
-        filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
-        fontSize: "70px",
+    const baseLayout: Omit<Word, "text">[] = [
+      {
+        color: "text-black",
+        from: -350,
+        delay: 0.3,
+        extraStyle: { fontSize: "30px", marginRight: "30px", fontWeight: "400" },
       },
-    },
-    {
-      color: "text-black",
-      from: 450,
-      delay: 0.5,
-      extraStyle: {
-        filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
-        fontSize: "90px",
-        marginLeft: "-40px",
+      {
+        color: "text-white",
+        from: -350,
+        delay: 0.4,
+        extraStyle: {
+          filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+          fontSize: "70px",
+        },
       },
-    },
-    {
-      color:
-        "text-[10rem] font-bold bg-gradient-to-b from-teal-800 to-teal-300 bg-clip-text text-transparent",
-      from: 250,
-      delay: 0.6,
-      extraStyle: {
-        filter: `
-      drop-shadow(3px 3px 6px rgba(0,0,0,1))
-      drop-shadow(6px 6px 12px rgba(0,0,0,0.9))
-      drop-shadow(10px 10px 20px rgba(0,0,0,0.8))
-    `,
+      {
+        color: "text-black",
+        from: 450,
+        delay: 0.5,
+        extraStyle: {
+          filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))",
+          fontSize: "90px",
+          marginLeft: "-40px",
+        },
       },
-    },
-    {
-      color: "text-white",
-      from: -250,
-      delay: 0.6,
-      extraStyle: {
-        fontSize: "50px",
-        marginLeft: "-60px",
-        fontWeight: "400",
+      {
+        color:
+          "text-[10rem] font-bold bg-gradient-to-b from-teal-800 to-teal-300 bg-clip-text text-transparent",
+        from: 250,
+        delay: 0.6,
+        extraStyle: {
+          filter: `
+        drop-shadow(3px 3px 6px rgba(0,0,0,1))
+        drop-shadow(6px 6px 12px rgba(0,0,0,0.9))
+        drop-shadow(10px 10px 20px rgba(0,0,0,0.8))
+      `,
+        },
       },
-    },
-    {
-      color: "text-black",
-      from: -250,
-      delay: 0.6,
-      extraStyle: { marginRight: "50px" },
-    },
-    {
-      color: "text-black",
-      from: -250,
-      delay: 0.6,
-      extraStyle: { fontSize: "20px", marginLeft: "-45px" },
-    },
-  ];
+      {
+        color: "text-white",
+        from: -250,
+        delay: 0.6,
+        extraStyle: {
+          fontSize: "50px",
+          marginLeft: "-60px",
+          fontWeight: "400",
+        },
+      },
+      {
+        color: "text-black",
+        from: -250,
+        delay: 0.6,
+        extraStyle: { marginRight: "50px" },
+      },
+      {
+        color: "text-black",
+        from: -250,
+        delay: 0.6,
+        extraStyle: { fontSize: "20px", marginLeft: "-45px" },
+      },
+    ];
 
-  const phrases: Word[][] = useMemo(
-    () => [
+    return [
       animatedWords1.map((text, i) => ({ ...baseLayout[i], text })),
       animatedWords2.map((text, i) => ({ ...baseLayout[i], text })),
-    ],
-    [animatedWords1, animatedWords2]
-  );
+    ];
+  }, [messages?.header?.animatedWords1, messages?.header?.animatedWords2]);
 
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [reverse, setReverse] = useState(false);

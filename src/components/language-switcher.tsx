@@ -16,7 +16,9 @@ export function LanguageSwitcher() {
   }, []);
 
   const toggleLanguage = () => {
-    setLocale(isEnglish ? "pt" : "en");
+    const newLocale = isEnglish ? "pt" : "en";
+    setLocale(newLocale);
+    window.history.replaceState(null, "", `/${newLocale}`);
   };
 
   const switchClassName =

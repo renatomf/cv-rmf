@@ -29,15 +29,27 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
-const emailTemplate = (name: string, email: string, phone: string | undefined, message: string) => {
+const emailTemplate = (name: string, email: string, phone: string | undefined, message: string, locale: string = "pt") => {
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
   const safePhone = phone ? escapeHtml(phone) : undefined;
   const safeMessage = escapeHtml(message);
+  const isEn = locale === "en";
+
+  const t = {
+    portfolio: isEn ? "Portfolio" : "Portfólio",
+    intro: isEn ? "You received a new message through your portfolio contact form." : "Você recebeu uma nova mensagem através do formulário de contato do seu portfólio.",
+    name: isEn ? "Name" : "Nome",
+    emailLabel: isEn ? "Email" : "E-mail",
+    phone: isEn ? "Phone" : "Telefone",
+    message: isEn ? "Message" : "Mensagem",
+    subject: isEn ? `New message from ${escapeHtml(name)}` : `Nova mensagem de ${escapeHtml(name)}`,
+    htmlLang: isEn ? "en-US" : "pt-BR",
+  };
 
   return `
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="${t.htmlLang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -60,7 +72,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
                     </svg>
                   </td>
                   <td style="vertical-align:middle;">
-                    <p style="margin:0; color:rgba(255,255,255,0.75); font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600;">Portfólio</p>
+                    <p style="margin:0; color:rgba(255,255,255,0.75); font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600;">${t.portfolio}</p>
                     <h1 style="margin:4px 0 0; color:#ffffff; font-size:22px; font-weight:700; letter-spacing:-0.5px;">Renato Marques Ferreira</h1>
                   </td>
                 </tr>
@@ -78,7 +90,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
             <td style="padding:40px;">
 
               <p style="margin:0 0 28px; color:#a0a0a0; font-size:14px; line-height:1.6;">
-                Você recebeu uma nova mensagem através do formulário de contato do seu portfólio.
+                ${t.intro}
               </p>
 
               <!-- Info cards -->
@@ -90,7 +102,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
                     <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#242424; border-radius:8px; border-left:3px solid #0bafac;">
                       <tr>
                         <td style="padding:14px 18px;">
-                          <p style="margin:0 0 4px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">Nome</p>
+                          <p style="margin:0 0 4px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">${t.name}</p>
                           <p style="margin:0; font-size:16px; color:#f0f0f0; font-weight:500;">${safeName}</p>
                         </td>
                       </tr>
@@ -104,7 +116,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
                     <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#242424; border-radius:8px; border-left:3px solid #0bafac;">
                       <tr>
                         <td style="padding:14px 18px;">
-                          <p style="margin:0 0 4px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">E-mail</p>
+                          <p style="margin:0 0 4px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">${t.emailLabel}</p>
                           <a href="mailto:${safeEmail}" style="margin:0; font-size:16px; color:#0bafac; font-weight:500; text-decoration:none;">${safeEmail}</a>
                         </td>
                       </tr>
@@ -119,7 +131,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
                     <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#242424; border-radius:8px; border-left:3px solid #0bafac;">
                       <tr>
                         <td style="padding:14px 18px;">
-                          <p style="margin:0 0 4px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">Telefone</p>
+                          <p style="margin:0 0 4px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">${t.phone}</p>
                           <p style="margin:0; font-size:16px; color:#f0f0f0; font-weight:500;">${safePhone}</p>
                         </td>
                       </tr>
@@ -133,7 +145,7 @@ const emailTemplate = (name: string, email: string, phone: string | undefined, m
                     <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#242424; border-radius:8px; border-left:3px solid #0bafac;">
                       <tr>
                         <td style="padding:14px 18px;">
-                          <p style="margin:0 0 8px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">Mensagem</p>
+                          <p style="margin:0 0 8px; font-size:10px; color:#0bafac; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">${t.message}</p>
                           <p style="margin:0; font-size:15px; color:#d0d0d0; line-height:1.7; white-space:pre-wrap;">${safeMessage}</p>
                         </td>
                       </tr>
@@ -164,14 +176,19 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { name, email, phone, message } = await req.json();
+  const { name, email, phone, message, locale } = await req.json();
+  const emailLocale = locale === "en" ? "en" : "pt";
+
+  const subject = emailLocale === "en"
+    ? `New message from ${escapeHtml(name)}`
+    : `Nova mensagem de ${escapeHtml(name)}`;
 
   const { error } = await resend.emails.send({
     from: "Portfólio <onboarding@resend.dev>",
     to: process.env.CONTACT_EMAIL!,
     replyTo: email,
-    subject: `Nova mensagem de ${escapeHtml(name)}`,
-    html: emailTemplate(name, email, phone, message),
+    subject,
+    html: emailTemplate(name, email, phone, message, emailLocale),
   });
 
   if (error) {

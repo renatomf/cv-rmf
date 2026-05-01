@@ -1,11 +1,43 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Renato Marques — Senior Front-End Developer | Full Stack";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export async function getImageMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return {
+    alt: locale === "en"
+      ? "Renato Marques — Senior Front-End Developer | Full Stack"
+      : "Renato Marques — Desenvolvedor Front-End Sênior | Full Stack",
+    ...size,
+    contentType,
+  };
+}
+
+export default async function Image({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const isEn = locale === "en";
+
+  const label = isEn ? "PORTFOLIO · RESUME" : "PORTFÓLIO · CURRÍCULO";
+  const role = isEn
+    ? "Senior Front-End Developer / Full Stack"
+    : "Desenvolvedor Front-End / Full Stack";
+  const subtitle = isEn
+    ? "15+ years of experience · AWS Certified Developer"
+    : "+15 anos de experiência · AWS Certified Developer";
+  const url = isEn
+    ? "https://renatomf.is-a.dev/en"
+    : "https://renatomf.is-a.dev/";
+
   return new ImageResponse(
     (
       <div
@@ -65,7 +97,7 @@ export default function Image() {
           <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "30px" }}>
             <div style={{ width: "28px", height: "3px", background: "#0bafac", display: "flex" }} />
             <div style={{ display: "flex", color: "#0bafac", fontSize: "14px", fontWeight: "700", letterSpacing: "3px" }}>
-              PORTFOLIO · RESUME
+              {label}
             </div>
           </div>
 
@@ -92,7 +124,7 @@ export default function Image() {
               marginBottom: "8px",
             }}
           >
-            Senior Front-End Developer / Full Stack
+            {role}
           </div>
 
           <div
@@ -103,7 +135,7 @@ export default function Image() {
               marginBottom: "42px",
             }}
           >
-            15+ years of experience · AWS Certified Developer
+            {subtitle}
           </div>
 
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -135,7 +167,7 @@ export default function Image() {
               letterSpacing: "0.5px",
             }}
           >
-            https://renatomf.is-a.dev/en
+            {url}
           </div>
         </div>
       </div>

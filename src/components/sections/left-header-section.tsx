@@ -13,7 +13,7 @@ interface LeftHeaderSectionProps {
 }
 
 export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) => {
-  const { messages } = useLanguage();
+  const { locale, messages } = useLanguage();
 
   // estado global para tooltip (texto + posição)
   const [tooltip, setTooltip] = useState<{
@@ -31,6 +31,7 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
             alt="Foto de Renato Marques"
             width={200}
             height={200}
+            priority
           />
         </div>
         <h3>
@@ -157,7 +158,8 @@ export const LeftHeaderSection = ({ scrollToSection }: LeftHeaderSectionProps) =
 
         {/* Download CV */}
         <a
-          href="#"
+          href={locale === "en" ? "/pdf/cv-renato-marques-ferreira-en.pdf" : "/pdf/cv-renato-marques-ferreira-pt.pdf"}
+          download
           aria-label={messages.leftSide?.downloadCV ?? "Download CV"}
           className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#0bafac] text-[#0bafac] text-sm font-medium hover:bg-[#0bafac] hover:text-white transition-colors duration-200"
         >

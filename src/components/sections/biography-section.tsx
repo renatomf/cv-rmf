@@ -39,7 +39,8 @@ export const BiographySection = () => {
       <p className="pb-4">{messages.biography.paragraph6}</p>
       <p className="pt-4 pb-1">
         <a
-          href="/pdf/AWS Certified Developer - Associate certificate.pdf"
+          href="/pdf/aws-certified-developer-associate.pdf"
+          className="text-muted-foreground hover:text-[#0bafac] font-semibold underline"
           download
         >
           {messages.biography.paragraph7}
@@ -63,7 +64,7 @@ export const BiographySection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={
-                          item.label === "Telefone" || item.label === "E-mail"
+                          item.label === "Telefone" || item.label === "Phone" || item.label === "E-mail" || item.label === "Email"
                             ? "hover:text-[#0bafac]"
                             : undefined
                         }

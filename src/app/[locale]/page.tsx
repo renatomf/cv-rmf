@@ -1,18 +1,22 @@
 import { notFound } from "next/navigation";
-import Home from "../(cv)/page";
+import Home from "@/components/home";
 
 const locales = ["pt", "en"];
 
-export default function Page({
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function Page({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = params.locale;
+  const { locale } = await params;
 
   if (!locales.includes(locale)) {
     notFound();
   }
 
-  return <Home locale={locale as "pt" | "en"} />;
+  return <Home />;
 }
