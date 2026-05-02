@@ -143,6 +143,9 @@ export const metadata: Record<string, Metadata> = {
     authors: [{ name: "Renato Marques" }],
     creator: "Renato Marques",
     publisher: "Renato Marques",
+    verification: {
+      google: "qaMymppOzfE3hEXNeBfSm2pQgDnQAee7hojMlTTU2Vw",
+    },
     openGraph: {
       type: "website",
       url: "https://renatomf.is-a.dev/en",

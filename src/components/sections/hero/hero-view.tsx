@@ -1,10 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 
-import { Button } from "./ui/button";
 
-export const Hero = () => {
+
+const videos = [
+  "/videos/video-9.mp4",
+  "/videos/video-3.mp4",
+  "/videos/video-5.mp4",
+];
+
+export const HeroView = () => {
   const interBubble = useRef<HTMLDivElement | null>(null);
   const curX = useRef(0);
   const curY = useRef(0);
@@ -12,14 +19,6 @@ export const Hero = () => {
   const tgY = useRef(0);
   const animationFrameId = useRef<number | null>(null);
 
-  // vídeos
-  const videos = [
-    "/videos/video-9.mp4",
-    "/videos/video-3.mp4",
-    "/videos/video-5.mp4",
-  ];
-
-  // estado para armazenar o vídeo atual
   const [currentVideo, setCurrentVideo] = useState(0);
 
   useEffect(() => {
@@ -55,7 +54,6 @@ export const Hero = () => {
   return (
     <div className="relative inset-0 w-full h-full">
       <div className="gradient-bg w-full h-full absolute top-0 left-0">
-        {/* Vídeo em background */}
         <video
           key={currentVideo}
           className="absolute inset-0 w-full h-full object-cover !bg-blend-screen opacity-25 z-0"
@@ -67,7 +65,6 @@ export const Hero = () => {
           <source src={videos[currentVideo]} type="video/mp4" />
         </video>
 
-        {/* SVG + Gradientes */}
         <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
           <defs>
             <filter id="goo" colorInterpolationFilters="sRGB">
@@ -95,7 +92,6 @@ export const Hero = () => {
           <div className="interactive" ref={interBubble}></div>
         </div>
 
-        {/* Botões de troca de vídeo */}
         <div className="absolute lg:bottom-10 md:bottom-19 right-10 z-20 hidden md:flex gap-2">
           {videos.map((_, index) => (
             <Button

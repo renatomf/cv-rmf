@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/components/language-context";
+import { useLanguage } from "@/i18n";
 
 interface Job {
   company: string;
@@ -11,17 +11,7 @@ interface Job {
 
 export const ExperienceSection = () => {
   const { messages } = useLanguage();
-
-  const jobs: Job[] = [
-    messages.experience.job1,
-    messages.experience.job2,
-    messages.experience.job3,
-    messages.experience.job4,
-    messages.experience.job5,
-    messages.experience.job6,
-    messages.experience.job7,
-    messages.experience.job8,
-  ];
+  const jobs: Job[] = messages.experience.jobs;
 
   return (
     <section id="cv_experience">
@@ -34,26 +24,10 @@ export const ExperienceSection = () => {
             <li key={index}>
               <div className="item">
                 <div className="item_top">
-                  <h5>
-                    {job.company}
-                  </h5>
-                  <span
-                    // style={{
-                    //   color: "#0bafac",
-                    //   background: "#dbf2f2",
-                    //   padding: "0 8px",
-                    //   borderRadius: "4px",
-                    //   fontWeight: 500,
-                    //   fontSize: "0.65em",
-                    //   whiteSpace: "nowrap",
-                    // }}
-                  >
-                    {job.period}
-                  </span>
+                  <h5>{job.company}</h5>
+                  <span>{job.period}</span>
                 </div>
-                <h3>
-                  {job.role}
-                </h3>
+                <h3>{job.role}</h3>
                 <p>{job.description}</p>
               </div>
             </li>
@@ -63,3 +37,4 @@ export const ExperienceSection = () => {
     </section>
   );
 };
+

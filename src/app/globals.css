@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+	--color-brand: var(--bg-primary);
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--font-sans: var(--font-geist-sans);
@@ -34,7 +35,8 @@
 	--popover: oklch(1 0 0);
 	--popover-foreground: oklch(0.145 0 0);
 	--primary: oklch(0.145 0 0);
-	--primary-foreground: oklch(0.3211 0 0) --secondary: oklch(0.97 0 0);
+	--primary-foreground: oklch(0.3211 0 0);
+	--secondary: oklch(0.97 0 0);
 	--secondary-foreground: oklch(0.3211 0 0);
 	--muted: oklch(0.9491 0 0);
 	--muted-foreground: oklch(0.556 0 0);
@@ -57,7 +59,8 @@
 	--popover: oklch(0.205 0 0);
 	--popover-foreground: oklch(0.985 0 0);
 	--primary: oklch(0.985 0 0);
-	--primary-foreground: oklch(0.6268 0 0) --secondary: oklch(0.269 0 0);
+	--primary-foreground: oklch(0.6268 0 0);
+	--secondary: oklch(0.269 0 0);
 	--secondary-foreground: oklch(0.985 0 0);
 	--muted: oklch(0.252 0 0);
 	--muted-foreground: oklch(0.708 0 0);
@@ -137,7 +140,7 @@ button {
   left: -130%;
   width: 130%;
   height: 100%;
-  background-color: #0bafac;
+  background-color: var(--bg-primary);
   clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
   transition: left 0.5s ease-in-out;
 }
@@ -983,7 +986,7 @@ h6 {
 }
 
 .fn_cs_info_items a:hover {
-	color: #0bafac
+	color: var(--bg-primary);
 }
 
 /*------------------------------------------------------------------*/
@@ -1752,5 +1755,14 @@ h6 {
 @media (max-width: 1024px) {
 	.rmf_cv .cv__content section:last-child {
 		margin-bottom: 50px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
 	}
 }

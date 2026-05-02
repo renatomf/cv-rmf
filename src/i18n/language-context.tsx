@@ -8,13 +8,12 @@ import {
   useState,
 } from "react";
 
-import messagesData from "@/data/messages.json";
-
-type Locale = "pt" | "en";
+import translationsData from "./translations.json";
+import { Locale, defaultLocale } from "./config";
 
 interface LanguageContextProps {
   locale: Locale;
-  messages: typeof messagesData["pt"];
+  messages: typeof translationsData["pt"];
   setLocale: (locale: Locale) => void;
 }
 
@@ -29,14 +28,14 @@ interface LanguageProviderProps {
 
 export const LanguageProvider = ({
   children,
-  locale: initialLocale = "pt",
+  locale: initialLocale = defaultLocale,
 }: LanguageProviderProps) => {
   const [locale, setLocale] = useState<Locale>(initialLocale);
 
   const value = useMemo(
     () => ({
       locale,
-      messages: messagesData[locale],
+      messages: translationsData[locale],
       setLocale,
     }),
     [locale]

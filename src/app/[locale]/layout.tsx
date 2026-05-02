@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import { Toaster } from "sonner";
+import { MotionConfig } from "motion/react";
 
-import { ThemeProvider } from "@/components/theme-provider";
-import { LanguageProvider } from "@/components/language-context";
+import { ThemeProvider } from "@/components/theme";
+import { LanguageProvider } from "@/i18n";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { metadata as siteMetadata } from "@/config/metadata";
+import { defaultLocale } from "@/i18n/config";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -64,7 +66,7 @@ function getJsonLd(locale: "pt" | "en") {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale: rawLocale } = await params;
-  const locale = rawLocale === "en" ? "en" : "pt";
+  const locale = rawLocale === "en" ? "en" : defaultLocale;
   const htmlLang = locale === "en" ? "en-US" : "pt-BR";
   const jsonLd = getJsonLd(locale);
 
@@ -79,23 +81,26 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className="bg-background text-foreground">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <LanguageProvider locale={locale}>
-            <Toaster
-              position="bottom-right"
-              toastOptions={{ style: { zIndex: 5000 } }}
-            />
-            <TooltipProvider>
-              {children}
-            </TooltipProvider>
-          </LanguageProvider>
-        </ThemeProvider>
+        <MotionConfig reducedMotion="user">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <LanguageProvider locale={locale}>
+              <Toaster
+                position="bottom-right"
+                toastOptions={{ style: { zIndex: 5000 } }}
+              />
+              <TooltipProvider>
+                {children}
+              </TooltipProvider>
+            </LanguageProvider>
+          </ThemeProvider>
+        </MotionConfig>
       </body>
     </html>
   );
 }
+

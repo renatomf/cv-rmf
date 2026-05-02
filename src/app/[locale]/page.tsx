@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import Home from "@/components/home";
 
-const locales = ["pt", "en"];
+import { locales, Locale } from "@/i18n/config";
+import { HomePage } from "./home-page";
 
-export function generateStaticParams() {
+export  function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
@@ -14,9 +14,9 @@ export default async function Page({
 }) {
   const { locale } = await params;
 
-  if (!locales.includes(locale)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 
-  return <Home />;
+  return <HomePage />;
 }

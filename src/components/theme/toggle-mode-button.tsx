@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Switch } from "./ui/switch";
+import { Switch } from "@/components/ui/switch";
 
 export function ThemeToggle() {
   const { theme, setTheme, systemTheme } = useTheme();
@@ -12,17 +12,11 @@ export function ThemeToggle() {
 
   if (!mounted) return null;
 
-  // Se o theme for "system", usamos o theme do sistema
   const currentTheme = theme === "system" ? systemTheme : theme;
   const isDark = currentTheme === "dark";
 
   const toggleTheme = () => {
-    // Se estiver seguindo o sistema, alternamos manualmente para o oposto
-    if (theme === "system") {
-      setTheme(isDark ? "light" : "dark");
-    } else {
-      setTheme(isDark ? "light" : "dark");
-    }
+    setTheme(isDark ? "light" : "dark");
   };
 
   return (

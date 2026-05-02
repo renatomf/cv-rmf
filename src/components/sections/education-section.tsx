@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { useLanguage } from "@/components/language-context";
+import { useLanguage } from "@/i18n";
 
 export const EducationSection = () => {
   const { messages } = useLanguage();
@@ -37,3 +39,4 @@ export const EducationSection = () => {
     </section>
   );
 };
+

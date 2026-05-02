@@ -1,0 +1,91 @@
+Listagem de caminhos de pasta para o volume OS
+O número de série do volume é 28C3-7D66
+C:\RENATO\PORTIFOLIO\RENATO_PORTIFOLIO\SRC
+|   css.d.ts
+|   middleware.ts
+|   
++---app
+|   |   globals.css
+|   |   icon.svg
+|   |   layout.tsx
+|   |   robots.ts
+|   |   sitemap.ts
+|   |   
+|   +---api
+|   |   \---contact
+|   |           email-template.ts
+|   |           route.ts
+|   |           
+|   \---[locale]
+|           error.tsx
+|           home-page.tsx
+|           layout.tsx
+|           opengraph-image.tsx
+|           page.tsx
+|           
++---components
+|   +---layout
+|   |       cv-layout.tsx
+|   |       navbar.tsx
+|   |       
+|   +---sections
+|   |   |   biography-section.tsx
+|   |   |   contact-section.tsx
+|   |   |   education-section.tsx
+|   |   |   experience-section.tsx
+|   |   |   profile-section.tsx
+|   |   |   
+|   |   +---hero
+|   |   |       animated-text.tsx
+|   |   |       hero-section.tsx
+|   |   |       hero-view.tsx
+|   |   |       index.ts
+|   |   |       
+|   |   \---skills
+|   |           skills-data.ts
+|   |           skills-sections.tsx
+|   |           
+|   +---shared
+|   |   |   loading-screen.tsx
+|   |   |   logo.tsx
+|   |   |   
+|   |   \---scroll
+|   |           index.ts
+|   |           scroll-down-indicator.tsx
+|   |           scroll-to-top-button.tsx
+|   |           
+|   +---theme
+|   |       index.ts
+|   |       theme-provider.tsx
+|   |       toggle-mode-button.tsx
+|   |       
+|   \---ui
+|           button.tsx
+|           form.tsx
+|           input.tsx
+|           label.tsx
+|           sonner.tsx
+|           switch.tsx
+|           textarea.tsx
+|           tooltip.tsx
+|           
++---config
+|       i18n.ts
+|       metadata.ts
+|       
++---hooks
+|       use-home-loading.ts
+|       use-home-scroll.ts
+|       use-mobile.ts
+|       
++---i18n
+|       index.ts
+|       language-context.tsx
+|       language-switcher.tsx
+|       translations.json
+|       
+\---lib
+        rate-limit.ts
+        sanitize.ts
+        utils.ts
+        

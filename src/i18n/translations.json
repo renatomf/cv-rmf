@@ -23,22 +23,25 @@
       "paragraph4": "Expertise em gerenciamento de estado (Redux, Zustand, Context API) e server-state com TanStack Query, integração com APIs REST, GraphQL e tRPC. Uso de TDD e testes automatizados como base para qualidade, aliado à liderança em estratégias de performance como code splitting, lazy loading e análise de dependências, com foco na eficiência, escalabilidade e melhoria contínua da experiência do usuário. Experiência com CI/CD e observabilidade, incluindo monitoramento e rastreamento de erros em produção com Sentry.",
       "paragraph5": "Atuação complementar em back-end com Node.js e bancos de dados PostgreSQL, MySQL e MongoDB, utilizando ORMs modernos como Prisma e Drizzle. Experiência com arquiteturas de microsserviços, ambientes em nuvem (AWS, Supabase, Firebase, NeonDB) e deploy em plataformas como Vercel e AWS, aplicando práticas de segurança baseadas no OWASP, garantindo proteção de dados, autenticação segura e mitigação de vulnerabilidades.",
       "paragraph6": "Experiência na utilização de IA de forma estratégica em todo o ciclo de desenvolvimento, utilizando Cursor, Claude, Copilot e ChatGPT para engenharia de prompts, geração, revisão e otimização de código e testes. Orquestração de fluxos assíncronos e background jobs com Inngest, promovendo automações escaláveis, aumento de produtividade e eficiência operacional.",
-      "paragraph7": "1 X AWS Developer Associate.",
+      "certLinkLabel": "1 X AWS Developer Associate.",
       "infoItems": [
-        { "label": "Nome", "value": "Renato Marques" },
-        { "label": "Data de nascimento", "value": "30 de novembro de 1976" },
-        { "label": "Idiomas", "value": "Português, Inglês" },
-        { "label": "Nacionalidade", "value": "Brasileiro" },
-        { "label": "Endereço", "value": "São Paulo, Brasil" },
+        { "label": "Nome", "value": "Renato Marques", "type": "text" },
+        { "label": "Data de nascimento", "value": "30 de novembro de 1976", "type": "text" },
+        { "label": "Idiomas", "value": "Português, Inglês", "type": "text" },
+        { "label": "Idade", "value": "", "type": "age" },
+        { "label": "Nacionalidade", "value": "Brasileiro", "type": "text" },
+        { "label": "Endereço", "value": "São Paulo, Brasil", "type": "text" },
         {
           "label": "Telefone",
           "value": "+55 (11) 97255-0341",
-          "link": "https://wa.me/5511972550341"
+          "link": "https://wa.me/5511972550341",
+          "type": "contact"
         },
         {
           "label": "E-mail",
           "value": "renatomardev@gmail.com",
-          "link": "mailto:renatomardev@gmail.com"
+          "link": "mailto:renatomardev@gmail.com",
+          "type": "contact"
         }
       ]
     },
@@ -70,83 +73,59 @@
     },
     "experience": {
       "title": "Experiência",
-      "job1": {
-        "role": "Desenvolvedor Full Stack",
-        "company": "LINKZ INFORMÁTICA",
-        "period": "02/2025 - PRESENTE",
-        "description": "Apps web e SaaS para publicidade digital com React e Next.js (SSR e Server Components), focados em experiências rápidas para campanhas e landing pages. Criação de CMSs personalizados para gestão de conteúdo e campanhas. Back-end com Node.js, PostgreSQL, APIs REST e tRPC para gestão de dados e métricas. Uso de LLMs para automação de processos, geração de conteúdo e otimização de fluxos de trabalho."
-      },
-      "job2": {
-        "role": "Desenvolvedor Front-End",
-        "company": "BRLINK / INGRAM MICRO",
-        "period": "10/2019 - 10/2024",
-        "description": "Arquitetura front-end enterprise com React, Next.js e Flutter, focada em escalabilidade, performance e manutenibilidade. Gerenciamento de estado com Context API e BLoC. Liderança em Design Systems com Material UI e Tailwind CSS, além de code reviews, definição de padrões e mentoria. Integração com AWS (EC2, S3, Lambda) via APIs REST. Evolução da cobertura de testes com Jest e Cypress."
-      },
-      "job3": {
-        "role": "Desenvolvedor Front-End",
-        "company": "ORTIZ GAMING",
-        "period": "03/2018 - 08/2019",
-        "description": "Plataforma web com Angular para gerenciamento remoto de máquinas em tempo real. Estado avançado com RxJS/NgRx; APIs REST de alta frequência com WebSockets e polling otimizado."
-      },
-      "job4": {
-        "role": "Desenvolvedor Front-End & UX Designer",
-        "company": "FITBANK",
-        "period": "02/2017 - 09/2018",
-        "description": "App de pagamentos com Angular, desenvolvendo interfaces responsivas para fluxos financeiros críticos. Atuação em UX Design e criação de identidade visual, além de interface mobile com Xamarin e colaboração com produto e back-end na definição de contratos de API."
-      },
-      "job5": {
-        "role": "Desenvolvedor Front-End & Designer Gráfico",
-        "company": "RM10 PUBLICIDADE",
-        "period": "04/2015 - 07/2016",
-        "description": "Criação de sites, hotsites, materiais impressos e e-mail marketing."
-      },
-      "job6": {
-        "role": "Desenvolvedor Front-End",
-        "company": "LINKZ INFORMÁTICA",
-        "period": "02/2012 - 12/2014",
-        "description": "Criação de sites, hotsites, aplicativos mobile, comércio eletrônico, apresentações multimídia, e-mail marketing, e-learning e materiais impressos."
-      },
-      "job7": {
-        "role": "Desenvolvedor Front-End & Designer Gráfico",
-        "company": "FISCOSOFT THOMSON REUTERS",
-        "period": "08/2010 - 10/2011",
-        "description": "Criação de sites, hotsites, materiais impressos e e-mail marketing."
-      },
-      "job8": {
-        "role": "Desenvolvedor Front-End",
-        "company": "CATHO ONLINE",
-        "period": "07/2008 - 06/2010",
-        "description": "Criação de cursos online (e-learning) nas áreas de Desenvolvimento Gerencial, Financeiro, Marketing, Vendas e Recursos Humanos."
-      }
+      "jobs": [
+        {
+          "role": "Desenvolvedor Full Stack",
+          "company": "LINKZ INFORMÁTICA",
+          "period": "02/2025 - PRESENTE",
+          "description": "Apps web e SaaS para publicidade digital com React e Next.js (SSR e Server Components), focados em experiências rápidas para campanhas e landing pages. Criação de CMSs personalizados para gestão de conteúdo e campanhas. Back-end com Node.js, PostgreSQL, APIs REST e tRPC para gestão de dados e métricas. Uso de LLMs para automação de processos, geração de conteúdo e otimização de fluxos de trabalho."
+        },
+        {
+          "role": "Desenvolvedor Front-End",
+          "company": "BRLINK / INGRAM MICRO",
+          "period": "10/2019 - 10/2024",
+          "description": "Arquitetura front-end enterprise com React, Next.js e Flutter, focada em escalabilidade, performance e manutenibilidade. Gerenciamento de estado com Context API e BLoC. Liderança em Design Systems com Material UI e Tailwind CSS, além de code reviews, definição de padrões e mentoria. Integração com AWS (EC2, S3, Lambda) via APIs REST. Evolução da cobertura de testes com Jest e Cypress."
+        },
+        {
+          "role": "Desenvolvedor Front-End",
+          "company": "ORTIZ GAMING",
+          "period": "03/2018 - 08/2019",
+          "description": "Plataforma web com Angular para gerenciamento remoto de máquinas em tempo real. Estado avançado com RxJS/NgRx; APIs REST de alta frequência com WebSockets e polling otimizado."
+        },
+        {
+          "role": "Desenvolvedor Front-End & UX Designer",
+          "company": "FITBANK",
+          "period": "02/2017 - 09/2018",
+          "description": "App de pagamentos com Angular, desenvolvendo interfaces responsivas para fluxos financeiros críticos. Atuação em UX Design e criação de identidade visual, além de interface mobile com Xamarin e colaboração com produto e back-end na definição de contratos de API."
+        },
+        {
+          "role": "Desenvolvedor Front-End & Designer Gráfico",
+          "company": "RM10 PUBLICIDADE",
+          "period": "04/2015 - 07/2016",
+          "description": "Criação de sites, hotsites, materiais impressos e e-mail marketing."
+        },
+        {
+          "role": "Desenvolvedor Front-End",
+          "company": "LINKZ INFORMÁTICA",
+          "period": "02/2012 - 12/2014",
+          "description": "Criação de sites, hotsites, aplicativos mobile, comércio eletrônico, apresentações multimídia, e-mail marketing, e-learning e materiais impressos."
+        },
+        {
+          "role": "Desenvolvedor Front-End & Designer Gráfico",
+          "company": "FISCOSOFT THOMSON REUTERS",
+          "period": "08/2010 - 10/2011",
+          "description": "Criação de sites, hotsites, materiais impressos e e-mail marketing."
+        },
+        {
+          "role": "Desenvolvedor Front-End",
+          "company": "CATHO ONLINE",
+          "period": "07/2008 - 06/2010",
+          "description": "Criação de cursos online (e-learning) nas áreas de Desenvolvimento Gerencial, Financeiro, Marketing, Vendas e Recursos Humanos."
+        }
+      ]
     },
     "skills": {
-      "title": "Habilidades",
-      "react": "React",
-      "react_percent": "90%",
-      "next": "Nextjs",
-      "next_percent": "90%",
-      "html": "HTML",
-      "html_percent": "95%",
-      "vue": "Vue",
-      "vue_percent": "85%",
-      "angular": "Angular",
-      "angular_percent": "80%",
-      "flutter": "Flutter",
-      "flutter_percent": "85%",
-      "react_native": "React Native",
-      "react_native_percent": "85%",
-      "css": "CSS",
-      "css_percent": "95%",
-      "javascript": "Javascript",
-      "javascript_percent": "85%",
-      "typescript": "Typescript",
-      "typescript_percent": "85%",
-      "node": "Node",
-      "node_percent": "80%",
-      "figma": "Figma",
-      "figma_percent": "85%",
-      "adobe": "Adobe Suite",
-      "adobe_percent": "80%"
+      "title": "Habilidades"
     },
     "header": {
       "hello": "Olá! Eu sou",
@@ -208,22 +187,25 @@
       "paragraph4": "Expertise in state management (Redux, Zustand, Context API) and server-state with TanStack Query, integration with REST, GraphQL, and tRPC APIs. Use of TDD and automated testing as a foundation for quality, combined with leadership in performance strategies such as code splitting, lazy loading, and dependency analysis, focusing on efficiency, scalability, and continuous improvement of user experience. Experience with CI/CD and observability, including monitoring and error tracking in production with Sentry.",
       "paragraph5": "Complementary back-end experience with Node.js and databases PostgreSQL, MySQL, and MongoDB, using modern ORMs such as Prisma and Drizzle. Experience with microservices architectures, cloud environments (AWS, Supabase, Firebase, NeonDB), and deployment on platforms such as Vercel and AWS, applying security practices based on OWASP, ensuring data protection, secure authentication, and vulnerability mitigation.",
       "paragraph6": "Experience in using AI strategically throughout the development lifecycle, using Cursor, Claude, Copilot, and ChatGPT for prompt engineering, code generation, review, and optimization of code and tests. Orchestration of asynchronous flows and background jobs with Inngest, promoting scalable automations, increased productivity, and operational efficiency.",
-      "paragraph7": "1 X AWS Developer Associate.",
+      "certLinkLabel": "1 X AWS Developer Associate.",
       "infoItems": [
-        { "label": "Name", "value": "Renato Marques" },
-        { "label": "Birthday", "value": "November 30, 1976" },
-        { "label": "Languages", "value": "Portuguese, English" },
-        { "label": "Nationality", "value": "Brazilian" },
-        { "label": "Address", "value": "São Paulo, Brazil" },
+        { "label": "Name", "value": "Renato Marques", "type": "text" },
+        { "label": "Birthday", "value": "November 30, 1976", "type": "text" },
+        { "label": "Languages", "value": "Portuguese, English", "type": "text" },
+        { "label": "Age", "value": "", "type": "age" },
+        { "label": "Nationality", "value": "Brazilian", "type": "text" },
+        { "label": "Address", "value": "São Paulo, Brazil", "type": "text" },
         {
           "label": "Phone",
           "value": "+55 (11) 97255-0341",
-          "link": "https://wa.me/5511972550341"
+          "link": "https://wa.me/5511972550341",
+          "type": "contact"
         },
         {
           "label": "Email",
           "value": "renatomardev@gmail.com",
-          "link": "mailto:renatomardev@gmail.com"
+          "link": "mailto:renatomardev@gmail.com",
+          "type": "contact"
         }
       ]
     },
@@ -255,83 +237,59 @@
     },
     "experience": {
       "title": "Experience",
-      "job1": {
-        "role": "Full Stack Developer",
-        "company": "LINKZ INFORMÁTICA",
-        "period": "02/2025 - Present",
-        "description": "Web apps and SaaS platforms for digital advertising built with React and Next.js (SSR and Server Components), focused on fast experiences for campaigns and landing pages. Development of custom CMSs for content and campaign management. Back-end with Node.js, PostgreSQL, REST APIs, and tRPC for handling data and metrics. Use of LLMs for process automation, content generation, and workflow optimization."
-      },
-      "job2": {
-        "role": "Front-End Developer",
-        "company": "BRLINK / INGRAM MICRO",
-        "period": "10/2019 - 10/2024",
-        "description": "Enterprise front-end architecture with React, Next.js, and Flutter, focused on scalability, performance, and maintainability. State management with Context API and BLoC. Leadership in Design Systems using Material UI and Tailwind CSS, including code reviews, standards definition, and mentoring. Integration with AWS (EC2, S3, Lambda) via REST APIs. Improved test coverage with Jest and Cypress."
-      },
-      "job3": {
-        "role": "Front-End Developer",
-        "company": "ORTIZ GAMING",
-        "period": "03/2018 - 08/2019",
-        "description": "Web platform with Angular for real-time remote machine management. Advanced state management with RxJS/NgRx; high-frequency REST APIs with WebSockets and optimized polling."
-      },
-      "job4": {
-        "role": "Front-End Developer & UX Designer",
-        "company": "FITBANK",
-        "period": "02/2017 - 09/2018",
-        "description": "Payment application built with Angular, developing responsive interfaces for critical financial workflows. Involved in UX Design and visual identity creation, as well as mobile interface development with Xamarin, collaborating with product and back-end teams in defining API contracts."
-      },
-      "job5": {
-        "role": "Front-End Developer & Graphic Designer",
-        "company": "RM10 PUBLICIDADE",
-        "period": "04/2015 - 07/2016",
-        "description": "Responsible for creating websites, hotsites, printed materials, and email marketing campaigns."
-      },
-      "job6": {
-        "role": "Front-End Developer",
-        "company": "LINKZ INFORMÁTICA",
-        "period": "02/2012 - 12/2014",
-        "description": "Responsible for creating websites, hotsites, mobile apps, e-commerce, multimedia presentations, email marketing, e-learning content, and printed materials."
-      },
-      "job7": {
-        "role": "Front-End Developer",
-        "company": "FISCOSOFT THOMSON REUTERS",
-        "period": "08/2010 - 10/2011",
-        "description": "Responsible for creating websites, hotsites, printed materials, and email marketing campaigns."
-      },
-      "job8": {
-        "role": "Front-End Developer",
-        "company": "CATHO ONLINE",
-        "period": "07/2008 - 06/2010",
-        "description": "Responsible for creating online courses (e-learning) in the areas of Managerial Development, Finance, Marketing, Sales, and Human Resources."
-      }
+      "jobs": [
+        {
+          "role": "Full Stack Developer",
+          "company": "LINKZ INFORMÁTICA",
+          "period": "02/2025 - Present",
+          "description": "Web apps and SaaS platforms for digital advertising built with React and Next.js (SSR and Server Components), focused on fast experiences for campaigns and landing pages. Development of custom CMSs for content and campaign management. Back-end with Node.js, PostgreSQL, REST APIs, and tRPC for handling data and metrics. Use of LLMs for process automation, content generation, and workflow optimization."
+        },
+        {
+          "role": "Front-End Developer",
+          "company": "BRLINK / INGRAM MICRO",
+          "period": "10/2019 - 10/2024",
+          "description": "Enterprise front-end architecture with React, Next.js, and Flutter, focused on scalability, performance, and maintainability. State management with Context API and BLoC. Leadership in Design Systems using Material UI and Tailwind CSS, including code reviews, standards definition, and mentoring. Integration with AWS (EC2, S3, Lambda) via REST APIs. Improved test coverage with Jest and Cypress."
+        },
+        {
+          "role": "Front-End Developer",
+          "company": "ORTIZ GAMING",
+          "period": "03/2018 - 08/2019",
+          "description": "Web platform with Angular for real-time remote machine management. Advanced state management with RxJS/NgRx; high-frequency REST APIs with WebSockets and optimized polling."
+        },
+        {
+          "role": "Front-End Developer & UX Designer",
+          "company": "FITBANK",
+          "period": "02/2017 - 09/2018",
+          "description": "Payment application built with Angular, developing responsive interfaces for critical financial workflows. Involved in UX Design and visual identity creation, as well as mobile interface development with Xamarin, collaborating with product and back-end teams in defining API contracts."
+        },
+        {
+          "role": "Front-End Developer & Graphic Designer",
+          "company": "RM10 PUBLICIDADE",
+          "period": "04/2015 - 07/2016",
+          "description": "Responsible for creating websites, hotsites, printed materials, and email marketing campaigns."
+        },
+        {
+          "role": "Front-End Developer",
+          "company": "LINKZ INFORMÁTICA",
+          "period": "02/2012 - 12/2014",
+          "description": "Responsible for creating websites, hotsites, mobile apps, e-commerce, multimedia presentations, email marketing, e-learning content, and printed materials."
+        },
+        {
+          "role": "Front-End Developer",
+          "company": "FISCOSOFT THOMSON REUTERS",
+          "period": "08/2010 - 10/2011",
+          "description": "Responsible for creating websites, hotsites, printed materials, and email marketing campaigns."
+        },
+        {
+          "role": "Front-End Developer",
+          "company": "CATHO ONLINE",
+          "period": "07/2008 - 06/2010",
+          "description": "Responsible for creating online courses (e-learning) in the areas of Managerial Development, Finance, Marketing, Sales, and Human Resources."
+        }
+      ]
     },
     "skills": {
-      "title": "Skills",
-      "react": "React",
-      "react_percent": "90%",
-      "next": "Nextjs",
-      "next_percent": "90%",
-      "html": "HTML",
-      "html_percent": "95%",
-      "vue": "Vue",
-      "vue_percent": "85%",
-      "angular": "Angular",
-      "angular_percent": "80%",
-      "flutter": "Flutter",
-      "flutter_percent": "85%",
-      "react_native": "React Native",
-      "react_native_percent": "85%",
-      "css": "CSS",
-      "css_percent": "95%",
-      "javascript": "Javascript",
-      "javascript_percent": "85%",
-      "typescript": "Typescript",
-      "typescript_percent": "85%",
-      "node": "Node",
-      "node_percent": "80%",
-      "figma": "Figma",
-      "figma_percent": "85%",
-      "adobe": "Adobe Suite",
-      "adobe_percent": "80%"
+      "title": "Skills"
     },
     "header": {
       "hello": "Hi! I'm",

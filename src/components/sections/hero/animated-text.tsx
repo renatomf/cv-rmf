@@ -2,7 +2,8 @@
 
 import { motion } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
-import { useLanguage } from "@/components/language-context";
+import { useLanguage } from "@/i18n";
+
 
 interface Word {
   text: string;
@@ -103,8 +104,8 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
     ];
 
     return [
-      animatedWords1.map((text, i) => ({ ...baseLayout[i], text })),
-      animatedWords2.map((text, i) => ({ ...baseLayout[i], text })),
+      animatedWords1.map((text: string, i: number) => ({ ...baseLayout[i], text })),
+      animatedWords2.map((text: string, i: number) => ({ ...baseLayout[i], text })),
     ];
   }, [messages?.header?.animatedWords1, messages?.header?.animatedWords2]);
 
@@ -174,3 +175,4 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
     </motion.div>
   );
 };
+

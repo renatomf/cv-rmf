@@ -14,9 +14,8 @@ import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "./toggle-mode-button";
-import { LanguageSwitcher } from "./language-switcher";
-import { useLanguage } from "@/components/language-context";
+import { ThemeToggle } from "@/components/theme";
+import { LanguageSwitcher, useLanguage } from "@/i18n";
 
 interface NavbarProps {
   scrollToSection: (href: string) => void;
@@ -35,31 +34,11 @@ export const Navbar = ({
   const menuItems = useMemo(
     () => [
       { icon: Home, label: messages.nav?.home ?? "Início", href: "#cv_header" },
-      {
-        icon: User,
-        label: messages.nav?.biography ?? "Biografia",
-        href: "#cv_biography",
-      },
-      {
-        icon: GraduationCap,
-        label: messages.nav?.education ?? "Educação",
-        href: "#cv_education",
-      },
-      {
-        icon: Briefcase,
-        label: messages.nav?.experience ?? "Experiência",
-        href: "#cv_experience",
-      },
-      {
-        icon: Wrench,
-        label: messages.nav?.skills ?? "Habilidades",
-        href: "#cv_skills",
-      },
-      {
-        icon: Mail,
-        label: messages.nav?.contact ?? "Contato",
-        href: "#contact",
-      },
+      { icon: User, label: messages.nav?.biography ?? "Biografia", href: "#cv_biography" },
+      { icon: GraduationCap, label: messages.nav?.education ?? "Educação", href: "#cv_education" },
+      { icon: Briefcase, label: messages.nav?.experience ?? "Experiência", href: "#cv_experience" },
+      { icon: Wrench, label: messages.nav?.skills ?? "Habilidades", href: "#cv_skills" },
+      { icon: Mail, label: messages.nav?.contact ?? "Contato", href: "#contact" },
     ],
     [messages],
   );
@@ -77,7 +56,6 @@ export const Navbar = ({
       transition={{ duration: 0.3, ease: "easeOut", delay: 0.05 }}
       className="navbar fixed top-0 left-0 right-0 h-[70px] xl:h-[50px] z-[10000] pl-[50px] pr-[70px] flex items-center justify-between text-white xl:text-black bg-black xl:bg-transparent"
     >
-      {/* Botão de menu */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -94,7 +72,6 @@ export const Navbar = ({
         </Button>
       </motion.div>
 
-      {/* Toggle tema e idioma */}
       <motion.div
         className="hidden md:flex flex-row items-center gap-2"
         initial={{ opacity: 0, y: -50 }}
@@ -105,7 +82,6 @@ export const Navbar = ({
         <LanguageSwitcher />
       </motion.div>
 
-      {/* Menu lateral */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
@@ -124,12 +100,11 @@ export const Navbar = ({
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3 }}
             >
-              {/* Botão de fechar */}
               <div className="absolute top-4 right-4 z-10">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-10 w-10 rounded-full bg-white/20 hover:bg-[#0bafac] backdrop-blur"
+                  className="h-10 w-10 rounded-full bg-white/20 hover:bg-brand backdrop-blur"
                   onClick={() => setIsMenuOpen(false)}
                   aria-label={messages.nav?.closeMenu ?? "Fechar menu"}
                 >
@@ -137,24 +112,19 @@ export const Navbar = ({
                 </Button>
               </div>
 
-              {/* Itens do menu */}
               <div className="p-4 flex flex-col gap-2 mt-14">
                 {menuItems.map((item) => (
                   <Button
                     key={item.href}
                     variant="ghost"
-                    className={`w-full justify-start text-left h-14 px-4 hover:bg-accent/5 hover:text-[#0bafac] text-base ${
-                      activeSection === item.href
-                        ? "text-[#0bafac]"
-                        : "text-white"
+                    className={`w-full justify-start text-left h-14 px-4 hover:bg-accent/5 hover:text-brand text-base ${
+                      activeSection === item.href ? "text-brand" : "text-white"
                     }`}
                     onClick={() => {
                       scrollToSection(item.href);
                       setIsMenuOpen(false);
                     }}
-                    aria-current={
-                      activeSection === item.href ? "page" : undefined
-                    }
+                    aria-current={activeSection === item.href ? "page" : undefined}
                   >
                     <item.icon className="mr-4 h-6 w-6" />
                     {item.label}
@@ -162,7 +132,6 @@ export const Navbar = ({
                 ))}
               </div>
 
-              {/* Tema e idioma dentro do menu */}
               <div className="flex flex-col gap-4 mt-8 pt-6 border-t border-white/20 px-4">
                 <div className="flex items-center justify-between p-4 bg-black rounded-lg">
                   <span className="text-sm font-medium text-white">
@@ -184,3 +153,4 @@ export const Navbar = ({
     </motion.nav>
   );
 };
+

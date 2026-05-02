@@ -18,7 +18,7 @@ export default function Error({
         <p className="text-muted-foreground mb-6">Ocorreu um erro inesperado. Tente novamente.</p>
         <button
           onClick={() => window.location.reload()}
-          className="px-4 py-2 rounded-md border border-[#0bafac] text-[#0bafac] text-sm font-medium hover:bg-[#0bafac] hover:text-white transition-colors duration-200"
+          className="px-4 py-2 rounded-md border border-brand text-brand text-sm font-medium hover:bg-brand hover:text-white transition-colors duration-200"
         >
           Recarregar página
         </button>

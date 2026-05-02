@@ -51,7 +51,7 @@ export function ScrollToTopButton({ scrollToSection }: ScrollToTopButtonProps) {
             transition={{ duration: 0.3 }}
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="flex items-center justify-center w-12 h-12 rounded-lg dark:text-black text-white shadow-lg bg-primary hover:bg-[#0bafac] focus:outline-none focus:ring-2 focus:ring-bg-primary/80"
+            className="flex items-center justify-center w-12 h-12 rounded-lg dark:text-black text-white shadow-lg bg-primary hover:bg-brand focus:outline-none focus:ring-2 focus:ring-brand/80"
           >
             <ArrowUpFromLine className="w-6 h-6" />
           </motion.button>

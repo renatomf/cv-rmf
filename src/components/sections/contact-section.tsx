@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { useLanguage } from "@/components/language-context";
+import { useLanguage } from "@/i18n";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -13,10 +13,10 @@ import { Label } from "@/components/ui/label";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 const contactSchema = z.object({
-  name: z.string().min(1),
-  email: z.string().email(),
-  phone: z.string().optional(),
-  message: z.string().min(1),
+  name: z.string().min(1).max(100),
+  email: z.email().max(200),
+  phone: z.string().max(30).optional(),
+  message: z.string().min(1).max(2000),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -25,10 +25,9 @@ export const ContactSection = () => {
   const { locale, messages } = useLanguage();
 
   const errorMessages: Record<string, string> = {
-    name: messages.contact.nameRequired || "Por favor, informe seu nome",
-    email: messages.contact.emailInvalid || "E-mail inválido",
-    message:
-      messages.contact.messageRequired || "Por favor, escreva uma mensagem",
+    name: messages.contact.nameRequired ?? "Por favor, informe seu nome",
+    email: messages.contact.emailInvalid ?? "E-mail inválido",
+    message: messages.contact.messageRequired ?? "Por favor, escreva uma mensagem",
   };
 
   const {
@@ -50,32 +49,25 @@ export const ContactSection = () => {
 
       if (res.ok) {
         toast.success(
-          messages.contact.success || "Mensagem enviada com sucesso!",
+          messages.contact.success ?? "Mensagem enviada com sucesso!",
           {
-            icon: <FaCheckCircle style={{ color: "#0bafac" }} />,
-            style: {
-              border: "1px solid #d1d5db",
-              color: "black",
-            },
+            icon: <FaCheckCircle style={{ color: "var(--bg-primary)" }} />,
+            style: { border: "1px solid #d1d5db", color: "black" },
           }
         );
         reset();
       } else {
         toast.error(
-          messages.contact.errorSending ||
-            "Erro ao enviar o formulário. Tente novamente.",
+          messages.contact.errorSending ?? "Erro ao enviar o formulário. Tente novamente.",
           {
             icon: <FaTimesCircle style={{ color: "#e02424" }} />,
-            style: {
-              border: "1px solid #e02424",
-              color: "#e02424",
-            },
+            style: { border: "1px solid #e02424", color: "#e02424" },
           }
         );
       }
     } catch {
       toast.error(
-        messages.contact.errorRequest || "Erro na requisição. Tente novamente."
+        messages.contact.errorRequest ?? "Erro na requisição. Tente novamente."
       );
     }
   };
@@ -83,119 +75,95 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="section_contact">
       <div className="section_title">
-        <h3>{messages.contact.title || "Contato"}</h3>
+        <h3>{messages.contact.title ?? "Contato"}</h3>
       </div>
-      <form
-        className="contact_form"
-        onSubmit={handleSubmit(onSubmit)}
-        noValidate
-      >
+      <form className="contact_form" onSubmit={handleSubmit(onSubmit)} noValidate>
         {Object.keys(errors).length > 0 && (
           <div className="empty_notice text-red-500 text-sm mb-4" role="alert">
             <span>
-              {messages.contact.error ||
-                "Por favor, preencha os campos obrigatórios!"}
+              {messages.contact.error ?? "Por favor, preencha os campos obrigatórios!"}
             </span>
           </div>
         )}
 
         <div className="items_wrap">
           <div className="items">
-            {/* Nome */}
             <div className="item half">
               <Label htmlFor="name" className="sr-only">
-                {messages.contact.name || "Nome"}
+                {messages.contact.name ?? "Nome"}
               </Label>
               <div className="input_wrapper">
                 <Input
                   id="name"
-                  placeholder={`${messages.contact.name || "Nome"} *`}
+                  placeholder={`${messages.contact.name ?? "Nome"} *`}
                   {...register("name")}
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
                 {errors.name && (
-                  <p
-                    id="name-error"
-                    className="!text-destructive text-xs mt-1"
-                    role="alert"
-                  >
+                  <p id="name-error" className="!text-destructive text-xs mt-1" role="alert">
                     {errorMessages["name"]}
                   </p>
                 )}
               </div>
             </div>
 
-            {/* Email */}
             <div className="item half">
               <Label htmlFor="email" className="sr-only">
-                {messages.contact.email || "E-mail"}
+                {messages.contact.email ?? "E-mail"}
               </Label>
               <div className="input_wrapper">
                 <Input
                   id="email"
                   type="email"
-                  placeholder={`${messages.contact.email || "E-mail"} *`}
+                  placeholder={`${messages.contact.email ?? "E-mail"} *`}
                   {...register("email")}
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
                 {errors.email && (
-                  <p
-                    id="email-error"
-                    className="!text-destructive text-xs mt-1"
-                    role="alert"
-                  >
+                  <p id="email-error" className="!text-destructive text-xs mt-1" role="alert">
                     {errorMessages["email"]}
                   </p>
                 )}
               </div>
             </div>
 
-            {/* Telefone */}
             <div className="item">
               <Label htmlFor="phone" className="sr-only">
-                {messages.contact.phone || "Telefone"}
+                {messages.contact.phone ?? "Telefone"}
               </Label>
               <div className="input_wrapper">
                 <Input
                   id="phone"
-                  placeholder={messages.contact.phone || "Telefone"}
+                  placeholder={messages.contact.phone ?? "Telefone"}
                   {...register("phone")}
                 />
               </div>
             </div>
 
-            {/* Mensagem */}
             <div className="item">
               <Label htmlFor="message" className="sr-only">
-                {messages.contact.message || "Mensagem"}
+                {messages.contact.message ?? "Mensagem"}
               </Label>
               <div className="input_wrapper">
                 <Textarea
                   id="message"
-                  placeholder={messages.contact.message || "Mensagem"}
+                  placeholder={messages.contact.message ?? "Mensagem"}
                   {...register("message")}
                   rows={5}
                   className="resize-none"
                   aria-invalid={!!errors.message}
-                  aria-describedby={
-                    errors.message ? "message-error" : undefined
-                  }
+                  aria-describedby={errors.message ? "message-error" : undefined}
                 />
                 {errors.message && (
-                  <p
-                    id="message-error"
-                    className="!text-destructive text-xs mt-1"
-                    role="alert"
-                  >
+                  <p id="message-error" className="!text-destructive text-xs mt-1" role="alert">
                     {errorMessages["message"]}
                   </p>
                 )}
               </div>
             </div>
 
-            {/* Botão */}
             <div className="item">
               <Button
                 variant="send"
@@ -205,8 +173,8 @@ export const ContactSection = () => {
                 disabled={isSubmitting}
               >
                 {isSubmitting
-                  ? messages.contact.sending || "Enviando..."
-                  : messages.contact.send || "Enviar"}
+                  ? messages.contact.sending ?? "Enviando..."
+                  : messages.contact.send ?? "Enviar"}
               </Button>
             </div>
             <div className="h-12" />
@@ -216,3 +184,4 @@ export const ContactSection = () => {
     </section>
   );
 };
+

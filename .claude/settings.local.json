@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Move-Item \"c:\\\\RENATO\\\\PORTIFOLIO\\\\renato_portifolio\\\\src\\\\lib\\\\email-template.ts\" \"c:\\\\RENATO\\\\PORTIFOLIO\\\\renato_portifolio\\\\src\\\\app\\\\api\\\\contact\\\\email-template.ts\")"
+    ]
+  }
+}

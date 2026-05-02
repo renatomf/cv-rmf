@@ -1,4 +1,6 @@
-import { useLanguage } from "@/components/language-context";
+"use client";
+
+import { useLanguage } from "@/i18n";
 
 const calculateAge = () => {
   const birth = new Date(1976, 10, 30);
@@ -14,16 +16,11 @@ const calculateAge = () => {
 export const BiographySection = () => {
   const { locale, messages } = useLanguage();
 
-  const ageItem = {
-    label: locale === "pt" ? "Idade" : "Age",
-    value: locale === "pt" ? `${calculateAge()} anos` : `${calculateAge()} years`,
-  };
+  const ageValue = locale === "pt" ? `${calculateAge()} anos` : `${calculateAge()} years`;
 
-  const infoItems = [
-    ...messages.biography.infoItems.slice(0, 3),
-    ageItem,
-    ...messages.biography.infoItems.slice(3),
-  ];
+  const infoItems = messages.biography.infoItems.map((item) =>
+    item.type === "age" ? { ...item, value: ageValue } : item
+  );
 
   return (
     <section id="cv_biography">
@@ -40,47 +37,39 @@ export const BiographySection = () => {
       <p className="pt-4 pb-1">
         <a
           href="/pdf/aws-certified-developer-associate.pdf"
-          className="text-muted-foreground hover:text-[#0bafac] font-semibold underline"
+          className="text-muted-foreground hover:text-brand font-semibold underline"
           download
         >
-          {messages.biography.paragraph7}
+          {messages.biography.certLinkLabel}
         </a>
       </p>
 
       <div className="fn_cs_info_items">
         <ul>
-          {infoItems.map(
-            (
-              item: { label: string; value: string; link?: string },
-              index: number
-            ) => (
-              <li key={index}>
-                <p>
-                  {item.label}:{" "}
-                  <span>
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={
-                          item.label === "Telefone" || item.label === "Phone" || item.label === "E-mail" || item.label === "Email"
-                            ? "hover:text-[#0bafac]"
-                            : undefined
-                        }
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      item.value
-                    )}
-                  </span>
-                </p>
-              </li>
-            )
-          )}
+          {infoItems.map((item, index) => (
+            <li key={index}>
+              <p>
+                {item.label}:{" "}
+                <span>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={item.type === "contact" ? "hover:text-brand" : undefined}
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </span>
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
   );
 };
+

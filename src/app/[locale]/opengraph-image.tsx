@@ -4,25 +4,27 @@ export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export async function getImageMetadata({
+export async function generateImageMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return {
-    alt: locale === "en"
-      ? "Renato Marques — Senior Front-End Developer | Full Stack"
-      : "Renato Marques — Desenvolvedor Front-End Sênior | Full Stack",
-    ...size,
-    contentType,
-  };
+  return [
+    {
+      id: "main",
+      alt: locale === "en"
+        ? "Renato Marques — Senior Front-End Developer | Full Stack"
+        : "Renato Marques — Desenvolvedor Front-End Sênior | Full Stack",
+    },
+  ];
 }
 
 export default async function Image({
   params,
 }: {
   params: Promise<{ locale: string }>;
+  id: string;
 }) {
   const { locale } = await params;
   const isEn = locale === "en";

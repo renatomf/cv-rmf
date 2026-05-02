@@ -1,13 +1,13 @@
 "use client";
 
-import { Hero } from "../hero";
-import { TextAnimated } from "../text-animated";
+import { TextAnimated } from "./animated-text";
+import { HeroView } from "./hero-view";
 
-interface RightHeaderSectionProps {
-  loading: boolean; // recebe do Home
+interface HeroSectionProps {
+  loading: boolean;
 }
 
-export const RightHeaderSection = ({ loading }: RightHeaderSectionProps) => {
+export const HeroSection = ({ loading }: HeroSectionProps) => {
   return (
     <section
       id="hero-header"
@@ -18,7 +18,7 @@ export const RightHeaderSection = ({ loading }: RightHeaderSectionProps) => {
       </div>
 
       <div className="absolute inset-0">
-        <Hero />
+        <HeroView />
       </div>
     </section>
   );
