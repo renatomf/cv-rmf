@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import { Toaster } from "sonner";
-import { MotionConfig } from "motion/react";
-
-import { ThemeProvider } from "@/components/theme";
+import { ThemeProvider, ReducedMotionConfig } from "@/components/theme";
 import { LanguageProvider } from "@/i18n";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { metadata as siteMetadata } from "@/config/metadata";
@@ -81,7 +79,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className="bg-background text-foreground">
-        <MotionConfig reducedMotion="user">
+        <ReducedMotionConfig>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -98,7 +96,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               </TooltipProvider>
             </LanguageProvider>
           </ThemeProvider>
-        </MotionConfig>
+        </ReducedMotionConfig>
       </body>
     </html>
   );

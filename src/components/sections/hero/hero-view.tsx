@@ -13,6 +13,7 @@ const videos = [
 
 export const HeroView = () => {
   const interBubble = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const curX = useRef(0);
   const curY = useRef(0);
   const tgX = useRef(0);
@@ -27,17 +28,17 @@ export const HeroView = () => {
       curY.current += (tgY.current - curY.current) / 20;
 
       if (interBubble.current) {
-        interBubble.current.style.transform = `translate(${Math.round(
-          curX.current
-        )}px, ${Math.round(curY.current)}px)`;
+        interBubble.current.style.transform = `translate(${Math.round(curX.current)}px, ${Math.round(curY.current)}px)`;
       }
 
       animationFrameId.current = requestAnimationFrame(move);
     }
 
     function onMouseMove(event: MouseEvent) {
-      tgX.current = event.clientX;
-      tgY.current = event.clientY;
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      tgX.current = event.clientX - rect.left - rect.width / 2;
+      tgY.current = event.clientY - rect.top - rect.height / 2;
     }
 
     window.addEventListener("mousemove", onMouseMove);
@@ -53,7 +54,7 @@ export const HeroView = () => {
 
   return (
     <div className="relative inset-0 w-full h-full">
-      <div className="gradient-bg w-full h-full absolute top-0 left-0">
+      <div className="gradient-bg w-full h-full absolute top-0 left-0" ref={containerRef}>
         <video
           key={currentVideo}
           className="absolute inset-0 w-full h-full object-cover !bg-blend-screen opacity-25 z-0"
