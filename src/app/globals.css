@@ -1732,6 +1732,9 @@ h6 {
 
 	.fn_cs_boxed_list .item_top span {
 		margin-left: 0px;
+		font-size: medium;
+		justify-content: center;
+		margin-top: 1rem;
 	}
 	.fn_cs_boxed_list .item_top {
 			flex-direction: column;
@@ -1755,6 +1758,26 @@ h6 {
 @media (max-width: 1024px) {
 	.rmf_cv .cv__content section:last-child {
 		margin-bottom: 50px;
+	}
+}
+
+@media (max-width: 767px) {
+	.rmf_cv .cv__bg {
+		width: 100%;
+		left: -100%;
+		clip-path: none;
+	}
+
+	.rmf_cv .cv__bg2 {
+		display: none;
+	}
+
+	#cv_education .fn_cs_boxed_list .item_top h5 {
+		width: 100%;
+	}
+
+	#cv_education .fn_cs_boxed_list .item_top span {
+		text-align: center;
 	}
 }
 

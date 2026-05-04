@@ -1,7 +1,8 @@
 "use client";
 
-import { TextAnimated } from "./animated-text";
+
 import { HeroView } from "./hero-view";
+import { TextAnimated } from "./text-animated";
 
 interface HeroSectionProps {
   loading: boolean;

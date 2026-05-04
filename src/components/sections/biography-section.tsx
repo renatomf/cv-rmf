@@ -37,7 +37,7 @@ export const BiographySection = () => {
       <p className="pt-4 pb-1">
         <a
           href="/pdf/aws-certified-developer-associate.pdf"
-          className="text-muted-foreground hover:text-brand font-semibold underline"
+          className="text-brand font-semibold underline"
           download
         >
           {messages.biography.certLinkLabel}
