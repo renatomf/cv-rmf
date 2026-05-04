@@ -400,7 +400,7 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
         ))}
       </motion.div>
 
-      <button
+      {/* <button
         onClick={() => setPaused((p) => !p)}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20
           flex items-center justify-center w-10 h-10 rounded-full
@@ -417,7 +417,7 @@ export const TextAnimated = ({ loading }: TextAnimatedProps) => {
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
           </svg>
         )}
-      </button>
+      </button> */}
     </>
   );
 };
