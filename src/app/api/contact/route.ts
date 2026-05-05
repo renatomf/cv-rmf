@@ -6,8 +6,6 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { emailTemplate } from "./email-template";
 import { escapeHtml } from "@/lib/sanitize";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactSchema = z.object({
   name: z.string().min(1).max(100),
   email: z.email().max(200),
@@ -17,6 +15,7 @@ const contactSchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
   if (!checkRateLimit(ip)) {
